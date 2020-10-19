@@ -1,0 +1,6 @@
+framework module VisxSDK {
+  umbrella header "VisxSDK.h"
+
+  export *
+  module * { export * }
+}
