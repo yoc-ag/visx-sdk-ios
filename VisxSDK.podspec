@@ -11,8 +11,8 @@ Pod::Spec.new do |spec|
   spec.author       = { "Yoc AG" => "sdk@yoc.com" }
   spec.platform     = :ios, "12.1"
   spec.source       =  { :git => 'https://github.com/yoc-media/visx-sdk-ios.git', :tag => "#{spec.version}" }
-  spec.vendored_frameworks = "visx-sdk-ios-1.0.0/VisxSDK.xcframework"
+  spec.vendored_frameworks = "VisxSDK.xcframework"
   
-  #spec.preserve_paths = "VisxSDK.xcframework"
+  spec.preserve_paths = "VisxSDK.xcframework"
   
 end
