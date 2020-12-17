@@ -14,6 +14,7 @@
 #import <WebKit/WebKit.h>
 #import <VisxSDK/Mediation.h>
 
+@class VisxAdViewWrapper;
 @protocol VisxAdViewDelegate;
 @protocol MediationDelegate;
 /// Like in newSDK2 and not like above
@@ -52,6 +53,15 @@
 @property (nonatomic) BOOL isMediationAdView;
 /// determines if the creative is universal
 @property (nonatomic) BOOL isUniversal;
+/// visxAdView wrapper for diplaying adView and advertising labels
+@property (nonatomic) VisxAdViewWrapper *adViewWrapper;
+/// height of the adView
+@property CGFloat adHeight;
+/// advertising label
+@property (nonatomic, copy) NSString *advLabel;
+/// CGRect which holds resized dimensions of the visxAdView
+@property CGRect resizedViewRect;
+
 
 /// Initializes visxAdView
 /// @param auid creative ID
@@ -60,6 +70,14 @@
 /// @param adSize dimensions of the creative. see VisxAdSize.h
 /// @param universal Boolean flag which determines if the creative is universal or not
 - (id)initWithAdUnit:(NSString *)auid appDomain:(NSString *)domain delegate:(id<VisxAdViewDelegate>)adViewDelegate size:(VisxAdSize)adSize isUniversal:(BOOL)universal;
+
+/// Creates advertising label above the creative, this method is optional
+/// @param label input paramater as a NSString, it could be regular string or html one.
+- (void)advertisingLabelText:(NSString *)label;
+
+/// Creates advertising label above the creative, this method is optional, if not used, BOOL useLabel is false
+/// @param useLabel Boolean flag which determines if external advertising label should be used or not.
+- (void)useExternalAdvertisingLabel:(BOOL)useLabel;
 
 /// Loads an ad for the visxAdView object with the given custom targeting parameters.
 /// The custom targeting parameters are only set once at the first time. For any additional
@@ -81,8 +99,7 @@
 
 /// This methods adds creative in ScrollView. It must be used together with container view.
 /// @param scroll scrollview in which we are adding the creative
-/// @param container creative container in which we are adding the creative
-- (void)showCreativeInScrollview:(UIScrollView *)scroll inContainer:(UIView *)container;
+- (UIView *)getCreativeInScrollview:(UIScrollView *)scroll;
 
 /// Use this method to remove understitial creative from UITableView
 /// @param cell TableViewCell which containes the creative
@@ -96,13 +113,6 @@
 
 ///  Refreshes the creative
 - (void)refreshPlacement;
-
-/// Refreshes the visxAdView with new ad content after the time (delay) is reached. Auto-refreshing is only allowed for banner.
-/// @param delay determines the refreshing time
-- (void)autoRefreshAdAfterDelay:(CGFloat)delay;
-
-/// Cancel the timer for autorefreshing. Now the visxAdView changes no longer the content after a while.
-- (void)cancelAutoRefreshAd;
 
 /// Provides the version of the SDK currently in use. @return Version of the SDK
 + (NSString*)getSdkVersion;
