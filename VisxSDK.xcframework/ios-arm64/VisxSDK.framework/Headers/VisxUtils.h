@@ -112,5 +112,12 @@ UIView *visibleView(void);
 /// Returns width and height of the scrollview in which creative is inserted
 CGRect getScrollViewSize(UIViewController *controllerView);
 /// Returns max size of the view in which creative can be displayed
-CGRect maxSize(BOOL isInterstital, BOOL isUniversal, CGSize originalSize, CGFloat containerWidth);
+CGRect maxSize(BOOL isInterstital, BOOL isUniversal, CGSize originalSize, CGFloat containerWidth, CGRect anchorViewFrame);
+/// Returns advertising label from NSData
+NSString *VisxGetAdvertisingLabel(NSData *data);
+/// Returns location data (lat, lon, type, accuracy, lastfix and ipservice)
+NSMutableDictionary *VisxLocationProperties(void);
+/// Returns boolean value if html string is valid
+BOOL isHtmlString(NSString *htmlString);
+
 @end

@@ -13,123 +13,19 @@
      }
  }());
 (function () {
-    // Establish the root mraidbridge object.
-    var mraidbridge = window.mraidbridge = {};
-    // Listeners for bridge events.
-    var listeners = {};
-    // Queue to track pending calls to the native SDK.
-    var nativeCallQueue = [];
-    // Whether a native call is currently in progress.
-    var nativeCallInFlight = false;
-    // ////////////////////////////////////////////////////////////////////////////////////////////////
-    mraidbridge.fireReadyEvent = function () {
-        mraidbridge.fireEvent('ready');
-    };
-    
-    mraidbridge.fireExposureEvent = function (properties) {
-        mraid.exposureChange(properties.exposedPercentage,
-                             properties.visibleRectangle,
-                             properties.occlusionRectangles);
-    };
-    
-    mraidbridge.fireChangeEvent = function (properties) {
-        //console.log(JSON.stringify(properties, null, 2));
-        mraidbridge.fireEvent('change', properties);
-    };
-    mraidbridge.fireSuccessEvent = function (action) {
-        console.log("mraidbridge.fireSuccessEvent action= " + action);
-        mraidbridge.fireEvent('success', action);
-    };
-    mraidbridge.fireErrorEvent = function (message, action) {
-        mraidbridge.fireEvent('error', message, action);
-    };
-    mraidbridge.fireEvent = function (type) {
-        var ls = listeners[type];
-        if (ls) {
-            var args = Array.prototype.slice.call(arguments);
-            args.shift();
-            var l = ls.length;
-            for (var i = 0; i < l; i++) {
-                ls[i].apply(null, args);
-            }
-        }
-    };
-    mraidbridge.setSupportFeature = function (feature, value) {
-        window.mraid.setSupportFeature(feature, value);
-    };
-    mraidbridge.nativeCallComplete = function (command) {
-        if (nativeCallQueue.length === 0) {
-            nativeCallInFlight = false;
-            return;
-        }
-        var nextCall = nativeCallQueue.shift();
-        window.location = nextCall;
-    };
-    mraidbridge.executeNativeCall = function (command) {
-        var call = 'mraid://' + command;
-        var key, value;
-        var isFirstArgument = true;
-        for (var i = 1; i < arguments.length; i += 2) {
-            key = arguments[i];
-            value = arguments[i + 1];
-            if (value === null) continue;
-            if (isFirstArgument) {
-                call += '?';
-                isFirstArgument = false;
-            } else {
-                call += '&';
-            }
-            call += key + '=' + encodeURI(value);
-        }
-        if (nativeCallInFlight) {
-            nativeCallQueue.push(call);
-        } else {
-            nativeCallInFlight = true;
-            window.location = call;
-        }
-    };
-    // ////////////////////////////////////////////////////////////////////////////////////////////////
-    mraidbridge.getOrientationProperties = function () {
-        
-        var properties = mraid.getOrientationProperties();
-        var jsonStr = JSON.stringify(properties);
-        
-        return jsonStr;
-    };
-    // ////////////////////////////////////////////////////////////////////////////////////////////////
-    mraidbridge.addEventListener = function (event, listener) {
-        var eventListeners;
-        listeners[event] = listeners[event] || [];
-        eventListeners = listeners[event];
-        for (var l in eventListeners) {
-            // Listener already registered, so no need to add it.
-            if (listener === l) return;
-        }
-        eventListeners.push(listener);
-    };
-    mraidbridge.removeEventListener = function (event, listener) {
-        if (listeners.hasOwnProperty(event)) {
-            var eventListeners = listeners[event];
-            if (eventListeners) {
-                var idx = eventListeners.indexOf(listener);
-                if (idx !== -1) {
-                    eventListeners.splice(idx, 1);
-                }
-            }
-        }
-    };
-}());
-(function () {
     var mraid = window.mraid = {};
-    var bridge = window.mraidbridge; // Constants.
+    var mraid_bridge = window.mraid_bridge = {};
+    // Constants.
     // ////////////////////////////////////////////////////////////////////////////////////
-    var VERSION = mraid.VERSION = '2.0';
+    var VERSION = mraid.VERSION = '3.0';
     // Used to track the version of the iOS SDK
-    var SDKVERSION = mraid.SDKVERSION = "1.0";
+    var SDKVERSION = mraid.SDKVERSION = "1.1.0";
+    // Placeholder, to be filled on Content Injection
+    window.MRAID_ENV;
     
     var STATES = mraid.STATES = {
     LOADING: 'loading',
-        // Initial state.
+    // Initial state.
     DEFAULT: 'default',
     EXPANDED: 'expanded',
     RESIZED: 'resized',
@@ -146,7 +42,8 @@
     SIZECHANGE: 'sizeChange',
     URLSCHEMESUPPORTED: 'urlschemesupported',
     EXPOSURECHANGE: 'exposureChange',
-    SUCCESS: 'success'
+    SUCCESS: 'success',
+    AUDIOVOLUMECHANGE: 'audioVolumeChange'
     };
     var PLACEMENT_TYPES = mraid.PLACEMENT_TYPES = {
     INLINE: 'inline',
@@ -163,7 +60,8 @@
     CALENDAR: 'calendar',
     VIDEO: 'inlineVideo',
     PICTURE: 'storePicture',
-    EXPOSURECHANGE: 'exposureChange'
+    EXPOSURECHANGE: 'exposureChange',
+    AUDIOVOLUMECHANGE: 'audioVolumeChange'
     };
     var supports = {
         'screen': false,
@@ -172,7 +70,8 @@
         'inlineVideo': true,
         'tel': false,
         'storePicture': false,
-        'exposureChange': true
+        'exposureChange': true,
+        'audioVolumeChange': true
     };
     // External MRAID state: may be directly or indirectly modified by the ad JS.
     ////////////////////
@@ -266,12 +165,68 @@
     var isExposureChangeEnabled = true;
     var keyboardState = false;
     var volumeLevel = 0;
+    var volumePercentage = null;
     var scale = 1;
     var placementType = PLACEMENT_TYPES.INLINE;
-    
+
+    var location = {
+        lat : -1,
+        lon : -1,
+        type : -1,
+        accuracy : -1,
+        lastFix : -1,
+        ipservice : -1
+    };
+    var startingTimeInSeconds = 0;
+
+    function executeNativeCall(command) {
+        var call = 'mraid://' + command;
+        var key, value;
+        var isFirstArgument = true;
+        for (var i = 1; i < arguments.length; i += 2) {
+            key = arguments[i];
+            value = arguments[i + 1];
+            if (value === null) continue;
+            if (isFirstArgument) {
+                call += '?';
+                isFirstArgument = false;
+            } else {
+                call += '&';
+            }
+            call += key + '=' + encodeURI(value);
+        }
+        window.webkit.messageHandlers.nativeapp.postMessage(call);
+    };
+
+    mraid_bridge.fireEvent = function (type) {
+        var args = Array.prototype.slice.call(arguments);
+        args.shift();
+        switch(type){
+            case 'error':
+                broadcastEvent(EVENTS.ERROR, args);
+                break;
+            case 'success':
+                broadcastEvent(EVENTS.SUCCESS, args);
+                break;
+            case 'ready':
+                broadcastEvent(EVENTS.READY);
+                break;
+            case 'change':
+                var properties = args[0];
+                for (var p in properties) {
+                    if (properties.hasOwnProperty(p)) {
+                        var handler = changeHandlers[p];
+                        handler(properties[p]);
+                    }
+                }
+                break;
+        }
+        
+    }; 
+
     // ////////////////////////////////////////////////////////////////////////////////////////////////
     // / SUPPORT DYNAMIC VALUES CHANGING FOR MRAID 2.0 //
-    bridge.modifyMraidSupports = function (sms, tel, storedPic, calendar) {
+    mraid_bridge.modifyMraidSupports = function (sms, tel, storedPic, calendar) {
         //supports["sms"] = sms;
         //supports["tel"] = tel;
         //supports["storePicture"] = storedPic;
@@ -281,6 +236,26 @@
         supports["tel"] = tel;
         supports["storePicture"] = false;
         supports["calendar"] = false;
+    };
+
+    mraid_bridge.getOrientationProperties = function () {
+        var properties = mraid.getOrientationProperties();
+        var jsonStr = JSON.stringify(properties);
+        return jsonStr;
+    };
+
+    mraid_bridge.fireExposureEvent = function (properties) {
+        mraid.exposureChange(properties.exposedPercentage,
+                             properties.visibleRectangle,
+                             properties.occlusionRectangles);
+    };
+    
+    mraid_bridge.fireAudioChangeEvent = function (properties) {
+        if (properties != -1) {
+            volumePercentage = properties;
+        }
+        console.log("Audio volume change" + volumePercentage);
+        broadcastEvent(EVENTS.AUDIOVOLUMECHANGE, volumePercentage);
     };
     
     var EventListeners = function (event) {
@@ -528,27 +503,7 @@
         return (v == "moveUp" || v == "flipRight" || v == "fadeIn" || v == "curlUp");
     }
     };
-    // ////////////////////////////////////////////////////////////////////////////////////////////////
-    bridge.addEventListener('change', function (properties) {
-        for (var p in properties) {
-            if (properties.hasOwnProperty(p)) {
-                var handler = changeHandlers[p];
-                handler(properties[p]);
-            }
-        }
-    });
-    bridge.addEventListener('error', function (message, action) {
-        broadcastEvent(EVENTS.ERROR, message, action);
-    });
-    bridge.addEventListener('success', function (action) {
-        broadcastEvent(EVENTS.SUCCESS, action);
-    });
-    bridge.addEventListener('ready', function () {
-        broadcastEvent(EVENTS.READY);
-    });
-    
-    // ////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     mraid.addEventListener = function (event, listener) {
         if (!event || !listener) {
             broadcastEvent(EVENTS.ERROR, 'Both event and listener are required.', 'addEventListener');
@@ -558,20 +513,19 @@
             if (!listeners[event]) listeners[event] = new EventListeners(event);
             listeners[event].add(listener);
             if (event == EVENTS.VOLUMECHANGE) {
-                bridge.executeNativeCall('enableVolumeControl', 'setting', 'true');
+                executeNativeCall('enableVolumeControl', 'setting', 'true');
             }
         }
     };
     mraid.close = function () {
-        // if (state === STATES.HIDDEN) {
-        // broadcastEvent(EVENTS.ERROR, 'Ad cannot be closed when it is already
-        // hidden.', 'close');
-        // } else {
-        bridge.executeNativeCall('close');
-        console.log("bridge.executeNativeCall('close')");
-        // }
+        executeNativeCall('close');
+        console.log("executeNativeCall('close')");
     };
     
+    mraid.visxShowAdvertisementMessageBelow = function(htmlData) {
+        executeNativeCall('visxshowmessagebelow', 'htmlData', btoa(htmlData));
+    };
+
     mraid.getDensity = function() {
         console.log("mraid.getDensity() density="+density);
         return density;
@@ -596,13 +550,13 @@
     };
     
     mraid.flip = function (transitionStyle, duration, url) {
-        bridge.executeNativeCall('flip', "transitionStyle", transitionStyle, "duration", duration, "url", url);
+        executeNativeCall('flip', "transitionStyle", transitionStyle, "duration", duration, "url", url);
     };
     mraid.presentWithAnimationStyle = function (animationStyle) {
         if (animationStyle != "flipFromRight" && animationStyle != "flipFromLeft" && animationStyle != "flipFromTop" && animationStyle != "flipFromBottom") {
             animationStyle = "blend";
         }
-        bridge.executeNativeCall('presentwithanimation', "animationStyle", animationStyle);
+        executeNativeCall('presentwithanimation', "animationStyle", animationStyle);
     };
     mraid.openModalVCWithURL = function (URL) {
         var args = ['openmodalvc'];
@@ -611,12 +565,10 @@
         args = args.concat(['style', modalVCProperties.transitionStyle]);
         args = args.concat(['color', modalVCProperties.backgroundColor]);
         args = args.concat(['alpha', modalVCProperties.alpha]);
-        bridge.executeNativeCall.apply(this, args);
+        executeNativeCall.apply(this, args);
     };
     mraid.expand = function (URL) {
-        if (state !== STATES.DEFAULT) {
-            broadcastEvent(EVENTS.ERROR, 'Ad can only be expanded from the default state.', 'expand');
-        } else {
+        if (state == STATES.DEFAULT || state == STATES.RESIZED) {
             var args = ['expand'];
             if (hasSetCustomClose) {
                 args = args.concat(['shouldUseCustomClose', expandProperties.useCustomClose ? 'true' : 'false']);
@@ -634,7 +586,9 @@
             if (URL && URL != "") {
                 args = args.concat(['url', URL]);
             }
-            bridge.executeNativeCall.apply(this, args);
+            executeNativeCall.apply(this, args);
+        } else {
+            broadcastEvent(EVENTS.ERROR, 'Ad can only be expanded from the default state.', 'expand');
         }
     };
     mraid.getExpandProperties = function () {
@@ -653,22 +607,18 @@
         };
         return properties;
     };
-    mraid.resize = function (animated, legacy) {
-        var legacy = (typeof legacy === "undefined") ? false : legacy;
-        var args;
-        
-        if(legacy) {
-            args = ['backwardCompatibleResize'];
+    mraid.resize = function () {
+        if (state == STATES.EXPANDED) {
+            broadcastEvent(EVENTS.ERROR, 'Ad can only be resized from the default state.', 'resize');
         } else {
+            var args;
             args = ['resize'];
+            args = args.concat(['width', resizeProperties.width, 'height', resizeProperties.height]);
+            args = args.concat(['offsetX', resizeProperties.offsetX, 'offsetY', resizeProperties.offsetY]);
+            args = args.concat(['customClosePosition', resizeProperties.customClosePosition, 'allowOffscreen', resizeProperties.allowOffscreen]);
+            args = args.concat(['animated', 'true']);
+            executeNativeCall.apply(this, args);
         }
-        
-        args = args.concat(['width', resizeProperties.width, 'height', resizeProperties.height]);
-        args = args.concat(['offsetX', resizeProperties.offsetX, 'offsetY', resizeProperties.offsetY]);
-        args = args.concat(['customClosePosition', resizeProperties.customClosePosition, 'allowOffscreen', resizeProperties.allowOffscreen]);
-        if (animated != undefined) args = args.concat(['animated', animated]);
-        else args = args.concat(['animated', 'true']);
-        bridge.executeNativeCall.apply(this, args);
     };
     mraid.getResizeProperties = function () {
         var properties = {
@@ -753,9 +703,9 @@
         } else if (!data) {
             broadcastEvent(EVENTS.ERROR, 'Request must specify a url.', 'playVideo');
         } else if (typeof data == 'string') {
-            bridge.executeNativeCall('playVideo', 'url', data);
+            executeNativeCall('playVideo', 'url', data);
         } else if (typeof data == 'object') {
-            bridge.executeNativeCall.apply(this, concatArguments('playVideo', data));
+            executeNativeCall.apply(this, concatArguments('playVideo', data));
         }
     };
     mraid.supports = function (feature) {
@@ -770,7 +720,7 @@
             broadcastEvent(EVENTS.ERROR, 'Request must specify event data.', 'isURLSchemeSupported');
         }else{
             console.log("isURLSchemeSupported is supported");
-            bridge.executeNativeCall('isURLSchemeSupported', 'urlScheme', scheme);
+            executeNativeCall('isURLSchemeSupported', 'urlScheme', scheme);
         }
     };
     
@@ -789,7 +739,7 @@
         webviewDimension.height = webviewHeight;
         viewportDimension.width = viewportWidth;
         viewportDimension.height = viewportHeight;
-        bridge.executeNativeCall('visxSetPlacementDimension', 'webviewWidth', webviewWidth, 'webviewHeight', webviewHeight, 'viewportWidth', viewportWidth, 'viewportHeight', viewportHeight);
+        executeNativeCall('visxSetPlacementDimension', 'webviewWidth', webviewWidth, 'webviewHeight', webviewHeight, 'viewportWidth', viewportWidth, 'viewportHeight', viewportHeight);
     };
     
     mraid.visxSetTypeEffect = function(effect) {
@@ -806,7 +756,7 @@
         webviewDimension.height = webviewHeight;
         viewportDimension.width = viewportWidth;
         viewportDimension.height = viewportHeight;
-        bridge.executeNativeCall('visxSetPlacementEffect', 'effect', effect, 'webviewWidth', webviewWidth, 'webviewHeight', webviewHeight, 'viewportWidth', viewportWidth, 'viewportHeight', viewportHeight);
+        executeNativeCall('visxSetPlacementEffect', 'effect', effect, 'webviewWidth', webviewWidth, 'webviewHeight', webviewHeight, 'viewportWidth', viewportWidth, 'viewportHeight', viewportHeight);
     };
     
     mraid.visxGetPlacementEffect = function() {
@@ -831,37 +781,41 @@
     
     mraid.visxClosePlacement = function() {
         console.log("called visxClosePlacement")
-        bridge.executeNativeCall('visxClosePlacement')
+        executeNativeCall('visxClosePlacement')
     };
     
     mraid.visxClearPlacement = function() {
         console.log("called visxClearPlacement")
-        bridge.executeNativeCall('visxClearPlacement')
+        executeNativeCall('visxClearPlacement')
     };
     
     mraid.visxRefreshPlacement = function() {
-        console.log("called visxRefreshPlacement")
-        bridge.executeNativeCall('visxRefreshPlacement')
+        if (mraid.getState() == STATES.DEFAULT || STATES.HIDDEN) {
+            executeNativeCall('visxRefreshPlacement')
+        } else {
+            broadcastEvent(EVENTS.ERROR, 'visxRefreshPlacement requires state to be default or hidden.', 'visxRefreshPlacement');
+        }
+        
     };
     
     mraid.visxVideoFinished = function() {
         console.log("called visxVideoFinished");
-        bridge.executeNativeCall('visxVideoFinished');
+        executeNativeCall('visxVideoFinished');
     };
     
     mraid.visxVideoWasCanceled = function() {
         console.log("called visxVideoWasCanceled");
-        bridge.executeNativeCall('visxVideoWasCanceled');
+        executeNativeCall('visxVideoWasCanceled');
     };
     
     mraid.visxVideoWasMuted = function() {
         console.log("called visxVideoWasMuted");
-        bridge.executeNativeCall('visxVideoWasMuted');
+        executeNativeCall('visxVideoWasMuted');
     };
     
     mraid.visxVideoWasUnmuted = function() {
         console.log("called visxVideoWasUnmuted");
-        bridge.executeNativeCall('visxVideoWasUnmuted');
+        executeNativeCall('visxVideoWasUnmuted');
     };
 
     mraid.setDeviceVolume = function (volume) {
@@ -869,7 +823,7 @@
         if (volume < 0 || volume > 1) {
             broadcastEvent(EVENTS.ERROR, 'volume is required.', 'open');
         } else {
-            bridge.executeNativeCall('setDeviceVolume', 'volume', volume);
+            executeNativeCall('setDeviceVolume', 'volume', volume);
         }
     };
     
@@ -878,7 +832,7 @@
             broadcastEvent(EVENTS.ERROR, 'URL is required.', 'open');
         } else {
             console.log("mraid.open func for opening new URL: " + URL);
-            bridge.executeNativeCall('open', 'url', URL);
+            executeNativeCall('open', 'url', URL);
         }
     };
     
@@ -942,7 +896,7 @@
         args = args.concat(['allowOrientationChange', orientationProperties.allowOrientationChange]);
         args = args.concat(['forceOrientation', orientationProperties.forceOrientation]);
         
-        bridge.executeNativeCall.apply(this, args);
+        executeNativeCall.apply(this, args);
     };
     mraid.setModalVCProperties = function (properties) {
         if (validate(properties, modalVCPropertyValidators, 'setModalVCProperties', true)) {
@@ -969,14 +923,14 @@
     mraid.useCustomClose = function (shouldUseCustomClose) {
         expandProperties.useCustomClose = shouldUseCustomClose;
         hasSetCustomClose = true;
-        console.log("Will execute bridge.executeNativeCall useCustomClose");
-        bridge.executeNativeCall('usecustomclose', 'shouldUseCustomClose', shouldUseCustomClose);
+        console.log("Will execute executeNativeCall useCustomClose");
+        executeNativeCall('usecustomclose', 'shouldUseCustomClose', shouldUseCustomClose);
     };
     mraid.setCustomCloseButtonParams = function (imageURLForCustomCloseButton, width, height) {
-        bridge.executeNativeCall('setcustomclosebuttonparams', 'url', imageURLForCustomCloseButton, '<<width', width,'<<height', height);
+        executeNativeCall('setcustomclosebuttonparams', 'url', imageURLForCustomCloseButton, '<<width', width,'<<height', height);
     };
     mraid.forceOrientation = function (orientation) {
-        bridge.executeNativeCall('forceorientation', 'orientation', orientation);
+        executeNativeCall('forceorientation', 'orientation', orientation);
     };
     mraid.exitApplicationAlert = function (alertFlag, alertTextData) {
         var args = ['setExitApplicationAlert'];
@@ -985,16 +939,38 @@
             args = args.concat([obj, encodeURIComponent(alertTextData[obj])]);
         }
         console.log("will execute nativeCall for exitApplicationAlert");
-        bridge.executeNativeCall.apply(this, args);
+        executeNativeCall.apply(this, args);
     };
     mraid.setCloseButtonPosition = function (value) {
         if (value != "top-right" && value != "top-left" && value != "bottom-right" && value != "bottom-left") {
             value = "top-right";
         }
         console.log("will executeNativeCall of setCloseButtonPosition="+value);
-        bridge.executeNativeCall('setCloseButtonPosition', 'position', value);
+        executeNativeCall('setCloseButtonPosition', 'position', value);
     };
     mraid.setDimmingViewProperties = function (color, alpha) {
-        bridge.executeNativeCall('setDimmingViewProperties', 'color', color, 'alpha', alpha);
+        executeNativeCall('setDimmingViewProperties', 'color', color, 'alpha', alpha);
     };
+    
+    mraid.getLocation = function() {
+        var currentTime = Math.floor(Date.now() / 1000);
+        var timeInSeconds = currentTime - startingTimeInSeconds;
+        location.lastFix = timeInSeconds;
+        return location;
+    }
+    
+    mraid_bridge.setLocation = function(lat, lon, type, accuracy, lastFix) {
+        if (lat != 0 && lon != 0) {
+            location.lat = lat;
+            location.lon = lon;
+            location.type = type;
+            location.accuracy = accuracy;
+            startingTimeInSeconds = lastFix;
+        }
+    }
+                                     
+    mraid.unload = function() {
+        executeNativeCall('visxUnloadCreative');
+    }
+    
 }());
