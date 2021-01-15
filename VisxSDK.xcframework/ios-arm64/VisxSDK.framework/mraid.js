@@ -19,7 +19,7 @@
     // ////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
     // Used to track the version of the iOS SDK
-    var SDKVERSION = mraid.SDKVERSION = "1.1.0";
+    var SDKVERSION = mraid.SDKVERSION = "1.2.0";
     // Placeholder, to be filled on Content Injection
     window.MRAID_ENV;
     
@@ -66,10 +66,10 @@
     var supports = {
         'screen': false,
         'sms': false,
-        'calendar': false,
+        'calendar': true,
         'inlineVideo': true,
         'tel': false,
-        'storePicture': false,
+        'storePicture': true,
         'exposureChange': true,
         'audioVolumeChange': true
     };
@@ -85,8 +85,12 @@
     
     // Properties wich control the orientation of an expandable and interstitial ad.
     var orientationProperties = {
-    allowOrientationChange: true,
+    allowOrientationChange: false,
     forceOrientation: "none"
+    };
+    var currentAppOrientationProperties = {
+    locked: true,
+    orientation: "none"
     };
     // Properties which define the behavior of a resizeable ad.
     var resizeProperties = {
@@ -234,8 +238,8 @@
         /* support is set to false as long as we haven't fully tested all features */
         supports["sms"] = false;
         supports["tel"] = tel;
-        supports["storePicture"] = false;
-        supports["calendar"] = false;
+        supports["storePicture"] = storedPic;
+        supports["calendar"] = calendar;
     };
 
     mraid_bridge.getOrientationProperties = function () {
@@ -254,9 +258,13 @@
         if (properties != -1) {
             volumePercentage = properties;
         }
-        console.log("Audio volume change" + volumePercentage);
         broadcastEvent(EVENTS.AUDIOVOLUMECHANGE, volumePercentage);
     };
+    
+    mraid_bridge.setCurrentAppOrientation = function (orientation, locked) {
+        currentAppOrientationProperties.orientation = orientation;
+        currentAppOrientationProperties.locked = locked == 1 ? true : false;
+    }
     
     var EventListeners = function (event) {
         this.event = event;
@@ -548,10 +556,7 @@
     mraid.getIsMediationAdView = function() {
         return isMediationAdView;
     };
-    
-    mraid.flip = function (transitionStyle, duration, url) {
-        executeNativeCall('flip', "transitionStyle", transitionStyle, "duration", duration, "url", url);
-    };
+
     mraid.presentWithAnimationStyle = function (animationStyle) {
         if (animationStyle != "flipFromRight" && animationStyle != "flipFromLeft" && animationStyle != "flipFromTop" && animationStyle != "flipFromBottom") {
             animationStyle = "blend";
@@ -637,6 +642,9 @@
     mraid.getState = function () {
         return state;
     };
+    mraid.getCurrentAppOrientation = function () {
+        return currentAppOrientationProperties;
+    };
     mraid.getAbsoluteScreenSize = function () {
         console.log("mraid.getAbsoluteScreenSize() will return maxSize="+absSize);
         return absSize;
@@ -691,11 +699,16 @@
     mraid.sendSMS = function (data) {
         broadcastEvent(EVENTS.ERROR, 'Method is not supported.', 'sendSMS');
     };
-    mraid.storePicture = function (data) {
-        broadcastEvent(EVENTS.ERROR, 'Method is not supported.', 'storePicture');
+    mraid.storePicture = function (url) {
+        if (url === null || url.match(/^ *$/) !== null) {
+            broadcastEvent(EVENTS.ERROR, 'Url request cannot be empty.', 'storePicture');
+        } else {
+            executeNativeCall('storepicture', 'url', url);
+        }
     };
     mraid.createCalendarEvent = function (data) {
-        broadcastEvent(EVENTS.ERROR, 'Method is not supported.', 'createCalendarEvent');
+        var jsonStr = JSON.stringify(data);
+        executeNativeCall('createcalendarevent', 'data', jsonStr);
     };
     mraid.playVideo = function (data) {
         if (!supports[FEATURES.VIDEO]) {
@@ -951,14 +964,12 @@
     mraid.setDimmingViewProperties = function (color, alpha) {
         executeNativeCall('setDimmingViewProperties', 'color', color, 'alpha', alpha);
     };
-    
     mraid.getLocation = function() {
         var currentTime = Math.floor(Date.now() / 1000);
         var timeInSeconds = currentTime - startingTimeInSeconds;
         location.lastFix = timeInSeconds;
         return location;
     }
-    
     mraid_bridge.setLocation = function(lat, lon, type, accuracy, lastFix) {
         if (lat != 0 && lon != 0) {
             location.lat = lat;
@@ -968,7 +979,6 @@
             startingTimeInSeconds = lastFix;
         }
     }
-                                     
     mraid.unload = function() {
         executeNativeCall('visxUnloadCreative');
     }
