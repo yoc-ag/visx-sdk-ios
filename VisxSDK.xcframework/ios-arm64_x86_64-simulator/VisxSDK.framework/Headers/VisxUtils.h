@@ -119,5 +119,6 @@ NSString *VisxGetAdvertisingLabel(NSData *data);
 NSMutableDictionary *VisxLocationProperties(void);
 /// Returns boolean value if html string is valid
 BOOL isHtmlString(NSString *htmlString);
-
+/// Returns current app orientation
+NSDictionary *setCurrentAppOrientation(void);
 @end
