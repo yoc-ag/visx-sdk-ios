@@ -4,25 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/Mediation.h</key>
-		<data>
-		up3WVFFgSo1yQU/6uxai2uRMTxw=
-		</data>
-		<key>Headers/Parameter.h</key>
-		<data>
-		Av6f5tkYygiv7oz4IE0QofKDlbA=
-		</data>
 		<key>Headers/VisxAdSize.h</key>
 		<data>
 		20sPSM5FwJYLxMoafjwQqhMl0Uo=
 		</data>
 		<key>Headers/VisxAdView.h</key>
 		<data>
-		eX2QW4h/josaAErzibZjCvZWLAU=
+		Qay7MxkRsDTX08jtVTLTIJrsx1g=
 		</data>
 		<key>Headers/VisxPlacementTypes.h</key>
 		<data>
 		Za1hjXAsnbx8N6jxDd2f056rM1o=
+		</data>
+		<key>Headers/VisxSDK-Swift.h</key>
+		<data>
+		xxvNGoOrtiuq6IHh4gfHrHTw+50=
 		</data>
 		<key>Headers/VisxSDK.h</key>
 		<data>
@@ -38,15 +34,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6J0UeIF5xtQUQlfTXm3JHC0C67Q=
+		5ILW5R/wZ2DB6HU2Fwk9e9kz5pg=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		xMGP4sEHkULUFolbtxViFuNmlXY=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		RsKU5e+FuNdz8AQiuTzy/qLwUjU=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		GgQELmA9mckRz7Ch5KdzWxtzA9c=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
+		<data>
+		xMGP4sEHkULUFolbtxViFuNmlXY=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftinterface</key>
+		<data>
+		RsKU5e+FuNdz8AQiuTzy/qLwUjU=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftmodule</key>
+		<data>
+		GgQELmA9mckRz7Ch5KdzWxtzA9c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		yaO1Wcxgh6a1yjwP6LKdZSsz7zE=
+		14iVbO6bPucNTV81ie5BZ+6PqsU=
 		</data>
 		<key>mraid.js</key>
 		<data>
-		kDThi0PxFOskJvgs3Io/gabiORo=
+		ogIu4okEnLDjtf9+W+ArOxOhIUQ=
+		</data>
+		<key>omsdk-v1.js</key>
+		<data>
+		VBhnPxV62WtlG5odVIWZbVaiwOc=
 		</data>
 		<key>yoc_close_button.png</key>
 		<data>
@@ -63,20 +87,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/Mediation.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ozOdSdW/6XgBhSxYe1JHwLQnMhzPEQEAzkD/JfHQ6Vo=
-			</data>
-		</dict>
-		<key>Headers/Parameter.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wdK+ep3Yp22Y2nhCfjsrLnK/gyM7vT46K5tnx/8SUvo=
-			</data>
-		</dict>
 		<key>Headers/VisxAdSize.h</key>
 		<dict>
 			<key>hash2</key>
@@ -88,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W9mNc0V9f3Sg5ZrYECXqpErnTkmEjmI/GBtXwv0IDiM=
+			LAMPU2LLQ7EWRnxITwe36FT8Jrdb00HDfMMOGFn9fDM=
 			</data>
 		</dict>
 		<key>Headers/VisxPlacementTypes.h</key>
@@ -96,6 +106,13 @@
 			<key>hash2</key>
 			<data>
 			FMOcSgdLj51UIvZm0qxNgaZJNGGTITMPec/wDn6rx88=
+			</data>
+		</dict>
+		<key>Headers/VisxSDK-Swift.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZcIid51QTwoP2zRr+wRrjMw9L6k3vXYJAvVVPw5bRLE=
 			</data>
 		</dict>
 		<key>Headers/VisxSDK.h</key>
@@ -119,18 +136,67 @@
 			Q2Qxz4LOg7iZNh16Slwev1SzP3PYHEBqm5YKQ3c8VTY=
 			</data>
 		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jUMAyuXux/wv9j8LO1oV0B/Yid+JnbnOxHnsPWeMCNk=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TQ4qgus7rWTBKIswDI+RHDyCcLU/+6iWrBipKArqDJw=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RDMQM3j1YCLritxbRvhLwBwud6d2MOIiw04+bgJS5tA=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jUMAyuXux/wv9j8LO1oV0B/Yid+JnbnOxHnsPWeMCNk=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TQ4qgus7rWTBKIswDI+RHDyCcLU/+6iWrBipKArqDJw=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RDMQM3j1YCLritxbRvhLwBwud6d2MOIiw04+bgJS5tA=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hPS1nyUC5ML0ke5Fpe4/lhvdH7J6qih/57xBV1dh5+Y=
+			7rpZXZlxqpcatis2jN3jz/FxMU9xprRtWCAGXlHUF0Q=
 			</data>
 		</dict>
 		<key>mraid.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cDM+slaZrZL0tP7As4gBjZ2hvDphWX++7gj1x60KFrw=
+			dlwr5UAKGySjVRkK4h87Ttv4MwrhWK7CqccFAQAj480=
+			</data>
+		</dict>
+		<key>omsdk-v1.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qy8Vy+v9KRCN7f0lcWabC4LZwExK8sYz6HpT3aFLW38=
 			</data>
 		</dict>
 		<key>yoc_close_button.png</key>
