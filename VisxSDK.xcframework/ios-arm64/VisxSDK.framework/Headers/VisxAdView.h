@@ -12,17 +12,16 @@
 #import <VisxSDK/VisxAdSize.h>
 #import <VisxSDK/VisxUtils.h>
 #import <WebKit/WebKit.h>
-#import <VisxSDK/Mediation.h>
 
 @class VisxAdViewWrapper;
+@class Mediation;
+
 @protocol VisxAdViewDelegate;
-@protocol MediationDelegate;
+
 /// Like in newSDK2 and not like above
 @interface VisxAdView : UIView <WKUIDelegate, WKNavigationDelegate>
 /// delegate for the VisxAdViewDelegate. Should implemented in publisher app.
 @property(nonatomic) id <VisxAdViewDelegate> delegate;
-/// delegate for the MediationDelegate. Its already implmeneted, no need to do anything here.
-@property(nonatomic, weak) id <MediationDelegate> mediationDelegate;
 /// determines the animationDuration for ads in seconds
 @property(nonatomic, assign) CGFloat animationDuration;
 /// determines type of the animation. See VisxUtils/VisxAdViewAnimationType.h
@@ -167,6 +166,10 @@
 /// @param visxAdView visxAdView with data
 - (void)visxAdWillPresentScreen:(VisxAdView *)visxAdView;
 
+/// Delegate method is called when the ad view is loaded and its on screen
+/// @param visxAdView visxAdView with data
+- (void)visxAdDidPresentScreen:(VisxAdView *)visxAdView;
+
 /// Delegate method called when universal creative changes placement effect
 /// @param visxAdView visxAdView with data
 /// @param effect visxPlacement Effect
@@ -223,6 +226,10 @@
 /// @param visxAdView the visxAdView which is closed.
 - (void)visxAdDidClose:(VisxAdView *)visxAdView;
 
+/// Delegate method is called when the ad has been tapped.
+/// @param visxAdView the visxAdView which is tapped.
+- (void)visxAdWasTapped:(VisxAdView *)visxAdView;
+
 /// Delegate method is (optional) called before showing a modal view controller.
 /// @param visxAdView visxAdView the calling adView.
 /// deprecated in version 2.0
@@ -242,13 +249,4 @@
 /// Delegate method is called when a modal view controller has been dismissed.
 /// @param visxAdView the VisxAdView which has originally opened the modal view
 - (void)visxAdViewWillDismissModalViewController:(VisxAdView *)visxAdView;
-@end
-
-///Mediation protocol
-@protocol MediationDelegate <NSObject>
-
-/// Delegate mthod is called whenever mediation creative is received
-/// @param mediation mediation creative with data
-/// @param adView visxAdView which containes the mediation creative
-- (void)loadMediationAd:(Mediation *)mediation adView:(VisxAdView *)adView;
 @end

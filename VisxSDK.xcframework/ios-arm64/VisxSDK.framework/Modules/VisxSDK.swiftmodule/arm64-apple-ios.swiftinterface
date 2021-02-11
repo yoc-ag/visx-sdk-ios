@@ -1,0 +1,38 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
+import Foundation
+import OMSDK_Yoc
+import Swift
+@_exported import VisxSDK
+import VisxSDK_Private
+@objc @_inheritsConvenienceInitializers @objcMembers public class OmidManager : ObjectiveC.NSObject {
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class VisxURLRequest : ObjectiveC.NSObject {
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class VisxRequestBuilder : ObjectiveC.NSObject {
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class Mediation : ObjectiveC.NSObject {
+  @objc public var className: Swift.String?
+  @objc public var adunit: Swift.String?
+  @objc public var sizes: [[Foundation.NSNumber]]?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol FetchMediationDelegate {
+  @objc func didReceive(_ mediations: [VisxSDK.Mediation])
+  @objc func fetchingMediationFailed()
+}
+@objc public protocol LoadMediationDelegate {
+  @objc func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class MediationManager : ObjectiveC.NSObject {
+  @objc deinit
+  @objc override dynamic public init()
+}

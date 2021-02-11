@@ -4,3 +4,8 @@ framework module VisxSDK {
   export *
   module * { export * }
 }
+
+module VisxSDK.Swift {
+    header "VisxSDK-Swift.h"
+    requires objc
+}
