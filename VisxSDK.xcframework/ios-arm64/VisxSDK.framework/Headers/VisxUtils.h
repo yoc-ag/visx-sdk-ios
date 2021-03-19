@@ -94,11 +94,11 @@ VisxPlacementEffect VisxPlacementTypeToDefaultEffect(VisxPlacementType type);
 /// Returns default placement effect from visxAdSize type
 VisxPlacementEffect VisxPlacementEffectForAdSize(VisxAdSize size);
 /// Returns creative Id from google response
-NSString *VisxGetGoogleAUID(NSString *serverParameter);
+NSString *VisxGetAUIDFromString(NSString *serverParameter);
 /// Returns publisher app domian from google response
-NSString *VisxGetGoogleAppDomain(NSString *serverParameter);
+NSString *VisxGetAppDomainFromString(NSString *serverParameter);
 /// Returns visxAdSize from google response
-VisxAdSize VisxGetGoogleAdSize(NSString *serverParameter);
+VisxAdSize VisxGetAdSizeFromString(NSString *serverParameter);
 /// Returns width of the creative from google response
 CGFloat VisxGetGoogleWidth(NSString *serverParameter);
 /// Returns height of the creative from google response
@@ -121,4 +121,6 @@ NSMutableDictionary *VisxLocationProperties(void);
 BOOL isHtmlString(NSString *htmlString);
 /// Returns current app orientation
 NSDictionary *setCurrentAppOrientation(void);
+// Returns visxAdSize from Xandr size
+VisxAdSize VisxGetXandrAdSize(CGSize cgSize);
 @end

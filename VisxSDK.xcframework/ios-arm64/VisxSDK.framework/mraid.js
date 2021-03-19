@@ -19,7 +19,7 @@
     // ////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
     // Used to track the version of the iOS SDK
-    var SDKVERSION = mraid.SDKVERSION = "1.2.1";
+    var SDKVERSION = mraid.SDKVERSION = "1.3.0";
     // Placeholder, to be filled on Content Injection
     window.MRAID_ENV;
     
@@ -43,7 +43,8 @@
     URLSCHEMESUPPORTED: 'urlschemesupported',
     EXPOSURECHANGE: 'exposureChange',
     SUCCESS: 'success',
-    AUDIOVOLUMECHANGE: 'audioVolumeChange'
+    AUDIOVOLUMECHANGE: 'audioVolumeChange',
+    VISXONSCROLL: 'visxOnScroll'
     };
     var PLACEMENT_TYPES = mraid.PLACEMENT_TYPES = {
     INLINE: 'inline',
@@ -231,12 +232,7 @@
     // ////////////////////////////////////////////////////////////////////////////////////////////////
     // / SUPPORT DYNAMIC VALUES CHANGING FOR MRAID 2.0 //
     mraid_bridge.modifyMraidSupports = function (sms, tel, storedPic, calendar) {
-        //supports["sms"] = sms;
-        //supports["tel"] = tel;
-        //supports["storePicture"] = storedPic;
-        //supports["calendar"] = calendar;
-        /* support is set to false as long as we haven't fully tested all features */
-        supports["sms"] = false;
+        supports["sms"] = sms;
         supports["tel"] = tel;
         supports["storePicture"] = storedPic;
         supports["calendar"] = calendar;
@@ -265,6 +261,10 @@
         currentAppOrientationProperties.orientation = orientation;
         currentAppOrientationProperties.locked = locked == 1 ? true : false;
     }
+    
+    mraid_bridge.fireScrollEvent = function (initialScrollViewHeight, currentScrollViewHeight, currentScrollPosition, scrollPositionDelta) {
+        broadcastEvent(EVENTS.VISXONSCROLL, initialScrollViewHeight, currentScrollViewHeight, currentScrollPosition, scrollPositionDelta);
+    };
     
     var EventListeners = function (event) {
         this.event = event;
@@ -696,9 +696,7 @@
         }
         return isExposureChangeEnabled;
     };
-    mraid.sendSMS = function (data) {
-        broadcastEvent(EVENTS.ERROR, 'Method is not supported.', 'sendSMS');
-    };
+
     mraid.storePicture = function (url) {
         if (url === null || url.match(/^ *$/) !== null) {
             broadcastEvent(EVENTS.ERROR, 'Url request cannot be empty.', 'storePicture');
@@ -829,6 +827,10 @@
     mraid.visxVideoWasUnmuted = function() {
         console.log("called visxVideoWasUnmuted");
         executeNativeCall('visxVideoWasUnmuted');
+    };
+    
+    mraid.visxEnableOnScrollEvent = function() {
+        executeNativeCall('visxEnableOnScrollEvent');
     };
 
     mraid.setDeviceVolume = function (volume) {

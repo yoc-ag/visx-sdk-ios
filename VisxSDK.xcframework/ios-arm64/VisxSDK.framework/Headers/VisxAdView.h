@@ -100,15 +100,14 @@
 /// @param scroll scrollview in which we are adding the creative
 - (UIView *)getCreativeInScrollview:(UIScrollView *)scroll;
 
-/// Use this method to remove understitial creative from UITableView
-/// @param cell TableViewCell which containes the creative
-- (void)removeCreativeFrom:(UITableViewCell *)cell;
-
 /// This methods updates Mini Understitial creative position while scrolling in UITableView or UIScrollView.
 - (void)scrollViewDidScroll;
 
+/// This method creates reactive scrolling effect.
+- (void)reactiveScrollDidScroll:(UIScrollView *)scroll;
+
 /// Releases the visxAdView. Should only be called, if the visxAdView is no longer needed.
-- (void)releaseVisxAdView;
+- (void)deallocAdView;
 
 ///  Refreshes the creative
 - (void)refreshPlacement;
@@ -130,6 +129,9 @@
 
 /// Presents the interstitial from the default view controller.
 - (void)showInterstitial;
+
+/// Presents the reactive scrolling creative from the default view controller.
+- (UIView *)getReactiveCreative;
 
 /// Presents the interstitial from the custom view controller.
 /// @param controller viewcontroller which will present interstitial creative
