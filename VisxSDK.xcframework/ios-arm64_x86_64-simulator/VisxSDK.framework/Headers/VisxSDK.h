@@ -17,5 +17,7 @@ FOUNDATION_EXPORT const unsigned char YocSDKVersionString[];
 #import <VisxSDK/VisxUtils.h>
 #import <VisxSDK/VisxAdSize.h>
 #import <VisxSDK/VisxSDKManager.h>
+#import <VisxSDK/VisxTableViewCell.h>
+#import "OMIDImports.h"
 
 

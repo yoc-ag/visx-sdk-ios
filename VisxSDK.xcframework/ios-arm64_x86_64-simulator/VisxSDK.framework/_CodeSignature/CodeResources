@@ -4,13 +4,61 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/OMIDAdEvents.h</key>
+		<data>
+		DCUPgL5CYKGyUdgZlX6PRd9X0XI=
+		</data>
+		<key>Headers/OMIDAdSession.h</key>
+		<data>
+		PQ0x3AWtdX1xcWGDXymbkFSC5mk=
+		</data>
+		<key>Headers/OMIDAdSessionConfiguration.h</key>
+		<data>
+		WJ0q/7EuGcZ2db1cUOrf+xWBhXs=
+		</data>
+		<key>Headers/OMIDAdSessionContext.h</key>
+		<data>
+		GHF9+hAJDI1b/riwxV70/R5JioE=
+		</data>
+		<key>Headers/OMIDFriendlyObstructionType.h</key>
+		<data>
+		ymPA8TI4PL8pK0zhc5ilyQj/SsA=
+		</data>
+		<key>Headers/OMIDImports.h</key>
+		<data>
+		kklBQQiiHyi6ArUe1OOfy92xxX4=
+		</data>
+		<key>Headers/OMIDMediaEvents.h</key>
+		<data>
+		JAGXIRbgDzkpxH1nY9K23632Z4Y=
+		</data>
+		<key>Headers/OMIDPartner.h</key>
+		<data>
+		xD917R3ze8JKEOc/z+2r5jLlbx8=
+		</data>
+		<key>Headers/OMIDSDK.h</key>
+		<data>
+		88ze5QvACjt7h2jrGeKJzmyPu7U=
+		</data>
+		<key>Headers/OMIDScriptInjector.h</key>
+		<data>
+		tSqSOwKxEL1ZirZxq0s6/XKBn8M=
+		</data>
+		<key>Headers/OMIDVASTProperties.h</key>
+		<data>
+		9RrVcwhCcv/4h0LH/E/Lu6vOGX4=
+		</data>
+		<key>Headers/OMIDVerificationScriptResource.h</key>
+		<data>
+		ugh+mDMiG4KvNYnb0x4cxDP4V6s=
+		</data>
 		<key>Headers/VisxAdSize.h</key>
 		<data>
 		20sPSM5FwJYLxMoafjwQqhMl0Uo=
 		</data>
 		<key>Headers/VisxAdView.h</key>
 		<data>
-		Qay7MxkRsDTX08jtVTLTIJrsx1g=
+		TnBGG4jYSQd03qRZO9+jDVgd8cI=
 		</data>
 		<key>Headers/VisxPlacementTypes.h</key>
 		<data>
@@ -18,23 +66,51 @@
 		</data>
 		<key>Headers/VisxSDK-Swift.h</key>
 		<data>
-		xxvNGoOrtiuq6IHh4gfHrHTw+50=
+		Y9NkynFRj9vL1GF0Bny1xZsZ4R4=
 		</data>
 		<key>Headers/VisxSDK.h</key>
 		<data>
-		EjH5Orc4EZy5nliVWBK7LWJAmT4=
+		cC/+tJwjJP1XtEn6s8nhQBxq22w=
 		</data>
 		<key>Headers/VisxSDKManager.h</key>
 		<data>
 		RYC5sF6IZb/4mpHTnh7EXjVVXic=
 		</data>
+		<key>Headers/VisxTableViewCell.h</key>
+		<data>
+		X5iFP3pOB+t2MdeEskLLwWH9fAI=
+		</data>
 		<key>Headers/VisxUtils.h</key>
 		<data>
-		H0lqmPWdRlEmM+cosbxU1xvHrzs=
+		kZ10tFwlcr/ZaF2MSKqbLjPSIoY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5ILW5R/wZ2DB6HU2Fwk9e9kz5pg=
+		QHRxL+iJn+6mKDtgP0k7BZv3REA=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		MmVMlVOu/kIQ4Vx+NcUt4AE9F+A=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		WazajRtEPg64BppLv4GLxwBX8SM=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		0NkqMQTVldf7AfxMQs/5sMu8AGQ=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		MmVMlVOu/kIQ4Vx+NcUt4AE9F+A=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
+		<data>
+		WazajRtEPg64BppLv4GLxwBX8SM=
+		</data>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		0NkqMQTVldf7AfxMQs/5sMu8AGQ=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +118,11 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		RsKU5e+FuNdz8AQiuTzy/qLwUjU=
+		OkloMq3lZPjTEmapPNQclrx5QVY=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GgQELmA9mckRz7Ch5KdzWxtzA9c=
+		/D7kwJrr35G48j00Zm7pPTomEl0=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,11 +130,11 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		RsKU5e+FuNdz8AQiuTzy/qLwUjU=
+		OkloMq3lZPjTEmapPNQclrx5QVY=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		GgQELmA9mckRz7Ch5KdzWxtzA9c=
+		/D7kwJrr35G48j00Zm7pPTomEl0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -66,11 +142,11 @@
 		</data>
 		<key>mraid.js</key>
 		<data>
-		ogIu4okEnLDjtf9+W+ArOxOhIUQ=
+		l1KwF3k40ZVaA9BYjlUKR+mZQUU=
 		</data>
 		<key>omsdk-v1.js</key>
 		<data>
-		VBhnPxV62WtlG5odVIWZbVaiwOc=
+		LIdxqhQnzCgTUMxshObPipT5ByE=
 		</data>
 		<key>yoc_close_button.png</key>
 		<data>
@@ -87,6 +163,90 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/OMIDAdEvents.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mdkyklsaxjpFINj1SBxHSo8jBdBZQMUH15XArYZg4XA=
+			</data>
+		</dict>
+		<key>Headers/OMIDAdSession.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PGc6/XU32bAb2UVnWkUayrJWXvfgJ68AnOrhluS6Q1c=
+			</data>
+		</dict>
+		<key>Headers/OMIDAdSessionConfiguration.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8JbEuTokHpsRIMtvID/cUVMPs0pdP1wv+6q/tb44Veg=
+			</data>
+		</dict>
+		<key>Headers/OMIDAdSessionContext.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tvzcd1WRYLdiHFx1D0eAACyIyNnO+PnSwclWukuL7f0=
+			</data>
+		</dict>
+		<key>Headers/OMIDFriendlyObstructionType.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/ZmBFlTK7mS0fZy4WqxCTpfhwDAEA4qlDHoed4FawBg=
+			</data>
+		</dict>
+		<key>Headers/OMIDImports.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WWfw+Z3RNrtOfWYdio9jyxKjmeVbPXzWNH7Pa7ErD0U=
+			</data>
+		</dict>
+		<key>Headers/OMIDMediaEvents.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pRAAMDjqPmgrvijxZlnOm3WHelqV9+Mlxxfgqn5Ovmc=
+			</data>
+		</dict>
+		<key>Headers/OMIDPartner.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			L+hQ+srPFsQMfVc4ot7yBghXMPLdKVe0sPso6FxN9yA=
+			</data>
+		</dict>
+		<key>Headers/OMIDSDK.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lHISutOr3S+fJ0Qy9o1UBq8Vc4lC/1BKhLTJM/ZFz30=
+			</data>
+		</dict>
+		<key>Headers/OMIDScriptInjector.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ovI/+AXhm7YWTPye0mMDgIwaww8Yq6g63mane2KHGf8=
+			</data>
+		</dict>
+		<key>Headers/OMIDVASTProperties.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uaXvDZYnBa6QIVqNqEumwtIAWlAYXV688R9PKcgMSEM=
+			</data>
+		</dict>
+		<key>Headers/OMIDVerificationScriptResource.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8/Bcx41zMVqHVcgTmPzDNa4vZ3yok/gIABfkm1OHav4=
+			</data>
+		</dict>
 		<key>Headers/VisxAdSize.h</key>
 		<dict>
 			<key>hash2</key>
@@ -98,7 +258,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LAMPU2LLQ7EWRnxITwe36FT8Jrdb00HDfMMOGFn9fDM=
+			Z2VPu0O0g6f7JeBizO0iD9h6g/IaTlf4lFH6hVa2HYs=
 			</data>
 		</dict>
 		<key>Headers/VisxPlacementTypes.h</key>
@@ -112,14 +272,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZcIid51QTwoP2zRr+wRrjMw9L6k3vXYJAvVVPw5bRLE=
+			rbqfY1hBKAaI6P68fC8opuw2ysyFpy3So6Zloax1cp0=
 			</data>
 		</dict>
 		<key>Headers/VisxSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			81/Qj1GbuNG8iizXRNyiLR24FdiPKYNLZt6NisIsoZg=
+			PScuksMbIVVLFE/ErDiye0VSeHx4zecuT5gdnXRrTds=
 			</data>
 		</dict>
 		<key>Headers/VisxSDKManager.h</key>
@@ -129,11 +289,60 @@
 			7dJGA+wYD19p+Yy59qW0+6dyW35WgHE7hnUKdPS8ZoM=
 			</data>
 		</dict>
+		<key>Headers/VisxTableViewCell.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SY2UZZ37nIZ9tpJsM0RPWKDSlZGjgr5gUrTtvldWlrA=
+			</data>
+		</dict>
 		<key>Headers/VisxUtils.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q2Qxz4LOg7iZNh16Slwev1SzP3PYHEBqm5YKQ3c8VTY=
+			8TH1NRVkOGSS+R5Lhh2sR4Ro6j+SWo3ogOKVyb7dwPw=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nei23UrS+9nO8dsm8QQtRRUYFuDKOYyUc+DmuaisFvA=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NcAV6cIfU1ApNWtQfFytlvxWuLKXy1DTUnCH1IN+ovQ=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X7sQrGtS5mIr/3WtiDCXSQxXMAGcJCjGOCeh/MgeEWw=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nei23UrS+9nO8dsm8QQtRRUYFuDKOYyUc+DmuaisFvA=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NcAV6cIfU1ApNWtQfFytlvxWuLKXy1DTUnCH1IN+ovQ=
+			</data>
+		</dict>
+		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X7sQrGtS5mIr/3WtiDCXSQxXMAGcJCjGOCeh/MgeEWw=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -147,14 +356,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TQ4qgus7rWTBKIswDI+RHDyCcLU/+6iWrBipKArqDJw=
+			pXWYYYGLqw5y5z+ZrKe4Ja0q5YImi2hBTDvm71Sb5is=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RDMQM3j1YCLritxbRvhLwBwud6d2MOIiw04+bgJS5tA=
+			Clv0j3t/NdjQpuRbzni4/v7qT1uDaEWaTwjfPDEckGw=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -168,14 +377,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TQ4qgus7rWTBKIswDI+RHDyCcLU/+6iWrBipKArqDJw=
+			pXWYYYGLqw5y5z+ZrKe4Ja0q5YImi2hBTDvm71Sb5is=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RDMQM3j1YCLritxbRvhLwBwud6d2MOIiw04+bgJS5tA=
+			Clv0j3t/NdjQpuRbzni4/v7qT1uDaEWaTwjfPDEckGw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -189,14 +398,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dlwr5UAKGySjVRkK4h87Ttv4MwrhWK7CqccFAQAj480=
+			uIIv3KOpqHhtAYTehVKLqvqVO6p3hjud90RZ2oYZjcI=
 			</data>
 		</dict>
 		<key>omsdk-v1.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qy8Vy+v9KRCN7f0lcWabC4LZwExK8sYz6HpT3aFLW38=
+			duPww1Uszbq0yCpVU1c4+kwjNV9IaT27i1uF8DeiFqY=
 			</data>
 		</dict>
 		<key>yoc_close_button.png</key>

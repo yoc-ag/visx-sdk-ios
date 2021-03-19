@@ -188,6 +188,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreLocation;
+@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -225,9 +227,13 @@ SWIFT_PROTOCOL("_TtP7VisxSDK21LoadMediationDelegate_")
 
 SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 @interface Mediation : NSObject
-@property (nonatomic, copy) NSString * _Nullable className;
-@property (nonatomic, copy) NSString * _Nullable adunit;
-@property (nonatomic, copy) NSArray<NSArray<NSNumber *> *> * _Nullable sizes;
+@property (nonatomic, readonly, copy) NSString * _Nullable className;
+@property (nonatomic, readonly, copy) NSString * _Nullable adunit;
+@property (nonatomic, readonly, copy) NSArray<NSArray<NSNumber *> *> * _Nullable sizes;
+@property (nonatomic, copy) NSString * _Nonnull keywordTargeting;
+@property (nonatomic) NSInteger siteId;
+@property (nonatomic) NSInteger pageId;
+@property (nonatomic) NSInteger formatId;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -242,6 +248,24 @@ SWIFT_CLASS("_TtC7VisxSDK16MediationManager")
 
 SWIFT_CLASS("_TtC7VisxSDK11OmidManager")
 @interface OmidManager : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7VisxSDK17VisxCommunication")
+@interface VisxCommunication : NSObject <NSURLSessionTaskDelegate>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class CLLocationManager;
+@class CLLocation;
+
+SWIFT_CLASS("_TtC7VisxSDK19VisxLocationService")
+@interface VisxLocationService : NSObject <CLLocationManagerDelegate>
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
