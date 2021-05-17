@@ -1,25 +1,26 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
+import AdSupport
 import CoreLocation
 import Foundation
 import Swift
 @_exported import VisxSDK
 @objc @_inheritsConvenienceInitializers @objcMembers public class OmidManager : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class VisxURLRequest : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class VisxCommunication : ObjectiveC.NSObject, Foundation.URLSessionTaskDelegate {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class VisxRequestBuilder : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class Mediation : ObjectiveC.NSObject {
   @objc final public let className: Swift.String?
@@ -29,24 +30,51 @@ import Swift
   @objc public var siteId: Swift.Int
   @objc public var pageId: Swift.Int
   @objc public var formatId: Swift.Int
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class VisxMediationUtils : ObjectiveC.NSObject {
+  @objc public class func topMostController() -> UIKit.UIViewController?
+  @objc public class func VisxGetAdSizeFromString(serverParameter: Swift.String) -> VisxSDK.VisxAdSize
+  @objc public class func VisxGetXandrAdSize(cgSize: CoreGraphics.CGSize) -> VisxSDK.VisxAdSize
+  @objc public class func VisxGoogleAdUpdatedViewString() -> Swift.String
+  @objc public class func VisxGetAUIDFromString(serverParameter: Swift.String) -> Swift.String
+  @objc public class func VisxGetAppDomainFromString(serverParameter: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum VisxAdViewAnimationType : Swift.Int {
+  case none = 0
+  case slideFromTop = 1
+  case slideFromBottom = 2
+  case slideFromLeft = 3
+  case slideFromRight = 4
+  case fadeIn = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class VisxUtilities : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
 }
 @objc public protocol FetchMediationDelegate {
-  @objc func didReceive(_ mediations: [VisxSDK.Mediation])
+  @objc func didReceive(_ mediations: [VisxSDK.Mediation], error: Swift.Error?)
   @objc func fetchingMediationFailed()
 }
 @objc public protocol LoadMediationDelegate {
   @objc func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class MediationManager : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class VisxLocationService : ObjectiveC.NSObject, CoreLocation.CLLocationManagerDelegate {
   @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
   @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
   @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }

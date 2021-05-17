@@ -10,8 +10,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <VisxSDK/VisxAdSize.h>
-#import <VisxSDK/VisxUtils.h>
 #import <WebKit/WebKit.h>
+
+#define kVisxAdViewTag 999998
 
 @class VisxAdViewWrapper;
 @class Mediation;
@@ -21,11 +22,9 @@
 /// Like in newSDK2 and not like above
 @interface VisxAdView : UIView <WKUIDelegate, WKNavigationDelegate>
 /// delegate for the VisxAdViewDelegate. Should implemented in publisher app.
-@property(nonatomic) id <VisxAdViewDelegate> delegate;
+@property(nonatomic, weak) id <VisxAdViewDelegate> delegate;
 /// determines the animationDuration for ads in seconds
 @property(nonatomic, assign) CGFloat animationDuration;
-/// determines type of the animation. See VisxUtils/VisxAdViewAnimationType.h
-@property(nonatomic, assign) VisxAdViewAnimationType animationType;
 /// webview of the creative
 @property (nonatomic, strong) WKWebView *webView;
 /// creative content as a NSString
@@ -96,11 +95,11 @@
 /// @param row indexpath.row of the cell
 - (void)showCreativeInTableview:(UITableView *)tableView withCell:(UITableViewCell *)cell withRow:(NSInteger)row;
 
-/// This methods adds creative in ScrollView. It must be used together with container view.
+/// This methods returns creative view. It must be used together with container view.
 /// @param scroll scrollview in which we are adding the creative
 - (UIView *)getCreativeInScrollview:(UIScrollView *)scroll;
 
-/// This methods updates Mini Understitial creative position while scrolling in UITableView or UIScrollView.
+/// This methods updates Understitial creative position while scrolling in UITableView or UIScrollView.
 - (void)scrollViewDidScroll;
 
 /// This method creates reactive scrolling effect.
@@ -251,4 +250,13 @@
 /// Delegate method is called when a modal view controller has been dismissed.
 /// @param visxAdView the VisxAdView which has originally opened the modal view
 - (void)visxAdViewWillDismissModalViewController:(VisxAdView *)visxAdView;
+@end
+
+/// Protocol that needs to be implemented in mediation for understitial effect.
+@protocol VisxUnderstitialScrollDelegate <NSObject>
+/// Delegate method for registering listeners
+/// @param visxAdView the VisxAdView used in mediation
+- (void)registerScrollListener:(VisxAdView *)visxAdView;
+/// Delegate method for unregistering listeners
+- (void)unregisterScrollListener:(VisxAdView *)visxAdView;
 @end
