@@ -19,7 +19,7 @@
     // ////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
     // Used to track the version of the iOS SDK
-    var SDKVERSION = mraid.SDKVERSION = "1.4.0";
+    var SDKVERSION = mraid.SDKVERSION = "1.5.0";
     // Placeholder, to be filled on Content Injection
     window.MRAID_ENV;
     
@@ -528,6 +528,10 @@
     mraid.close = function () {
         executeNativeCall('close');
         console.log("executeNativeCall('close')");
+    };
+    
+    mraid.visxShowAdvertisementMessageAbove = function(htmlData) {
+        executeNativeCall('visxshowmessageabove', 'htmlData', btoa(htmlData));
     };
     
     mraid.visxShowAdvertisementMessageBelow = function(htmlData) {
