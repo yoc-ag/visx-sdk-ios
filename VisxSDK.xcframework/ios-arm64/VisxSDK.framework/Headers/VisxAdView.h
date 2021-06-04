@@ -60,7 +60,6 @@
 /// CGRect which holds resized dimensions of the visxAdView
 @property CGRect resizedViewRect;
 
-
 /// Initializes visxAdView
 /// @param auid creative ID
 /// @param domain publisher domain
@@ -68,6 +67,21 @@
 /// @param adSize dimensions of the creative. see VisxAdSize.h
 /// @param universal Boolean flag which determines if the creative is universal or not
 - (id)initWithAdUnit:(NSString *)auid appDomain:(NSString *)domain delegate:(id<VisxAdViewDelegate>)adViewDelegate size:(VisxAdSize)adSize isUniversal:(BOOL)universal;
+
+/// Initializes simple banner visxAdView
+/// @param adSize dimensions of the creative. see VisxAdSize.h
+/// @param auid creative ID
+/// @param domain publisher domain
+/// @param container UIView container where creative will be displayed
+- (instancetype)initSimpleBannerWithFixedSize:(VisxAdSize)adSize adUnit:(NSString *)auid appDomain:(NSString *)domain container:(UIView *)container;
+
+/// Initializes universal visxAdView
+/// @param auid creative ID
+/// @param domain publisher domain
+/// @param container UIView container where creative will be displayed
+/// @param adSize dimensions of the creative. see VisxAdSize.h
+/// @param anchorView UIScrollView in which container is placed, this value can be nil
+- (instancetype)initUniversalAdWithAdUnit:(NSString *)auid appDomain:(NSString *)domain container:(UIView *)container size:(VisxAdSize)adSize anchorView:(UIScrollView *)anchorView;
 
 /// Creates advertising label above the creative, this method is optional
 /// @param label input paramater as a NSString, it could be regular string or html one.
