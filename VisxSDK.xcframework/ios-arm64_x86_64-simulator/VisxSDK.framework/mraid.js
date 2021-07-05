@@ -19,7 +19,7 @@
     // ////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
     // Used to track the version of the iOS SDK
-    var SDKVERSION = mraid.SDKVERSION = "1.5.0";
+    var SDKVERSION = mraid.SDKVERSION = "1.5.1";
     // Placeholder, to be filled on Content Injection
     window.MRAID_ENV;
     
