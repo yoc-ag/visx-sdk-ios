@@ -143,6 +143,10 @@
 /// Presents the interstitial from the default view controller.
 - (void)showInterstitial;
 
+/// Sets custom color for Mystery creative, default is transparent.
+/// @param color UIColor
+- (void)setInterstitialBackgroundColor:(UIColor *)color;
+
 /// Presents the reactive scrolling creative from the default view controller.
 - (UIView *)getReactiveCreative;
 
