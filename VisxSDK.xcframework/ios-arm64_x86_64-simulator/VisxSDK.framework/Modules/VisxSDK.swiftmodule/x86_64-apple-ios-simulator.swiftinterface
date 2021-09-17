@@ -1,80 +1,995 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
+import AVFoundation
+import AVKit
 import AdSupport
+import AppTrackingTransparency
+import CommonCrypto
 import CoreLocation
+import EventKit
+import EventKitUI
 import Foundation
+import MessageUI
+import Photos
 import Swift
+import UIKit
 @_exported import VisxSDK
-@objc @_inheritsConvenienceInitializers @objcMembers public class OmidManager : ObjectiveC.NSObject {
+@available(iOS 9.0, macOS 10.11, *)
+extension UILayoutGuide {
+  public var snp: VisxSDK.ConstraintLayoutGuideDSL {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class LayoutConstraint : UIKit.NSLayoutConstraint {
+  public var label: Swift.String? {
+    get
+    set(newValue)
+  }
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class VisxURLRequest : ObjectiveC.NSObject {
+public protocol ConstraintInsetTarget : VisxSDK.ConstraintConstantTarget {
+}
+extension Int : VisxSDK.ConstraintInsetTarget {
+}
+extension UInt : VisxSDK.ConstraintInsetTarget {
+}
+extension Float : VisxSDK.ConstraintInsetTarget {
+}
+extension Double : VisxSDK.ConstraintInsetTarget {
+}
+extension CGFloat : VisxSDK.ConstraintInsetTarget {
+}
+extension UIEdgeInsets : VisxSDK.ConstraintInsetTarget {
+}
+public protocol ConstraintOffsetTarget : VisxSDK.ConstraintConstantTarget {
+}
+extension Int : VisxSDK.ConstraintOffsetTarget {
+}
+extension UInt : VisxSDK.ConstraintOffsetTarget {
+}
+extension Float : VisxSDK.ConstraintOffsetTarget {
+}
+extension Double : VisxSDK.ConstraintOffsetTarget {
+}
+extension CGFloat : VisxSDK.ConstraintOffsetTarget {
+}
+@_hasMissingDesignatedInitializers public class ConstraintMakerFinalizable {
+  @discardableResult
+  public func labeled(_ label: Swift.String) -> VisxSDK.ConstraintMakerFinalizable
+  public var constraint: VisxSDK.Constraint {
+    get
+  }
+  @objc deinit
+}
+public typealias ConstraintInsets = UIKit.UIEdgeInsets
+public protocol ConstraintDirectionalInsetTarget : VisxSDK.ConstraintConstantTarget {
+}
+@available(iOS 11.0, tvOS 11.0, *)
+extension NSDirectionalEdgeInsets : VisxSDK.ConstraintDirectionalInsetTarget {
+}
+extension AVPlayerViewController {
+  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+}
+public struct ConstraintViewDSL : VisxSDK.ConstraintAttributesDSL {
+  @discardableResult
+  public func prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  public func makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func removeConstraints()
+  public var contentHuggingHorizontalPriority: Swift.Float {
+    get
+    nonmutating set(newValue)
+  }
+  public var contentHuggingVerticalPriority: Swift.Float {
+    get
+    nonmutating set(newValue)
+  }
+  public var contentCompressionResistanceHorizontalPriority: Swift.Float {
+    get
+    nonmutating set(newValue)
+  }
+  public var contentCompressionResistanceVerticalPriority: Swift.Float {
+    get
+    nonmutating set(newValue)
+  }
+  public var target: Swift.AnyObject? {
+    get
+  }
+}
+public protocol ConstraintDSL {
+  var target: Swift.AnyObject? { get }
+  func setLabel(_ value: Swift.String?)
+  func label() -> Swift.String?
+}
+extension ConstraintDSL {
+  public func setLabel(_ value: Swift.String?)
+  public func label() -> Swift.String?
+}
+public protocol ConstraintBasicAttributesDSL : VisxSDK.ConstraintDSL {
+}
+extension ConstraintBasicAttributesDSL {
+  public var left: VisxSDK.ConstraintItem {
+    get
+  }
+  public var top: VisxSDK.ConstraintItem {
+    get
+  }
+  public var right: VisxSDK.ConstraintItem {
+    get
+  }
+  public var bottom: VisxSDK.ConstraintItem {
+    get
+  }
+  public var leading: VisxSDK.ConstraintItem {
+    get
+  }
+  public var trailing: VisxSDK.ConstraintItem {
+    get
+  }
+  public var width: VisxSDK.ConstraintItem {
+    get
+  }
+  public var height: VisxSDK.ConstraintItem {
+    get
+  }
+  public var centerX: VisxSDK.ConstraintItem {
+    get
+  }
+  public var centerY: VisxSDK.ConstraintItem {
+    get
+  }
+  public var edges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var directionalEdges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var horizontalEdges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var verticalEdges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var directionalHorizontalEdges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var directionalVerticalEdges: VisxSDK.ConstraintItem {
+    get
+  }
+  public var size: VisxSDK.ConstraintItem {
+    get
+  }
+  public var center: VisxSDK.ConstraintItem {
+    get
+  }
+}
+public protocol ConstraintAttributesDSL : VisxSDK.ConstraintBasicAttributesDSL {
+}
+extension ConstraintAttributesDSL {
+  @available(*, deprecated, renamed: "lastBaseline")
+  public var baseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  public var lastBaseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  public var firstBaseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leftMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var topMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var rightMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var bottomMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leadingMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var trailingMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerXWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerYWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var margins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var directionalMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+}
+public protocol ConstraintRelatableTarget {
+}
+extension Int : VisxSDK.ConstraintRelatableTarget {
+}
+extension UInt : VisxSDK.ConstraintRelatableTarget {
+}
+extension Float : VisxSDK.ConstraintRelatableTarget {
+}
+extension Double : VisxSDK.ConstraintRelatableTarget {
+}
+extension CGFloat : VisxSDK.ConstraintRelatableTarget {
+}
+extension CGSize : VisxSDK.ConstraintRelatableTarget {
+}
+extension CGPoint : VisxSDK.ConstraintRelatableTarget {
+}
+extension UIEdgeInsets : VisxSDK.ConstraintRelatableTarget {
+}
+@available(iOS 11.0, tvOS 11.0, *)
+extension NSDirectionalEdgeInsets : VisxSDK.ConstraintRelatableTarget {
+}
+extension ConstraintItem : VisxSDK.ConstraintRelatableTarget {
+}
+extension UIView : VisxSDK.ConstraintRelatableTarget {
+}
+@available(iOS 9.0, macOS 10.11, *)
+extension UILayoutGuide : VisxSDK.ConstraintRelatableTarget {
+}
+@available(iOS 9.0, macOS 10.11, *)
+public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
+  @discardableResult
+  public func prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  public func makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func removeConstraints()
+  public var target: Swift.AnyObject? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(VisxSDKManager) public class VisxSDKManager : ObjectiveC.NSObject {
+  @objc public class func sharedInstance() -> VisxSDK.VisxSDKManager
+  @objc public func initializeSDK()
+  @objc public func setAppStoreUrl(url: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class VisxCommunication : ObjectiveC.NSObject, Foundation.URLSessionTaskDelegate {
+@_hasMissingDesignatedInitializers final public class Constraint {
+  final public var layoutConstraints: [VisxSDK.LayoutConstraint]
+  final public var isActive: Swift.Bool {
+    get
+    set(newValue)
+  }
+  @available(*, deprecated, renamed: "activate()")
+  final public func install()
+  @available(*, deprecated, renamed: "deactivate()")
+  final public func uninstall()
+  final public func activate()
+  final public func deactivate()
+  @discardableResult
+  final public func update(offset: VisxSDK.ConstraintOffsetTarget) -> VisxSDK.Constraint
+  @discardableResult
+  final public func update(inset: VisxSDK.ConstraintInsetTarget) -> VisxSDK.Constraint
+  @available(iOS 11.0, tvOS 11.0, *)
+  @discardableResult
+  final public func update(inset: VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.Constraint
+  @discardableResult
+  final public func update(priority: VisxSDK.ConstraintPriorityTarget) -> VisxSDK.Constraint
+  @discardableResult
+  final public func update(priority: VisxSDK.ConstraintPriority) -> VisxSDK.Constraint
+  @available(*, deprecated, renamed: "update(offset:)")
+  final public func updateOffset(amount: VisxSDK.ConstraintOffsetTarget)
+  @available(*, deprecated, renamed: "update(inset:)")
+  final public func updateInsets(amount: VisxSDK.ConstraintInsetTarget)
+  @available(*, deprecated, renamed: "update(priority:)")
+  final public func updatePriority(amount: VisxSDK.ConstraintPriorityTarget)
+  @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
+  final public func updatePriorityRequired()
+  @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
+  final public func updatePriorityHigh()
+  @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
+  final public func updatePriorityMedium()
+  @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
+  final public func updatePriorityLow()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class VisxAdSize : ObjectiveC.NSObject {
+  @objc public static var kSmartphoneBanner300x50: VisxSDK.VisxAdSize
+  @objc public static var kSmartphoneBanner300x75: VisxSDK.VisxAdSize
+  @objc public static var kSmartphoneBanner300x150: VisxSDK.VisxAdSize
+  @objc public static var kSmartphoneBanner320x50: VisxSDK.VisxAdSize
+  @objc public static var kBillboard970x250: VisxSDK.VisxAdSize
+  @objc public static var kLeaderboard728x90: VisxSDK.VisxAdSize
+  @objc public static var kPushdown970x90: VisxSDK.VisxAdSize
+  @objc public static var kHalfpage300x600: VisxSDK.VisxAdSize
+  @objc public static var kPortrait300x1050: VisxSDK.VisxAdSize
+  @objc public static var kSkyscraper160x600: VisxSDK.VisxAdSize
+  @objc public static var kUnderstitial320x480: VisxSDK.VisxAdSize
+  @objc public static var kUnderstitial300x600: VisxSDK.VisxAdSize
+  @objc public static var kMediumRectangle300x150: VisxSDK.VisxAdSize
+  @objc public static var kMediumRectangle300x250: VisxSDK.VisxAdSize
+  @objc public static var kUnderstitial300x250: VisxSDK.VisxAdSize
+  @objc public static var kInterstitial1x1: VisxSDK.VisxAdSize
+  @objc public static var kInterstitial320x480: VisxSDK.VisxAdSize
+  @objc public static var kInterstitial300x600: VisxSDK.VisxAdSize
+  @objc public static var kStickyBanner300x50: VisxSDK.VisxAdSize
+  @objc public static var kStickyBanner320x50: VisxSDK.VisxAdSize
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class VisxRequestBuilder : ObjectiveC.NSObject {
-  @objc override dynamic public init()
+@_hasMissingDesignatedInitializers public class ConstraintMaker {
+  public var left: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var top: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var bottom: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var right: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var leading: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var trailing: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var width: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var height: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var centerX: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var centerY: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(*, deprecated, renamed: "lastBaseline")
+  public var baseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var lastBaseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  public var firstBaseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leftMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var rightMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var topMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var bottomMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leadingMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var trailingMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerXWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerYWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var edges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var horizontalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var verticalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalHorizontalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalVerticalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var size: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var center: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var margins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var directionalMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class Mediation : ObjectiveC.NSObject {
-  @objc final public let className: Swift.String?
-  @objc final public let adunit: Swift.String?
-  @objc final public let sizes: [[Foundation.NSNumber]]?
-  @objc public var keywordTargeting: Swift.String
-  @objc public var siteId: Swift.Int
-  @objc public var pageId: Swift.Int
-  @objc public var formatId: Swift.Int
-  @objc override dynamic public init()
+@_hasMissingDesignatedInitializers public class ConstraintDescription {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class VisxMediationUtils : ObjectiveC.NSObject {
-  @objc public class func topMostController() -> UIKit.UIViewController?
-  @objc public class func VisxGetAdSizeFromString(serverParameter: Swift.String) -> VisxSDK.VisxAdSize
-  @objc public class func VisxGetXandrAdSize(cgSize: CoreGraphics.CGSize) -> VisxSDK.VisxAdSize
-  @objc public class func VisxGoogleAdUpdatedViewString() -> Swift.String
-  @objc public class func VisxGetAUIDFromString(serverParameter: Swift.String) -> Swift.String
-  @objc public class func VisxGetAppDomainFromString(serverParameter: Swift.String) -> Swift.String
-  @objc override dynamic public init()
-  @objc deinit
+@available(iOS 8.0, *)
+extension UILayoutSupport {
+  public var snp: VisxSDK.ConstraintLayoutSupportDSL {
+    get
+  }
 }
-@objc public enum VisxAdViewAnimationType : Swift.Int {
-  case none = 0
-  case slideFromTop = 1
-  case slideFromBottom = 2
-  case slideFromLeft = 3
-  case slideFromRight = 4
-  case fadeIn = 5
+@available(iOS 8.0, *)
+public typealias ConstraintLayoutSupport = UIKit.UILayoutSupport
+@objc public enum VisxPlacementType : Swift.Int {
+  case inline = 0
+  case interstitial = 1
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class VisxUtilities : ObjectiveC.NSObject {
+@objc public enum VisxPlacementEffect : Swift.Int {
+  case banner = 0
+  case understitial = 1
+  case understitialMini = 2
+  case sticky = 3
+  case interstitial = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol ConstraintPriorityTarget {
+  var constraintPriorityTargetValue: Swift.Float { get }
+}
+extension Int : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension UInt : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension Float : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension Double : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension CGFloat : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension UILayoutPriority : VisxSDK.ConstraintPriorityTarget {
+  public var constraintPriorityTargetValue: Swift.Float {
+    get
+  }
+}
+extension LayoutConstraint {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class Mediation : ObjectiveC.NSObject {
+  final public let className: Swift.String?
+  final public let adunit: Swift.String?
+  final public let sizes: [[Foundation.NSNumber]]?
+  public var keywordTargeting: Swift.String
+  public var siteId: Swift.Int
+  public var pageId: Swift.Int
+  public var formatId: Swift.Int
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public protocol FetchMediationDelegate {
-  @objc func didReceive(_ mediations: [VisxSDK.Mediation], error: Swift.Error?)
-  @objc func fetchingMediationFailed()
+@objc public protocol VisxUnderstitialScrollDelegate {
+  @objc func registerScrollListener(visxAdView: VisxSDK.VisxAdView)
+  @objc func unregisterScrollListener(visxAdView: VisxSDK.VisxAdView)
 }
-@objc public protocol LoadMediationDelegate {
-  @objc func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView)
-}
-@objc @_hasMissingDesignatedInitializers @objcMembers public class MediationManager : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @objcMembers public class VisxMediationUtils : ObjectiveC.NSObject {
+  @objc public class func topMostController() -> UIKit.UIViewController?
+  @objc public class func visxGetAdSizeFromString(serverParameter: Swift.String) -> VisxSDK.VisxAdSize
+  @objc public class func visxGetXandrAdSize(cgSize: CoreGraphics.CGSize) -> VisxSDK.VisxAdSize
+  @objc public class func visxGoogleAdUpdatedViewString() -> Swift.String
+  @objc public class func visxGetAUIDFromString(serverParameter: Swift.String) -> Swift.String
+  @objc public class func visxGetAppDomainFromString(serverParameter: Swift.String) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class VisxLocationService : ObjectiveC.NSObject, CoreLocation.CLLocationManagerDelegate {
-  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
-  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
-  @objc override dynamic public init()
+public protocol ConstraintMultiplierTarget {
+  var constraintMultiplierTargetValue: CoreGraphics.CGFloat { get }
+}
+extension Int : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
+    get
+  }
+}
+extension UInt : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
+    get
+  }
+}
+extension Float : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
+    get
+  }
+}
+extension Double : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
+    get
+  }
+}
+extension CGFloat : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ConstraintMakerRelatable {
+  @discardableResult
+  public func equalTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func equalToSuperview(_ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func lessThanOrEqualTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func lessThanOrEqualToSuperview(_ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func greaterThanOrEqualTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func greaterThanOrEqualToSuperview(_ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @objc deinit
+}
+public struct ConstraintPriority : Swift.ExpressibleByFloatLiteral, Swift.Equatable, Swift.Strideable {
+  public typealias FloatLiteralType = Swift.Float
+  public let value: Swift.Float
+  public init(floatLiteral value: Swift.Float)
+  public init(_ value: Swift.Float)
+  public static var required: VisxSDK.ConstraintPriority {
+    get
+  }
+  public static var high: VisxSDK.ConstraintPriority {
+    get
+  }
+  public static var medium: VisxSDK.ConstraintPriority {
+    get
+  }
+  public static var low: VisxSDK.ConstraintPriority {
+    get
+  }
+  public static func == (lhs: VisxSDK.ConstraintPriority, rhs: VisxSDK.ConstraintPriority) -> Swift.Bool
+  public func advanced(by n: VisxSDK.ConstraintPriority.FloatLiteralType) -> VisxSDK.ConstraintPriority
+  public func distance(to other: VisxSDK.ConstraintPriority) -> VisxSDK.ConstraintPriority.FloatLiteralType
+  public typealias Stride = VisxSDK.ConstraintPriority.FloatLiteralType
+}
+@available(iOS 11.0, tvOS 11.0, *)
+public typealias ConstraintDirectionalInsets = UIKit.NSDirectionalEdgeInsets
+@available(iOS 8.0, *)
+public struct ConstraintLayoutSupportDSL : VisxSDK.ConstraintDSL {
+  public var target: Swift.AnyObject? {
+    get
+  }
+  public var top: VisxSDK.ConstraintItem {
+    get
+  }
+  public var bottom: VisxSDK.ConstraintItem {
+    get
+  }
+  public var height: VisxSDK.ConstraintItem {
+    get
+  }
+}
+extension ConstraintMakerRelatable {
+  @discardableResult
+  public func equalToSuperview<T>(_ closure: (VisxSDK.ConstraintView) -> T, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable where T : VisxSDK.ConstraintRelatableTarget
+  @discardableResult
+  public func lessThanOrEqualToSuperview<T>(_ closure: (VisxSDK.ConstraintView) -> T, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable where T : VisxSDK.ConstraintRelatableTarget
+  @discardableResult
+  public func greaterThanOrEqualTo<T>(_ closure: (VisxSDK.ConstraintView) -> T, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable where T : VisxSDK.ConstraintRelatableTarget
+}
+extension UIView {
+  @available(*, deprecated, renamed: "snp.left")
+  public var snp_left: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.top")
+  public var snp_top: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.right")
+  public var snp_right: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.bottom")
+  public var snp_bottom: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.leading")
+  public var snp_leading: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.trailing")
+  public var snp_trailing: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.width")
+  public var snp_width: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.height")
+  public var snp_height: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.centerX")
+  public var snp_centerX: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.centerY")
+  public var snp_centerY: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.baseline")
+  public var snp_baseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  @available(*, deprecated, renamed: "snp.lastBaseline")
+  public var snp_lastBaseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  @available(iOS, deprecated, renamed: "snp.firstBaseline")
+  public var snp_firstBaseline: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.leftMargin")
+  public var snp_leftMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.topMargin")
+  public var snp_topMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.rightMargin")
+  public var snp_rightMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.bottomMargin")
+  public var snp_bottomMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.leadingMargin")
+  public var snp_leadingMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.trailingMargin")
+  public var snp_trailingMargin: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.centerXWithinMargins")
+  public var snp_centerXWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.centerYWithinMargins")
+  public var snp_centerYWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.edges")
+  public var snp_edges: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.size")
+  public var snp_size: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.center")
+  public var snp_center: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.margins")
+  public var snp_margins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(iOS 8.0, *)
+  @available(iOS, deprecated, renamed: "snp.centerWithinMargins")
+  public var snp_centerWithinMargins: VisxSDK.ConstraintItem {
+    get
+  }
+  @available(*, deprecated, renamed: "snp.prepareConstraints(_:)")
+  public func snp_prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  @available(*, deprecated, renamed: "snp.makeConstraints(_:)")
+  public func snp_makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @available(*, deprecated, renamed: "snp.remakeConstraints(_:)")
+  public func snp_remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @available(*, deprecated, renamed: "snp.updateConstraints(_:)")
+  public func snp_updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @available(*, deprecated, renamed: "snp.removeConstraints()")
+  public func snp_removeConstraints()
+  public var snp: VisxSDK.ConstraintViewDSL {
+    get
+  }
+}
+public protocol ConstraintConstantTarget {
+}
+extension CGPoint : VisxSDK.ConstraintConstantTarget {
+}
+extension CGSize : VisxSDK.ConstraintConstantTarget {
+}
+extension UIEdgeInsets : VisxSDK.ConstraintConstantTarget {
+}
+@available(iOS 11.0, tvOS 11.0, *)
+extension NSDirectionalEdgeInsets : VisxSDK.ConstraintConstantTarget {
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VisxTableViewCell) public class VisxTableViewCell : UIKit.UITableViewCell {
+  @objc public static var visxCellIdentifier: Swift.String
+  @objc public func showAd(adView: VisxSDK.VisxAdView, tableView: UIKit.UITableView, row: Swift.Int)
+  @objc deinit
+}
+public typealias ConstraintView = UIKit.UIView
+public protocol LoadMediationDelegate : AnyObject {
+  func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView)
+}
+@available(*, deprecated, message: "Use ConstraintMakerPrioritizable instead.")
+public typealias ConstraintMakerPriortizable = VisxSDK.ConstraintMakerPrioritizable
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConstraintMakerPrioritizable : VisxSDK.ConstraintMakerFinalizable {
+  @discardableResult
+  public func priority(_ amount: VisxSDK.ConstraintPriority) -> VisxSDK.ConstraintMakerFinalizable
+  @discardableResult
+  public func priority(_ amount: VisxSDK.ConstraintPriorityTarget) -> VisxSDK.ConstraintMakerFinalizable
+  @available(*, deprecated, message: "Use priority(.required) instead.")
+  @discardableResult
+  public func priorityRequired() -> VisxSDK.ConstraintMakerFinalizable
+  @available(*, deprecated, message: "Use priority(.high) instead.")
+  @discardableResult
+  public func priorityHigh() -> VisxSDK.ConstraintMakerFinalizable
+  @available(*, deprecated, message: "Use priority(.medium) instead.")
+  @discardableResult
+  public func priorityMedium() -> VisxSDK.ConstraintMakerFinalizable
+  @available(*, deprecated, message: "Use priority(.low) instead.")
+  @discardableResult
+  public func priorityLow() -> VisxSDK.ConstraintMakerFinalizable
+  @objc deinit
+}
+@available(iOS 9.0, *)
+public typealias ConstraintLayoutGuide = UIKit.UILayoutGuide
+public typealias ConstraintInterfaceLayoutDirection = UIKit.UIUserInterfaceLayoutDirection
+public struct ConstraintConfig {
+  public static var interfaceLayoutDirection: VisxSDK.ConstraintInterfaceLayoutDirection
+}
+@objc public protocol VisxAdViewDelegate {
+  @objc func viewControllerForPresentingVisxAdView() -> UIKit.UIViewController
+  @objc func visxAdViewDidInitialize(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
+  @objc optional func visxAdWillPresentScreen(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdDidPresentScreen(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdViewDidChangePlacementEffect(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
+  @objc optional func visxAdViewDidChangePlacementDimension(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdViewdidFailWithError(visxAdView: VisxSDK.VisxAdView, error: Foundation.NSError)
+  @objc optional func visxAdViewDidReload(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdWillHide(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdViewDidHide(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func willExpandYocAd(visxAdView: VisxSDK.VisxAdView, toFrame frame: CoreGraphics.CGRect, animated: Swift.Bool)
+  @objc optional func didExpandYocAd(visxAdView: VisxSDK.VisxAdView, toFrame frame: CoreGraphics.CGRect)
+  @objc optional func visxAdWillResize(frame: CoreGraphics.CGRect, animated: Swift.Bool)
+  @objc optional func visxAdWillResizeToFrame(frame: CoreGraphics.CGRect, animated: Swift.Bool)
+  @objc optional func visxAdWillClose(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdDidClose(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdWasTapped(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func appShouldSuspendForAd(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func appShouldResumeFromAd(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdViewWillPresentModalViewController(visxAdView: VisxSDK.VisxAdView)
+  @objc optional func visxAdViewWillDismissModalViewController(visxAdView: VisxSDK.VisxAdView)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConstraintMakerExtendable : VisxSDK.ConstraintMakerRelatable {
+  public var left: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var top: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var bottom: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var right: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var leading: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var trailing: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var width: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var height: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var centerX: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var centerY: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(*, deprecated, renamed: "lastBaseline")
+  public var baseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var lastBaseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, macOS 10.11, *)
+  public var firstBaseline: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leftMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var rightMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var topMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var bottomMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var leadingMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var trailingMargin: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerXWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerYWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var edges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var horizontalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var verticalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalHorizontalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var directionalVerticalEdges: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  public var size: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var margins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var directionalMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @available(iOS 8.0, *)
+  public var centerWithinMargins: VisxSDK.ConstraintMakerExtendable {
+    get
+  }
+  @objc deinit
+}
+public protocol LayoutConstraintItem : AnyObject {
+}
+@available(iOS 9.0, macOS 10.11, *)
+extension UILayoutGuide : VisxSDK.LayoutConstraintItem {
+}
+extension UIView : VisxSDK.LayoutConstraintItem {
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConstraintMakerEditable : VisxSDK.ConstraintMakerPrioritizable {
+  @discardableResult
+  public func multipliedBy(_ amount: VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func dividedBy(_ amount: VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func offset(_ amount: VisxSDK.ConstraintOffsetTarget) -> VisxSDK.ConstraintMakerEditable
+  @discardableResult
+  public func inset(_ amount: VisxSDK.ConstraintInsetTarget) -> VisxSDK.ConstraintMakerEditable
+  @available(iOS 11.0, tvOS 11.0, *)
+  @discardableResult
+  public func inset(_ amount: VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.ConstraintMakerEditable
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+  @objc public var isMediationAdView: Swift.Bool
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+@_hasMissingDesignatedInitializers final public class ConstraintItem {
+  @objc deinit
+}
+public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
+extension VisxAdView {
+  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
+  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
+  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
+  @objc dynamic public convenience init(prebidDict: Foundation.NSDictionary, appDomain: Swift.String, container: UIKit.UIView, adSize: VisxSDK.VisxAdSize, anchorView: UIKit.UIScrollView?)
+  @objc dynamic public func getSdkVersion() -> Swift.String
+  @objc dynamic public func load()
+  @objc dynamic public func loadWithCustomTargetingParameters(params: [Swift.String : Swift.String])
+  @objc dynamic public func advertisingLabelText(label: Swift.String)
+  @objc dynamic public func deallocAdView()
+  @objc dynamic public func getCreativeInScrollview(scroll: UIKit.UIScrollView) -> UIKit.UIView
+  @objc dynamic public func getReactiveCreative() -> UIKit.UIView?
+  @objc dynamic public func showInterstitial()
+  @objc dynamic public func showInterstitialFromViewController(controller: UIKit.UIViewController)
+  @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc dynamic public func isInterstitial() -> Swift.Bool
+  @objc dynamic public func setInterstitialBackgroundColor(color: UIKit.UIColor)
+  @objc dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)
+  @objc dynamic public func didFailToReceiveAdWithError(bannerView: UIKit.UIView, error: Foundation.NSError)
 }

@@ -4,6 +4,14 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.swiftlint.yml</key>
+		<data>
+		RRMS8urZbI8FMtAjNsJNGb29vXo=
+		</data>
+		<key>Headers/MediationLoader.h</key>
+		<data>
+		DM+SlaesOiK4KMCevhOx5FiyPsI=
+		</data>
 		<key>Headers/OMIDAdEvents.h</key>
 		<data>
 		DCUPgL5CYKGyUdgZlX6PRd9X0XI=
@@ -52,61 +60,41 @@
 		<data>
 		ugh+mDMiG4KvNYnb0x4cxDP4V6s=
 		</data>
-		<key>Headers/VisxAdSize.h</key>
-		<data>
-		20sPSM5FwJYLxMoafjwQqhMl0Uo=
-		</data>
-		<key>Headers/VisxAdView.h</key>
-		<data>
-		UkYMkXjNECytYsROv2INLSSTJ2o=
-		</data>
-		<key>Headers/VisxPlacementTypes.h</key>
-		<data>
-		Za1hjXAsnbx8N6jxDd2f056rM1o=
-		</data>
 		<key>Headers/VisxSDK-Swift.h</key>
 		<data>
-		pW88dKS5K+ueAvYm/xcSm25+aGs=
+		7s3tZBqQUA+iRYTaf4t7wazDnKQ=
 		</data>
 		<key>Headers/VisxSDK.h</key>
 		<data>
-		uk9plwBPh/CWS/82UomGh7qTZxk=
-		</data>
-		<key>Headers/VisxSDKManager.h</key>
-		<data>
-		RYC5sF6IZb/4mpHTnh7EXjVVXic=
-		</data>
-		<key>Headers/VisxTableViewCell.h</key>
-		<data>
-		X5iFP3pOB+t2MdeEskLLwWH9fAI=
+		r7k0n+MAuKYr7Iob51wyHAOtBrk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oSTFly/4h2iUxuUkzw76uYhSrlY=
+		hPllU+95wUbW1d9YBgSUx+WPlOo=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		j7mQEjzFMwcZHCCSFtCmRtf8n5Y=
+		YF2A5Bn3gUpqEByAoRV6zNk3Yfg=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		c+6Of/gMheBosNywgdYwayFxP/4=
+		Ym2ko+edcow61CuBS6CMI2rBAaE=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		3rJhVz0ffEa/3R8k44VR9rQ4mDk=
+		VIl+5j9vl2TkBYvroYqbp9a6Enk=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		j7mQEjzFMwcZHCCSFtCmRtf8n5Y=
+		YF2A5Bn3gUpqEByAoRV6zNk3Yfg=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		c+6Of/gMheBosNywgdYwayFxP/4=
+		Ym2ko+edcow61CuBS6CMI2rBAaE=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		3rJhVz0ffEa/3R8k44VR9rQ4mDk=
+		VIl+5j9vl2TkBYvroYqbp9a6Enk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +102,7 @@
 		</data>
 		<key>mraid.js</key>
 		<data>
-		EN38pJx3cgmtTL9EOYkZYIPzPSY=
+		v2D9JfaEaXLXLPTgF/AUHl27I/8=
 		</data>
 		<key>omsdk-v1.js</key>
 		<data>
@@ -122,7 +110,7 @@
 		</data>
 		<key>yoc_close_button.png</key>
 		<data>
-		EOIGCSUaSUGoWV6Q5JFG8/Umbpg=
+		sc4IHO/D3MNZd9qZ6IqEgAmVKOI=
 		</data>
 		<key>yocplayer_mute_icon_50x50.png</key>
 		<data>
@@ -135,6 +123,20 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>.swiftlint.yml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hTUykS52SJr7ksLMNDtRLc7T4+dOPSxxBVJ03I488jE=
+			</data>
+		</dict>
+		<key>Headers/MediationLoader.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FpxaV2HidbLsyXL501R1+XB9z0qZXHRQlgteYWcV5Es=
+			</data>
+		</dict>
 		<key>Headers/OMIDAdEvents.h</key>
 		<dict>
 			<key>hash2</key>
@@ -219,95 +221,60 @@
 			8/Bcx41zMVqHVcgTmPzDNa4vZ3yok/gIABfkm1OHav4=
 			</data>
 		</dict>
-		<key>Headers/VisxAdSize.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fgRC7efBdOE86I8RcO2VK1g2vGNGvSDHrA8sSliYaDc=
-			</data>
-		</dict>
-		<key>Headers/VisxAdView.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			I0lyL1XcqNYHqQkiAWF2VUWMrOpXQk/VooEdvljgstw=
-			</data>
-		</dict>
-		<key>Headers/VisxPlacementTypes.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FMOcSgdLj51UIvZm0qxNgaZJNGGTITMPec/wDn6rx88=
-			</data>
-		</dict>
 		<key>Headers/VisxSDK-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fFlAozBEJoNjUVXRcTsA4bNLXk1vZVHDlVwZVCQVRrQ=
+			j2q6L/q84Xjhhf4fZKwOvuapRaaPHeObnx5FSggZb4U=
 			</data>
 		</dict>
 		<key>Headers/VisxSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8VkIWGvC39aDmPg341EQj+EBgCGslICrKY2unmMNY/g=
-			</data>
-		</dict>
-		<key>Headers/VisxSDKManager.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			7dJGA+wYD19p+Yy59qW0+6dyW35WgHE7hnUKdPS8ZoM=
-			</data>
-		</dict>
-		<key>Headers/VisxTableViewCell.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SY2UZZ37nIZ9tpJsM0RPWKDSlZGjgr5gUrTtvldWlrA=
+			mRQRrpGJxgqfmHZnNT2EOGrDhwlVao/ILxsH7t+wPHg=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wGQWQWtl1APPzDs4FZ2wWnLB5Tg2UL9WVs3XbmLMJuk=
+			gi1rZzcYpDOeP7cv/DClko3iMDQjYLjCVdjcOhpgr/s=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZPkiaka0hJPKyhv+Zs/WU7iKOfj53tOh1bXTXOTbAe8=
+			od6uSJCd+yRU72lXm7Vk+kOtaxMU8zOoPaypWMMnXUA=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2zLBihjZrdn0fapBVeX+S4LVe6dx6f8XUdZCtvqXdxk=
+			DDQa7ZDxhYQduIcKkxmUU2SpA0EcY6KKgn5f3oduSVs=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wGQWQWtl1APPzDs4FZ2wWnLB5Tg2UL9WVs3XbmLMJuk=
+			gi1rZzcYpDOeP7cv/DClko3iMDQjYLjCVdjcOhpgr/s=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZPkiaka0hJPKyhv+Zs/WU7iKOfj53tOh1bXTXOTbAe8=
+			od6uSJCd+yRU72lXm7Vk+kOtaxMU8zOoPaypWMMnXUA=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2zLBihjZrdn0fapBVeX+S4LVe6dx6f8XUdZCtvqXdxk=
+			DDQa7ZDxhYQduIcKkxmUU2SpA0EcY6KKgn5f3oduSVs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -321,7 +288,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vmN8VSftJkMYNaWo89XCSTXrC5rCwOLVvH4Riuajju4=
+			NqYxJY+Zw123XZusTEuL8ygYGqcSChy82m/HFUK69zE=
 			</data>
 		</dict>
 		<key>omsdk-v1.js</key>
@@ -335,7 +302,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BUi7afEsYtT4fU3bTVkTGkdG7+lvOJZjmGVoE5NITa4=
+			Dr9EWavSRfUO3F7d9l1x1PvnpzxTb1DTjTuTFFD7AYM=
 			</data>
 		</dict>
 		<key>yocplayer_mute_icon_50x50.png</key>
