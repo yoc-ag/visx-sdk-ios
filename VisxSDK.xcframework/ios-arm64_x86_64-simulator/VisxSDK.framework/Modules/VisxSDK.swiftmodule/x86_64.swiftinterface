@@ -571,6 +571,23 @@ extension CGFloat : VisxSDK.ConstraintMultiplierTarget {
     get
   }
 }
+@objc public enum VisxLogLevel : Swift.Int, Swift.RawRepresentable {
+  case DEFAULT = 0
+  case DEBUG = 100
+  case INFO = 200
+  case NOTICE = 300
+  case WARNING = 400
+  case ERROR = 500
+  case CRITICAL = 600
+  case ALERT = 700
+  case EMERGENCY = 800
+  public func toString() -> Swift.String
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers public class ConstraintMakerRelatable {
   @discardableResult
   public func equalTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
@@ -607,6 +624,12 @@ public struct ConstraintPriority : Swift.ExpressibleByFloatLiteral, Swift.Equata
   public func advanced(by n: VisxSDK.ConstraintPriority.FloatLiteralType) -> VisxSDK.ConstraintPriority
   public func distance(to other: VisxSDK.ConstraintPriority) -> VisxSDK.ConstraintPriority.FloatLiteralType
   public typealias Stride = VisxSDK.ConstraintPriority.FloatLiteralType
+}
+@_hasMissingDesignatedInitializers public class VisxLogLabel {
+  public func setLabel(key: Swift.String, value: Swift.String)
+  public func getLabels() -> Foundation.NSMutableDictionary
+  public func clearLabels()
+  @objc deinit
 }
 @available(iOS 11.0, tvOS 11.0, *)
 public typealias ConstraintDirectionalInsets = UIKit.NSDirectionalEdgeInsets
@@ -966,6 +989,7 @@ extension UIView : VisxSDK.LayoutConstraintItem {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @objc public var isMediationAdView: Swift.Bool
+  @objc public var adHeight: CoreGraphics.CGFloat
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
