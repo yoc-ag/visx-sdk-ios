@@ -8,6 +8,18 @@
 		<data>
 		RRMS8urZbI8FMtAjNsJNGb29vXo=
 		</data>
+		<key>Frameworks/OMSDK_Yoc.framework/Info.plist</key>
+		<data>
+		5su0YN4PY8SLdORU8or6lOVgckw=
+		</data>
+		<key>Frameworks/OMSDK_Yoc.framework/OMSDK_Yoc</key>
+		<data>
+		/vBBld177gXBKjFGz5voaeiwjk0=
+		</data>
+		<key>Frameworks/OMSDK_Yoc.framework/_CodeSignature/CodeResources</key>
+		<data>
+		0WTO2yEXgANVXBjvyOK/Thi4YKI=
+		</data>
 		<key>Headers/MediationLoader.h</key>
 		<data>
 		DM+SlaesOiK4KMCevhOx5FiyPsI=
@@ -62,7 +74,7 @@
 		</data>
 		<key>Headers/VisxSDK-Swift.h</key>
 		<data>
-		7s3tZBqQUA+iRYTaf4t7wazDnKQ=
+		rRFHXgzpC4+LCjZCB54XdDtv/S0=
 		</data>
 		<key>Headers/VisxSDK.h</key>
 		<data>
@@ -70,7 +82,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hPllU+95wUbW1d9YBgSUx+WPlOo=
+		HLsecTb7j/pdX3+3kca6IaimdP8=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -78,11 +90,11 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Ym2ko+edcow61CuBS6CMI2rBAaE=
+		2ZlHm5eLx09uYqwNf8qXipU/m8c=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		VIl+5j9vl2TkBYvroYqbp9a6Enk=
+		2YJzc3XmIObxkFH0Qf67LZpSxeg=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -90,11 +102,11 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Ym2ko+edcow61CuBS6CMI2rBAaE=
+		2ZlHm5eLx09uYqwNf8qXipU/m8c=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		VIl+5j9vl2TkBYvroYqbp9a6Enk=
+		2YJzc3XmIObxkFH0Qf67LZpSxeg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -106,7 +118,7 @@
 		</data>
 		<key>omsdk-v1.js</key>
 		<data>
-		LIdxqhQnzCgTUMxshObPipT5ByE=
+		VOOFUvEPmPYIUTK4mm25eLvi01s=
 		</data>
 		<key>yoc_close_button.png</key>
 		<data>
@@ -128,6 +140,27 @@
 			<key>hash2</key>
 			<data>
 			hTUykS52SJr7ksLMNDtRLc7T4+dOPSxxBVJ03I488jE=
+			</data>
+		</dict>
+		<key>Frameworks/OMSDK_Yoc.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			12610QZ1I2Yf+BxBg1ejqmIU1Njvfz4qViBz4nMSjSw=
+			</data>
+		</dict>
+		<key>Frameworks/OMSDK_Yoc.framework/OMSDK_Yoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			B9KOQKqAhxDh/KfJfUyB9D4wV8mZj8XVpTMUQERP6Bw=
+			</data>
+		</dict>
+		<key>Frameworks/OMSDK_Yoc.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EDFAEnmlFbOZP3XpfhyXUn/CvYOYOjkpjU6OE75pzuI=
 			</data>
 		</dict>
 		<key>Headers/MediationLoader.h</key>
@@ -225,7 +258,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			j2q6L/q84Xjhhf4fZKwOvuapRaaPHeObnx5FSggZb4U=
+			HY24nCFZjCXGXE9+QOlAAwxwltlEJJ6HAHhAJYY93U0=
 			</data>
 		</dict>
 		<key>Headers/VisxSDK.h</key>
@@ -246,14 +279,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			od6uSJCd+yRU72lXm7Vk+kOtaxMU8zOoPaypWMMnXUA=
+			vkC3e5IFfUKZ0DICwOeKCX4/8G0g9vbbA+t5+ybhhxg=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DDQa7ZDxhYQduIcKkxmUU2SpA0EcY6KKgn5f3oduSVs=
+			g9OzBLFrqPGjIxtmXBX3li8U6fhu+byYk49b2S+GjrY=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
@@ -267,14 +300,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			od6uSJCd+yRU72lXm7Vk+kOtaxMU8zOoPaypWMMnXUA=
+			vkC3e5IFfUKZ0DICwOeKCX4/8G0g9vbbA+t5+ybhhxg=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DDQa7ZDxhYQduIcKkxmUU2SpA0EcY6KKgn5f3oduSVs=
+			g9OzBLFrqPGjIxtmXBX3li8U6fhu+byYk49b2S+GjrY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -295,7 +328,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			duPww1Uszbq0yCpVU1c4+kwjNV9IaT27i1uF8DeiFqY=
+			/w2ZIVK37XH41iGuVX3mNK+gDRNbBMpf8vLLSLe6ILc=
 			</data>
 		</dict>
 		<key>yoc_close_button.png</key>
