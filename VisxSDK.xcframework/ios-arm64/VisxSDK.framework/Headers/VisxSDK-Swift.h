@@ -295,6 +295,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize *
 SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView : UIView <UIScrollViewDelegate>
 @property (nonatomic) BOOL isMediationAdView;
+@property (nonatomic) CGFloat adHeight;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -375,6 +376,18 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (void)visxAdViewWillPresentModalViewControllerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)visxAdViewWillDismissModalViewControllerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
+
+typedef SWIFT_ENUM(NSInteger, VisxLogLevel, open) {
+  VisxLogLevelDEFAULT = 0,
+  VisxLogLevelDEBUG = 100,
+  VisxLogLevelINFO = 200,
+  VisxLogLevelNOTICE = 300,
+  VisxLogLevelWARNING = 400,
+  VisxLogLevelERROR = 500,
+  VisxLogLevelCRITICAL = 600,
+  VisxLogLevelALERT = 700,
+  VisxLogLevelEMERGENCY = 800,
+};
 
 
 SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
