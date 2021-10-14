@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
 import AVFoundation
 import AVKit
@@ -15,14 +15,15 @@ import Photos
 import Swift
 import UIKit
 @_exported import VisxSDK
+import _Concurrency
 @available(iOS 9.0, macOS 10.11, *)
-extension UILayoutGuide {
-  public var snp: VisxSDK.ConstraintLayoutGuideDSL {
+extension UIKit.UILayoutGuide {
+  @_Concurrency.MainActor(unsafe) public var snp: VisxSDK.ConstraintLayoutGuideDSL {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers public class LayoutConstraint : UIKit.NSLayoutConstraint {
-  public var label: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LayoutConstraint : UIKit.NSLayoutConstraint {
+  @_Concurrency.MainActor(unsafe) public var label: Swift.String? {
     get
     set(newValue)
   }
@@ -31,29 +32,29 @@ extension UILayoutGuide {
 }
 public protocol ConstraintInsetTarget : VisxSDK.ConstraintConstantTarget {
 }
-extension Int : VisxSDK.ConstraintInsetTarget {
+extension Swift.Int : VisxSDK.ConstraintInsetTarget {
 }
-extension UInt : VisxSDK.ConstraintInsetTarget {
+extension Swift.UInt : VisxSDK.ConstraintInsetTarget {
 }
-extension Float : VisxSDK.ConstraintInsetTarget {
+extension Swift.Float : VisxSDK.ConstraintInsetTarget {
 }
-extension Double : VisxSDK.ConstraintInsetTarget {
+extension Swift.Double : VisxSDK.ConstraintInsetTarget {
 }
-extension CGFloat : VisxSDK.ConstraintInsetTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintInsetTarget {
 }
-extension UIEdgeInsets : VisxSDK.ConstraintInsetTarget {
+extension UIKit.UIEdgeInsets : VisxSDK.ConstraintInsetTarget {
 }
 public protocol ConstraintOffsetTarget : VisxSDK.ConstraintConstantTarget {
 }
-extension Int : VisxSDK.ConstraintOffsetTarget {
+extension Swift.Int : VisxSDK.ConstraintOffsetTarget {
 }
-extension UInt : VisxSDK.ConstraintOffsetTarget {
+extension Swift.UInt : VisxSDK.ConstraintOffsetTarget {
 }
-extension Float : VisxSDK.ConstraintOffsetTarget {
+extension Swift.Float : VisxSDK.ConstraintOffsetTarget {
 }
-extension Double : VisxSDK.ConstraintOffsetTarget {
+extension Swift.Double : VisxSDK.ConstraintOffsetTarget {
 }
-extension CGFloat : VisxSDK.ConstraintOffsetTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintOffsetTarget {
 }
 @_hasMissingDesignatedInitializers public class ConstraintMakerFinalizable {
   @discardableResult
@@ -67,17 +68,17 @@ public typealias ConstraintInsets = UIKit.UIEdgeInsets
 public protocol ConstraintDirectionalInsetTarget : VisxSDK.ConstraintConstantTarget {
 }
 @available(iOS 11.0, tvOS 11.0, *)
-extension NSDirectionalEdgeInsets : VisxSDK.ConstraintDirectionalInsetTarget {
+extension UIKit.NSDirectionalEdgeInsets : VisxSDK.ConstraintDirectionalInsetTarget {
 }
-extension AVPlayerViewController {
-  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+extension AVKit.AVPlayerViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
 }
 public struct ConstraintViewDSL : VisxSDK.ConstraintAttributesDSL {
   @discardableResult
-  public func prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
-  public func makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
-  public func remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
-  public func updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func prepareConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  public func makeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func remakeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func updateConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
   public func removeConstraints()
   public var contentHuggingHorizontalPriority: Swift.Float {
     get
@@ -104,13 +105,13 @@ public protocol ConstraintDSL {
   func setLabel(_ value: Swift.String?)
   func label() -> Swift.String?
 }
-extension ConstraintDSL {
+extension VisxSDK.ConstraintDSL {
   public func setLabel(_ value: Swift.String?)
   public func label() -> Swift.String?
 }
 public protocol ConstraintBasicAttributesDSL : VisxSDK.ConstraintDSL {
 }
-extension ConstraintBasicAttributesDSL {
+extension VisxSDK.ConstraintBasicAttributesDSL {
   public var left: VisxSDK.ConstraintItem {
     get
   }
@@ -168,7 +169,7 @@ extension ConstraintBasicAttributesDSL {
 }
 public protocol ConstraintAttributesDSL : VisxSDK.ConstraintBasicAttributesDSL {
 }
-extension ConstraintAttributesDSL {
+extension VisxSDK.ConstraintAttributesDSL {
   @available(*, deprecated, renamed: "lastBaseline")
   public var baseline: VisxSDK.ConstraintItem {
     get
@@ -228,39 +229,39 @@ extension ConstraintAttributesDSL {
 }
 public protocol ConstraintRelatableTarget {
 }
-extension Int : VisxSDK.ConstraintRelatableTarget {
+extension Swift.Int : VisxSDK.ConstraintRelatableTarget {
 }
-extension UInt : VisxSDK.ConstraintRelatableTarget {
+extension Swift.UInt : VisxSDK.ConstraintRelatableTarget {
 }
-extension Float : VisxSDK.ConstraintRelatableTarget {
+extension Swift.Float : VisxSDK.ConstraintRelatableTarget {
 }
-extension Double : VisxSDK.ConstraintRelatableTarget {
+extension Swift.Double : VisxSDK.ConstraintRelatableTarget {
 }
-extension CGFloat : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintRelatableTarget {
 }
-extension CGSize : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGSize : VisxSDK.ConstraintRelatableTarget {
 }
-extension CGPoint : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGPoint : VisxSDK.ConstraintRelatableTarget {
 }
-extension UIEdgeInsets : VisxSDK.ConstraintRelatableTarget {
+extension UIKit.UIEdgeInsets : VisxSDK.ConstraintRelatableTarget {
 }
 @available(iOS 11.0, tvOS 11.0, *)
-extension NSDirectionalEdgeInsets : VisxSDK.ConstraintRelatableTarget {
+extension UIKit.NSDirectionalEdgeInsets : VisxSDK.ConstraintRelatableTarget {
 }
-extension ConstraintItem : VisxSDK.ConstraintRelatableTarget {
+extension VisxSDK.ConstraintItem : VisxSDK.ConstraintRelatableTarget {
 }
-extension UIView : VisxSDK.ConstraintRelatableTarget {
+extension UIKit.UIView : VisxSDK.ConstraintRelatableTarget {
 }
 @available(iOS 9.0, macOS 10.11, *)
-extension UILayoutGuide : VisxSDK.ConstraintRelatableTarget {
+extension UIKit.UILayoutGuide : VisxSDK.ConstraintRelatableTarget {
 }
 @available(iOS 9.0, macOS 10.11, *)
 public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   @discardableResult
-  public func prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
-  public func makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
-  public func remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
-  public func updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func prepareConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  public func makeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func remakeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
+  public func updateConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
   public func removeConstraints()
   public var target: Swift.AnyObject? {
     get
@@ -333,7 +334,6 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   @objc public static var kInterstitial300x600: VisxSDK.VisxAdSize
   @objc public static var kStickyBanner300x50: VisxSDK.VisxAdSize
   @objc public static var kStickyBanner320x50: VisxSDK.VisxAdSize
-  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ConstraintMaker {
@@ -452,8 +452,8 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   @objc deinit
 }
 @available(iOS 8.0, *)
-extension UILayoutSupport {
-  public var snp: VisxSDK.ConstraintLayoutSupportDSL {
+extension UIKit.UILayoutSupport {
+  @_Concurrency.MainActor(unsafe) public var snp: VisxSDK.ConstraintLayoutSupportDSL {
     get
   }
 }
@@ -483,37 +483,37 @@ public typealias ConstraintLayoutSupport = UIKit.UILayoutSupport
 public protocol ConstraintPriorityTarget {
   var constraintPriorityTargetValue: Swift.Float { get }
 }
-extension Int : VisxSDK.ConstraintPriorityTarget {
+extension Swift.Int : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension UInt : VisxSDK.ConstraintPriorityTarget {
+extension Swift.UInt : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension Float : VisxSDK.ConstraintPriorityTarget {
+extension Swift.Float : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension Double : VisxSDK.ConstraintPriorityTarget {
+extension Swift.Double : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension CGFloat : VisxSDK.ConstraintPriorityTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension UILayoutPriority : VisxSDK.ConstraintPriorityTarget {
+extension UIKit.UILayoutPriority : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
 }
-extension LayoutConstraint {
+extension VisxSDK.LayoutConstraint {
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -526,7 +526,6 @@ extension LayoutConstraint {
   public var siteId: Swift.Int
   public var pageId: Swift.Int
   public var formatId: Swift.Int
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc public protocol VisxUnderstitialScrollDelegate {
@@ -546,27 +545,27 @@ extension LayoutConstraint {
 public protocol ConstraintMultiplierTarget {
   var constraintMultiplierTargetValue: CoreGraphics.CGFloat { get }
 }
-extension Int : VisxSDK.ConstraintMultiplierTarget {
+extension Swift.Int : VisxSDK.ConstraintMultiplierTarget {
   public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
-extension UInt : VisxSDK.ConstraintMultiplierTarget {
+extension Swift.UInt : VisxSDK.ConstraintMultiplierTarget {
   public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
-extension Float : VisxSDK.ConstraintMultiplierTarget {
+extension Swift.Float : VisxSDK.ConstraintMultiplierTarget {
   public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
-extension Double : VisxSDK.ConstraintMultiplierTarget {
+extension Swift.Double : VisxSDK.ConstraintMultiplierTarget {
   public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
-extension CGFloat : VisxSDK.ConstraintMultiplierTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintMultiplierTarget {
   public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
@@ -648,7 +647,7 @@ public struct ConstraintLayoutSupportDSL : VisxSDK.ConstraintDSL {
     get
   }
 }
-extension ConstraintMakerRelatable {
+extension VisxSDK.ConstraintMakerRelatable {
   @discardableResult
   public func equalToSuperview<T>(_ closure: (VisxSDK.ConstraintView) -> T, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable where T : VisxSDK.ConstraintRelatableTarget
   @discardableResult
@@ -656,151 +655,151 @@ extension ConstraintMakerRelatable {
   @discardableResult
   public func greaterThanOrEqualTo<T>(_ closure: (VisxSDK.ConstraintView) -> T, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable where T : VisxSDK.ConstraintRelatableTarget
 }
-extension UIView {
+extension UIKit.UIView {
   @available(*, deprecated, renamed: "snp.left")
-  public var snp_left: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_left: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.top")
-  public var snp_top: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_top: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.right")
-  public var snp_right: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_right: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.bottom")
-  public var snp_bottom: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_bottom: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.leading")
-  public var snp_leading: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_leading: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.trailing")
-  public var snp_trailing: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_trailing: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.width")
-  public var snp_width: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_width: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.height")
-  public var snp_height: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_height: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.centerX")
-  public var snp_centerX: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_centerX: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.centerY")
-  public var snp_centerY: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_centerY: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.baseline")
-  public var snp_baseline: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_baseline: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, macOS 10.11, *)
   @available(*, deprecated, renamed: "snp.lastBaseline")
-  public var snp_lastBaseline: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_lastBaseline: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, macOS 10.11, *)
   @available(iOS, deprecated, renamed: "snp.firstBaseline")
-  public var snp_firstBaseline: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_firstBaseline: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.leftMargin")
-  public var snp_leftMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_leftMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.topMargin")
-  public var snp_topMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_topMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.rightMargin")
-  public var snp_rightMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_rightMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.bottomMargin")
-  public var snp_bottomMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_bottomMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.leadingMargin")
-  public var snp_leadingMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_leadingMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.trailingMargin")
-  public var snp_trailingMargin: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_trailingMargin: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.centerXWithinMargins")
-  public var snp_centerXWithinMargins: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_centerXWithinMargins: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.centerYWithinMargins")
-  public var snp_centerYWithinMargins: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_centerYWithinMargins: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.edges")
-  public var snp_edges: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_edges: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.size")
-  public var snp_size: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_size: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.center")
-  public var snp_center: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_center: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.margins")
-  public var snp_margins: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_margins: VisxSDK.ConstraintItem {
     get
   }
   @available(iOS 8.0, *)
   @available(iOS, deprecated, renamed: "snp.centerWithinMargins")
-  public var snp_centerWithinMargins: VisxSDK.ConstraintItem {
+  @_Concurrency.MainActor(unsafe) public var snp_centerWithinMargins: VisxSDK.ConstraintItem {
     get
   }
   @available(*, deprecated, renamed: "snp.prepareConstraints(_:)")
-  public func snp_prepareConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
+  @_Concurrency.MainActor(unsafe) public func snp_prepareConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void) -> [VisxSDK.Constraint]
   @available(*, deprecated, renamed: "snp.makeConstraints(_:)")
-  public func snp_makeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func snp_makeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
   @available(*, deprecated, renamed: "snp.remakeConstraints(_:)")
-  public func snp_remakeConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func snp_remakeConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
   @available(*, deprecated, renamed: "snp.updateConstraints(_:)")
-  public func snp_updateConstraints(_ closure: (VisxSDK.ConstraintMaker) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func snp_updateConstraints(_ closure: (_ make: VisxSDK.ConstraintMaker) -> Swift.Void)
   @available(*, deprecated, renamed: "snp.removeConstraints()")
-  public func snp_removeConstraints()
-  public var snp: VisxSDK.ConstraintViewDSL {
+  @_Concurrency.MainActor(unsafe) public func snp_removeConstraints()
+  @_Concurrency.MainActor(unsafe) public var snp: VisxSDK.ConstraintViewDSL {
     get
   }
 }
 public protocol ConstraintConstantTarget {
 }
-extension CGPoint : VisxSDK.ConstraintConstantTarget {
+extension CoreGraphics.CGPoint : VisxSDK.ConstraintConstantTarget {
 }
-extension CGSize : VisxSDK.ConstraintConstantTarget {
+extension CoreGraphics.CGSize : VisxSDK.ConstraintConstantTarget {
 }
-extension UIEdgeInsets : VisxSDK.ConstraintConstantTarget {
+extension UIKit.UIEdgeInsets : VisxSDK.ConstraintConstantTarget {
 }
 @available(iOS 11.0, tvOS 11.0, *)
-extension NSDirectionalEdgeInsets : VisxSDK.ConstraintConstantTarget {
+extension UIKit.NSDirectionalEdgeInsets : VisxSDK.ConstraintConstantTarget {
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VisxTableViewCell) public class VisxTableViewCell : UIKit.UITableViewCell {
-  @objc public static var visxCellIdentifier: Swift.String
-  @objc public func showAd(adView: VisxSDK.VisxAdView, tableView: UIKit.UITableView, row: Swift.Int)
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VisxTableViewCell) @_Concurrency.MainActor(unsafe) public class VisxTableViewCell : UIKit.UITableViewCell {
+  @objc @_Concurrency.MainActor(unsafe) public static var visxCellIdentifier: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public func showAd(adView: VisxSDK.VisxAdView, tableView: UIKit.UITableView, row: Swift.Int)
   @objc deinit
 }
 public typealias ConstraintView = UIKit.UIView
@@ -969,9 +968,9 @@ public struct ConstraintConfig {
 public protocol LayoutConstraintItem : AnyObject {
 }
 @available(iOS 9.0, macOS 10.11, *)
-extension UILayoutGuide : VisxSDK.LayoutConstraintItem {
+extension UIKit.UILayoutGuide : VisxSDK.LayoutConstraintItem {
 }
-extension UIView : VisxSDK.LayoutConstraintItem {
+extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConstraintMakerEditable : VisxSDK.ConstraintMakerPrioritizable {
   @discardableResult
@@ -987,33 +986,32 @@ extension UIView : VisxSDK.LayoutConstraintItem {
   public func inset(_ amount: VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.ConstraintMakerEditable
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
-  @objc public var isMediationAdView: Swift.Bool
-  @objc public var adHeight: CoreGraphics.CGFloat
+@objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+  @objc @_Concurrency.MainActor(unsafe) public var isMediationAdView: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public var adHeight: CoreGraphics.CGFloat
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @_hasMissingDesignatedInitializers final public class ConstraintItem {
   @objc deinit
 }
 public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
-extension VisxAdView {
-  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
-  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
-  @objc dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
-  @objc dynamic public convenience init(prebidDict: Foundation.NSDictionary, appDomain: Swift.String, container: UIKit.UIView, adSize: VisxSDK.VisxAdSize, anchorView: UIKit.UIScrollView?)
-  @objc dynamic public func getSdkVersion() -> Swift.String
-  @objc dynamic public func load()
-  @objc dynamic public func loadWithCustomTargetingParameters(params: [Swift.String : Swift.String])
-  @objc dynamic public func advertisingLabelText(label: Swift.String)
-  @objc dynamic public func deallocAdView()
-  @objc dynamic public func getCreativeInScrollview(scroll: UIKit.UIScrollView) -> UIKit.UIView
-  @objc dynamic public func getReactiveCreative() -> UIKit.UIView?
-  @objc dynamic public func showInterstitial()
-  @objc dynamic public func showInterstitialFromViewController(controller: UIKit.UIViewController)
-  @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
-  @objc dynamic public func isInterstitial() -> Swift.Bool
-  @objc dynamic public func setInterstitialBackgroundColor(color: UIKit.UIColor)
-  @objc dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)
-  @objc dynamic public func didFailToReceiveAdWithError(bannerView: UIKit.UIView, error: Foundation.NSError)
+extension VisxSDK.VisxAdView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(prebidDict: Foundation.NSDictionary, appDomain: Swift.String, container: UIKit.UIView, adSize: VisxSDK.VisxAdSize, anchorView: UIKit.UIScrollView?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func getSdkVersion() -> Swift.String
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func load()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func loadWithCustomTargetingParameters(params: [Swift.String : Swift.String])
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func advertisingLabelText(label: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func deallocAdView()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func getCreativeInScrollview(scroll: UIKit.UIScrollView) -> UIKit.UIView
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func getReactiveCreative() -> UIKit.UIView?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func showInterstitial()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func showInterstitialFromViewController(controller: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func isInterstitial() -> Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setInterstitialBackgroundColor(color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func didFailToReceiveAdWithError(bannerView: UIKit.UIView, error: Foundation.NSError)
 }
