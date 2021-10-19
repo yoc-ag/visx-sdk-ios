@@ -82,7 +82,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1LSeBUTR7Xg6YlPzxSY1q0UZ07w=
+		P/fJ2tG/Zpv09glh+NDnHwmQtqo=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		1LSeBUTR7Xg6YlPzxSY1q0UZ07w=
+		P/fJ2tG/Zpv09glh+NDnHwmQtqo=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xBrVlWbczftg+mBoNNCKsHo1J/4=
+		7KxOmhBXYzEsFZlSdK7L9+y3TQ8=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		xBrVlWbczftg+mBoNNCKsHo1J/4=
+		7KxOmhBXYzEsFZlSdK7L9+y3TQ8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -277,7 +277,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YpF7XDv6g+jeYEcYmFQV67mNkvyAY/GbqijiEIj7coI=
+			nC725ml4zbf5SPf0/npOgWeE4F2FmErXHGKzevHqFC4=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
@@ -298,7 +298,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YpF7XDv6g+jeYEcYmFQV67mNkvyAY/GbqijiEIj7coI=
+			nC725ml4zbf5SPf0/npOgWeE4F2FmErXHGKzevHqFC4=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -319,7 +319,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z89IF07srr9cFkE3ANhZp/pepDZC68YBfHS2btmhRXs=
+			8tzd2ZmAAwYIIRaCRRR8vFeCiuoQuHXa8sSO++1rOx0=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -340,7 +340,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z89IF07srr9cFkE3ANhZp/pepDZC68YBfHS2btmhRXs=
+			8tzd2ZmAAwYIIRaCRRR8vFeCiuoQuHXa8sSO++1rOx0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
