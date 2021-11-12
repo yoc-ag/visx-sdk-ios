@@ -70,7 +70,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZukjvubjqEBdJdtKOjPNuXaigFw=
+		IEWnf0YbY/ZtU2lyqRjcq4wYH8E=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		6XrrdLkkydOazR0kk2vHmh3Q548=
+		x1o/fceuDinb62OPVI8Rrljk1qo=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		6XrrdLkkydOazR0kk2vHmh3Q548=
+		x1o/fceuDinb62OPVI8Rrljk1qo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3pjEOHZe9kDGAi8g8dWWGzrZC+cSaNdSj8+AxeC+OPE=
+			GsA/ZXdOJz9wGPO9jd6eon7CBNj3UbSmULzx8ATFt0w=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
@@ -274,7 +274,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3pjEOHZe9kDGAi8g8dWWGzrZC+cSaNdSj8+AxeC+OPE=
+			GsA/ZXdOJz9wGPO9jd6eon7CBNj3UbSmULzx8ATFt0w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
