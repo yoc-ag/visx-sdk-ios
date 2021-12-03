@@ -245,7 +245,6 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
-
 SWIFT_CLASS("_TtC7VisxSDK10VisxAdSize")
 @interface VisxAdSize : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x50;)
@@ -316,21 +315,27 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
 /// VisxAdView - Default initializer
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(VisxAdSize * _Nonnull)adSize universal:(BOOL)universal;
-/// VisxAdView - Simple banner with fixed size initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate;
+/// VisxAdView - Adaptive banner initializer with dynamic size
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate;
+/// VisxAdView - Fixed size banner initializer
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate SWIFT_DEPRECATED_MSG("Please use -> \"Default initializer\"");
 /// VisxAdView - Universal ad initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView;
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView SWIFT_DEPRECATED_MSG("Please use -> \"Adaptive banner initializer with dynamic size\"");
 /// VisxAdView - Prebid initializer
 - (nonnull instancetype)initWithPrebidDict:(NSDictionary * _Nonnull)prebidDict appDomain:(NSString * _Nonnull)appDomain container:(UIView * _Nonnull)container adSize:(VisxAdSize * _Nonnull)adSize anchorView:(UIScrollView * _Nullable)anchorView;
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
+/// Sets absolute position of the visible view where creative should be shown.
+/// To get absolute position of the visible area, convert the UIScrollView/UITableView frame to nil.
+/// example: self.view.convert(articleScrollView.frame, to: nil)
+- (void)setAnchorFrameWith:(double)anchorX :(double)anchorY :(double)anchorWidth :(double)anchorHeight;
 /// Loads request
 - (void)load;
 /// Loads request with custom targeting parameters
 - (void)loadWithCustomTargetingParametersWithParams:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 /// Sets advertising label above the creative
 - (void)advertisingLabelTextWithLabel:(NSString * _Nonnull)label;
-/// Deallocates current VisxAdView
+/// Manually deallocates current VisxAdView
 - (void)deallocAdView;
 /// Returns visxAdView
 - (UIView * _Nonnull)getCreativeInScrollviewWithScroll:(UIScrollView * _Nonnull)scroll SWIFT_WARN_UNUSED_RESULT;
@@ -440,13 +445,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)showAdWithAdView:(VisxAdView * _Nonnull)adView tableView:(UITableView * _Nonnull)tableView row:(NSInteger)row;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_PROTOCOL("_TtP7VisxSDK30VisxUnderstitialScrollDelegate_")
-@protocol VisxUnderstitialScrollDelegate
-- (void)registerScrollListenerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)unregisterScrollListenerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -701,7 +699,6 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
-
 SWIFT_CLASS("_TtC7VisxSDK10VisxAdSize")
 @interface VisxAdSize : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x50;)
@@ -772,21 +769,27 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
 /// VisxAdView - Default initializer
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(VisxAdSize * _Nonnull)adSize universal:(BOOL)universal;
-/// VisxAdView - Simple banner with fixed size initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate;
+/// VisxAdView - Adaptive banner initializer with dynamic size
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate;
+/// VisxAdView - Fixed size banner initializer
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate SWIFT_DEPRECATED_MSG("Please use -> \"Default initializer\"");
 /// VisxAdView - Universal ad initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView;
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView SWIFT_DEPRECATED_MSG("Please use -> \"Adaptive banner initializer with dynamic size\"");
 /// VisxAdView - Prebid initializer
 - (nonnull instancetype)initWithPrebidDict:(NSDictionary * _Nonnull)prebidDict appDomain:(NSString * _Nonnull)appDomain container:(UIView * _Nonnull)container adSize:(VisxAdSize * _Nonnull)adSize anchorView:(UIScrollView * _Nullable)anchorView;
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
+/// Sets absolute position of the visible view where creative should be shown.
+/// To get absolute position of the visible area, convert the UIScrollView/UITableView frame to nil.
+/// example: self.view.convert(articleScrollView.frame, to: nil)
+- (void)setAnchorFrameWith:(double)anchorX :(double)anchorY :(double)anchorWidth :(double)anchorHeight;
 /// Loads request
 - (void)load;
 /// Loads request with custom targeting parameters
 - (void)loadWithCustomTargetingParametersWithParams:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 /// Sets advertising label above the creative
 - (void)advertisingLabelTextWithLabel:(NSString * _Nonnull)label;
-/// Deallocates current VisxAdView
+/// Manually deallocates current VisxAdView
 - (void)deallocAdView;
 /// Returns visxAdView
 - (UIView * _Nonnull)getCreativeInScrollviewWithScroll:(UIScrollView * _Nonnull)scroll SWIFT_WARN_UNUSED_RESULT;
@@ -896,13 +899,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)showAdWithAdView:(VisxAdView * _Nonnull)adView tableView:(UITableView * _Nonnull)tableView row:(NSInteger)row;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_PROTOCOL("_TtP7VisxSDK30VisxUnderstitialScrollDelegate_")
-@protocol VisxUnderstitialScrollDelegate
-- (void)registerScrollListenerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)unregisterScrollListenerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
 
 #if __has_attribute(external_source_symbol)

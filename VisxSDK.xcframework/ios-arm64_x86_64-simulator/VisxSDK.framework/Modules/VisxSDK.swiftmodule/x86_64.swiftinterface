@@ -15,6 +15,7 @@ import Photos
 import Swift
 import UIKit
 @_exported import VisxSDK
+import WebKit
 import _Concurrency
 @available(iOS 9.0, macOS 10.11, *)
 extension UIKit.UILayoutGuide {
@@ -528,10 +529,6 @@ extension VisxSDK.LayoutConstraint {
   public var formatId: Swift.Int
   @objc deinit
 }
-@objc public protocol VisxUnderstitialScrollDelegate {
-  @objc func registerScrollListener(visxAdView: VisxSDK.VisxAdView)
-  @objc func unregisterScrollListener(visxAdView: VisxSDK.VisxAdView)
-}
 @objc @_inheritsConvenienceInitializers @objcMembers public class VisxMediationUtils : ObjectiveC.NSObject {
   @objc public class func topMostController() -> UIKit.UIViewController?
   @objc public class func visxGetAdSizeFromString(serverParameter: Swift.String) -> VisxSDK.VisxAdSize
@@ -997,10 +994,14 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
 extension VisxSDK.VisxAdView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
-  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate)
+  @objc @available(*, deprecated, message: "Please use -> \"Default initializer\"")
+  @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
+  @objc @available(*, deprecated, message: "Please use -> \"Adaptive banner initializer with dynamic size\"")
+  @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
   @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(prebidDict: Foundation.NSDictionary, appDomain: Swift.String, container: UIKit.UIView, adSize: VisxSDK.VisxAdSize, anchorView: UIKit.UIScrollView?)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func getSdkVersion() -> Swift.String
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func setAnchorFrame(with anchorX: Swift.Double, _ anchorY: Swift.Double, _ anchorWidth: Swift.Double, _ anchorHeight: Swift.Double)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func load()
   @objc @_Concurrency.MainActor(unsafe) dynamic public func loadWithCustomTargetingParameters(params: [Swift.String : Swift.String])
   @objc @_Concurrency.MainActor(unsafe) dynamic public func advertisingLabelText(label: Swift.String)
