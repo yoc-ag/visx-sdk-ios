@@ -40,7 +40,8 @@
         VIEWABLECHANGE: 'viewableChange',
         /** non-MRAID 3.0 Events */
         SUCCESS: 'success',
-        VISXONSCROLL: 'visxOnScroll'
+        VISXONSCROLL: 'visxOnScroll',
+        VISXCOMPANIONCLOSED: 'visxCompanionClosed'
     };
 
     var PLACEMENT_TYPES = mraid.PLACEMENT_TYPES = {
@@ -239,6 +240,10 @@
     mraid_bridge.fireScrollEvent = function (initialScrollViewHeight, currentScrollViewHeight, currentScrollPosition, scrollPositionDelta) {
         broadcastEvent(EVENTS.VISXONSCROLL, initialScrollViewHeight, currentScrollViewHeight, currentScrollPosition, scrollPositionDelta);
     };
+
+    mraid_bridge.fireCloseEventOfCompanion = function () {
+        broadcastEvent(EVENTS.VISXCOMPANIONCLOSED);
+    }
 
     var EventListeners = function (event) {
         this.event = event;
@@ -477,6 +482,14 @@
         executeNativeCall('visxshowmessagebelow', 'htmlData', btoa(htmlData));
     };
 
+    mraid.visxShowBrandedTakeoverSticky = function (html, width, height, animationStyle, direction) {
+        executeNativeCall('visxshowbrandedtakeoversticky', 'html', btoa(html), 'stickyWidth', width, 'stickyHeight', height, 'animationStyle', animationStyle, 'direction', direction);
+    }
+
+    mraid.visxHideBrandedTakeoverSticky = function (animationStyle, direction) {
+        executeNativeCall('visxhidebrandedtakeoversticky', 'animationStyle', animationStyle, 'direction', direction);
+    }
+
     mraid.getDensity = function () {
         console.log("mraid.getDensity() density=" + density);
         return density;
@@ -503,20 +516,13 @@
     mraid.expand = function (URL) {
         if (state == STATES.DEFAULT || state == STATES.RESIZED) {
             var args = ['expand'];
-
-            /** MRAID 3.0 deprecated useCustomClose, we will always set it false */
-            args = args.concat(['shouldUseCustomClose', 'false']);
-
             if (expandProperties.width >= 0 && expandProperties.height >= 0) {
                 args = args.concat(['w', expandProperties.width, 'h', expandProperties.height]);
             } else {
                 broadcastEvent(EVENTS.ERROR, 'expandProperties invalid.', 'expand');
                 return;
             }
-
-            //TODO: expandPosition is not specified in MRAID 3.0 and can be moved to native implementation
             args = args.concat(['expandPosition', 'center']);
-
             if (URL && URL != "") {
                 args = args.concat(['url', URL]);
             }
@@ -596,6 +602,7 @@
     };
 
     mraid.getCurrentPosition = function () {
+        executeNativeCall('getcurrentposition');
         return currentPosition;
     };
 
@@ -807,10 +814,6 @@
     };
 
     mraid.useCustomClose = function (shouldUseCustomClose) {
-        /** MRAID 3.0 deprecated useCustomClose, we will always set it false */
-        //TODO: We can improve the native code for this.
-        expandProperties.useCustomClose = shouldUseCustomClose;
-        executeNativeCall('usecustomclose', 'shouldUseCustomClose', shouldUseCustomClose);
         broadcastEvent(EVENTS.ERROR, 'UseCustomClose has been deprecated, and will be ignored.', 'useCustomClose');
     };
 
