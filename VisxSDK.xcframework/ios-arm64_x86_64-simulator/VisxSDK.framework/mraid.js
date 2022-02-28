@@ -15,7 +15,7 @@
 (function () {
     var mraid = window.mraid = {};
     var mraid_bridge = window.mraid_bridge = {};
-
+    window.open = function(url) {mraid.open(url)}
     //////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
     // Placeholder, to be filled on Content Injection
@@ -744,7 +744,7 @@
         if (!URL) {
             broadcastEvent(EVENTS.ERROR, 'URL is required.', 'open');
         } else {
-            executeNativeCall('open', 'url', URL);
+            executeNativeCall('open', 'url', encodeURI(URL));
         }
     };
 
