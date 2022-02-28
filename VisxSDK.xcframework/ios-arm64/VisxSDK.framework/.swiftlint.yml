@@ -1,39 +1,153 @@
-opt_in_rules:
-- empty_count
-- empty_string
+#############
+# Paths
+#############
 
-excluded:
-- Carthage
-- Pods
-- SwiftLint/Common/3rdPartyLib
-- VisxSDK/Utils/SnapKit
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+    - Pods
+    - SwiftLint/Common/3rdPartyLib
+    - VisxSDK/Utils/SnapKit
+    - VisxSDK/Resources/VisxConstants.swift
+    - VisxSDK/Utils/VisxSDKLog.swift
 
-line_length:
-    warning: 200
-    error: 250
+#############
+# Rules
+#############
+
+type_name: #2 https://realm.github.io/SwiftLint/type_name.html
+    min_length:
+        error: 3
+    max_length:
+        error: 30
+
+identifier_name: #3 https://realm.github.io/SwiftLint/identifier_name.html
+    min_length:
+        error: 3
+    max_length:
+        error: 30
+    excluded: # excluded via string array - Point of discussion, should we allowed or block those chars
+        - i
+        - j
+        - x
+        - y
+
+force_unwrapping: error #4 https://realm.github.io/SwiftLint/force_unwrapping.html
+
+conditional_returns_on_newline:  #5 https://realm.github.io/SwiftLint/conditional_returns_on_newline.html
+    severity: error
+    if_only: false
+
+implicit_return: #6 https://realm.github.io/SwiftLint/implicit_return.html
+    severity: error
+    included: [function, getter, closure]
+
+empty_count: #7 https://realm.github.io/SwiftLint/empty_count.html
+    only_after_dot: true
+    severity: error
+
+trailing_comma: #8 https://realm.github.io/SwiftLint/trailing_comma.html
+    mandatory_comma: true
+    severity: error
+
+nesting: #9 https://realm.github.io/SwiftLint/nesting.html
+    type_level: 5 # need to discuss of the level
+    severity: warning
+
+attributes: # 10 https://realm.github.io/SwiftLint/attributes.html
+    severity: error
+
+explicit_self: # 11 https://realm.github.io/SwiftLint/explicit_self.html
+    severity: error
+
+unowned_variable_capture: # 17 https://realm.github.io/SwiftLint/unowned_variable_capture.html
+    severity: warning
+
+colon: # 18 https://realm.github.io/SwiftLint/colon.html
+    severity: error
+
+line_length: # 19 https://realm.github.io/SwiftLint/line_length.html
+    warning: 150
+    error: 200
     ignores_function_declarations: true
     ignores_comments: true
     ignores_urls: true
-    
-function_body_length:
-    warning: 300
-    error: 500
-    
-function_parameter_count:
-    warning: 6
+
+function_body_length: # 20 https://realm.github.io/SwiftLint/function_body_length.html
+    warning: 50
+    error: 100
+
+function_parameter_count: # 21 https://realm.github.io/SwiftLint/function_parameter_count.html
     error: 8
-    
-type_body_length:
+    ignores_default_parameters: true
+
+type_body_length: # 22 https://realm.github.io/SwiftLint/type_body_length.html
     warning: 300
-    error: 500
-    
-file_length:
-    warning: 1000
-    error: 1500
+    error: 300
+
+file_length: # 23 https://realm.github.io/SwiftLint/file_length.html
+    warning: 500
+    error: 1000
     ignore_comment_only_lines: true
-    
-cyclomatic_complexity:
-    warning: 10
-    error: 20
-    
-reporter: "xcode"
+
+cyclomatic_complexity: # 24 https://realm.github.io/SwiftLint/cyclomatic_complexity.html
+    error: 10
+    ignores_case_statements: true
+
+##############
+# Custom rules
+##############
+
+custom_rules:
+
+    forbid_disabling_rules: #12
+        included: ".*.swift"
+        name: "Forbid disabling rules"
+        message: "Disabling Swiftlint's rules is forbidden, open ticket if you think it's a Swiftlint bug."
+        regex: "swiftlint:disable"
+        severity: error
+
+    no_print: # 13 https://ricardojpsantos.medium.com/using-swiftlint-to-decrease-code-smell-on-xcode-e1dd49258f22
+        included: ".*\\.swift"
+        name: "Fordidden print"
+        regex: "print[(]"
+        message: "Use appropriate logger"
+        severity: warning
+
+    commented_code: # 14 https://ricardojpsantos.medium.com/using-swiftlint-to-decrease-code-smell-on-xcode-e1dd49258f22
+        regex: '(?<!:|\/)\/\/\h*[a-z.](?!wiftlint)'
+        message: "Comment starting with lowercase letter - did you forget to delete old code?"
+        severity: error
+
+    numbers_smell: # 15 https://ricardojpsantos.medium.com/using-swiftlint-to-decrease-code-smell-on-xcode-e1dd49258f22
+        regex: '(return |case |\w\(|: |\?\? |\, |== |<=? |>=? |\+= |\-= |\/= |\*= |%= |\w\.\w+ = )\(*-?\d{2,}'
+        message: "Numbers smell; define a constant instead."
+        severity: warning
+
+    no_hard_coded_strings: # 16
+        regex: '^[^#][a-zA-Z0-9][a-zA-Z0-9! ]+'
+        match_kinds:
+            - string
+        message: "Hard-coded string is never a good practice"
+        severity: error
+
+########
+# OPT IN
+########
+
+opt_in_rules: # some rules are turned off by default, so we need to opt-in them
+        - attributes
+        - conditional_returns_on_newline
+        - empty_count
+        - explicit_self
+        - force_unwrapping
+        - implicit_return
+        - unowned_variable_capture
+
+#############
+# Bonus rules :)
+#############
+
+comment_spacing:
+    severity: error
+
+unneeded_break_in_switch:
+    severity: error

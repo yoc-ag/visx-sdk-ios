@@ -305,7 +305,6 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 
 @protocol VisxAdViewDelegate;
 @class UIScrollView;
-@class NSDictionary;
 @class UIViewController;
 @class UIColor;
 @class NSError;
@@ -319,8 +318,6 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate SWIFT_DEPRECATED_MSG("Please use -> \"Default initializer\"");
 /// VisxAdView - Universal ad initializer
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView SWIFT_DEPRECATED_MSG("Please use -> \"Adaptive banner initializer with dynamic size\"");
-/// VisxAdView - Prebid initializer
-- (nonnull instancetype)initWithPrebidDict:(NSDictionary * _Nonnull)prebidDict appDomain:(NSString * _Nonnull)appDomain container:(UIView * _Nonnull)container adSize:(VisxAdSize * _Nonnull)adSize anchorView:(UIScrollView * _Nullable)anchorView;
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
 /// Sets absolute position of the visible view where creative should be shown.
@@ -333,7 +330,7 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (void)loadWithCustomTargetingParametersWithParams:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 /// Sets advertising label above the creative
 - (void)advertisingLabelTextWithLabel:(NSString * _Nonnull)label;
-/// Manually deallocates current VisxAdView
+/// Deallocates current VisxAdView
 - (void)deallocAdView;
 /// Returns visxAdView
 - (UIView * _Nonnull)getCreativeInScrollviewWithScroll:(UIScrollView * _Nonnull)scroll SWIFT_WARN_UNUSED_RESULT;
@@ -349,6 +346,10 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (BOOL)isInterstitial SWIFT_WARN_UNUSED_RESULT;
 /// Set interstitial background color, clear is default
 - (void)setInterstitialBackgroundColorWithColor:(UIColor * _Nonnull)color;
+/// Used only when header bidding is enabled, renderAdIfHeaderBiddingEnabled() needs to be called to show creative
+- (void)renderAdIfHeaderBiddingEnabled;
+/// Returns current currency
+- (NSString * _Nonnull)getCurrency SWIFT_WARN_UNUSED_RESULT;
 - (void)adViewDidReceiveAdWithBannerView:(UIView * _Nonnull)bannerView;
 - (void)didFailToReceiveAdWithErrorWithBannerView:(UIView * _Nonnull)bannerView error:(NSError * _Nonnull)error;
 @end
@@ -361,38 +362,20 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (UIViewController * _Nonnull)viewControllerForPresentingVisxAdView SWIFT_WARN_UNUSED_RESULT;
 - (void)visxAdViewDidInitializeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
 @optional
-- (void)visxAdWillPresentScreenWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdDidPresentScreenWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdViewDidChangePlacementEffectWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
-- (void)visxAdViewDidChangePlacementDimensionWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdViewdidFailWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView error:(NSError * _Nonnull)error;
-- (void)visxAdViewDidReloadWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdWillHideWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdViewDidHideWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)willExpandYocAdWithVisxAdView:(VisxAdView * _Nonnull)visxAdView toFrame:(CGRect)frame animated:(BOOL)animated;
-- (void)didExpandYocAdWithVisxAdView:(VisxAdView * _Nonnull)visxAdView toFrame:(CGRect)frame;
-- (void)visxAdWillResizeWithFrame:(CGRect)frame animated:(BOOL)animated;
-- (void)visxAdWillResizeToFrameWithFrame:(CGRect)frame animated:(BOOL)animated;
-- (void)visxAdWillCloseWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdDidCloseWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdWasTappedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(double)price;
+- (void)visxAdFailedWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView message:(NSString * _Nonnull)message code:(NSInteger)code;
+- (void)visxAdViewSizeChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView width:(CGFloat)width height:(CGFloat)height;
+- (void)visxAdViewEffectChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
+- (void)visxAdViewClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdViewClickedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxLandingPageOpened;
 - (void)appShouldSuspendForAdWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)appShouldResumeFromAdWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdViewWillPresentModalViewControllerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdViewWillDismissModalViewControllerWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdVideoFinishedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdInterstitialWillBeClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdInterstitialClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
-
-typedef SWIFT_ENUM(NSInteger, VisxLogLevel, open) {
-  VisxLogLevelDEFAULT = 0,
-  VisxLogLevelDEBUG = 100,
-  VisxLogLevelINFO = 200,
-  VisxLogLevelNOTICE = 300,
-  VisxLogLevelWARNING = 400,
-  VisxLogLevelERROR = 500,
-  VisxLogLevelCRITICAL = 600,
-  VisxLogLevelALERT = 700,
-  VisxLogLevelEMERGENCY = 800,
-};
 
 
 SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
@@ -430,6 +413,7 @@ SWIFT_CLASS_NAMED("VisxSDKManager")
 @interface VisxSDKManager : NSObject
 + (VisxSDKManager * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
 - (void)initializeSDK;
+- (void)setRemoteConfigSiteIdWith:(NSString * _Nonnull)siteId;
 - (void)setAppStoreUrlWithUrl:(NSString * _Nonnull)url;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -440,7 +424,7 @@ SWIFT_CLASS_NAMED("VisxTableViewCell")
 @interface VisxTableViewCell : UITableViewCell
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull visxCellIdentifier;)
 + (NSString * _Nonnull)visxCellIdentifier SWIFT_WARN_UNUSED_RESULT;
-- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView tableView:(UITableView * _Nonnull)tableView row:(NSInteger)row;
+- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView tableView:(UITableView * _Nonnull)tableView;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
