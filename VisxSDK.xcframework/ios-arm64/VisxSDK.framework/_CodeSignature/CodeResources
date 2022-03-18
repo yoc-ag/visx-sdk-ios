@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/VisxSDK-Swift.h</key>
 		<data>
-		BHfJGOaQw5zLslXQ9NYwpLchyTE=
+		yE7vUkF8/dpoLparXQEC0j60sQE=
 		</data>
 		<key>Headers/VisxSDK.h</key>
 		<data>
@@ -70,31 +70,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		diQYV+Kb/Y3ZOHHAE/g1G5clago=
+		8STMgGq9Z2/lQAcGLZrNpCEyUYs=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		1hr+i6UpL+T5m63HF2ltRHnSafY=
+		in5NJfx2mEKbHD8mYnXuTJo6Dwk=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		y2y+ALlZX4JFbnZNosGrKEVHNNg=
+		VZjenBrt+MQyNlRmsciF7MCDVzE=
 		</data>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		yfH5JUTHvF7m98ECOccxlO+lMXY=
-		</data>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		1hr+i6UpL+T5m63HF2ltRHnSafY=
-		</data>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		y2y+ALlZX4JFbnZNosGrKEVHNNg=
-		</data>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		yfH5JUTHvF7m98ECOccxlO+lMXY=
+		iAzvT36bb8AVzMaBgV+zfZeF2h0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -225,7 +213,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvZxbXso8t97AWLaenT7FC/g7/SZo9gWugFuamaBwBM=
+			IhcowYu0VeMmF/yJdULse3/DHih077nA8FxUn57hg4Y=
 			</data>
 		</dict>
 		<key>Headers/VisxSDK.h</key>
@@ -239,42 +227,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tKjM/iMQfbejKFpEn37cYGaFBJ9AHTNABew88V9/yQk=
+			DmG1Ya7514GBX6AO55AMwIM7tLaX8uykxlCYCTTElLw=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pDowHAPxSMAr06MupQrDgHfLb29G2FgEkDT+fLOGais=
+			sptyqI2qC3B26ttfptHq8qgkTmEEnVW2S+SNhX+OmWY=
 			</data>
 		</dict>
 		<key>Modules/VisxSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4okvYnYewxTAKjHnkuBUhZmBXR+T7Fkww5SZh/M4uyg=
-			</data>
-		</dict>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tKjM/iMQfbejKFpEn37cYGaFBJ9AHTNABew88V9/yQk=
-			</data>
-		</dict>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			pDowHAPxSMAr06MupQrDgHfLb29G2FgEkDT+fLOGais=
-			</data>
-		</dict>
-		<key>Modules/VisxSDK.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4okvYnYewxTAKjHnkuBUhZmBXR+T7Fkww5SZh/M4uyg=
+			N3C2x692883JKdfo4qZXa4CD3WTZLJfmAmp8XRpIBa4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
