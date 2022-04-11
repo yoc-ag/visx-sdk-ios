@@ -41,7 +41,8 @@
         /** non-MRAID 3.0 Events */
         SUCCESS: 'success',
         VISXONSCROLL: 'visxOnScroll',
-        VISXCOMPANIONCLOSED: 'visxCompanionClosed'
+        VISXSTICKYISCLOSED: 'visxStickyIsClosed',
+        VISXSTICKYISDISPLAYED: 'visxStickyIsDisplayed'
     };
 
     var PLACEMENT_TYPES = mraid.PLACEMENT_TYPES = {
@@ -161,6 +162,8 @@
     };
     var startingTimeInSeconds = 0;
 
+    var isUniversalAd = false;
+
     function executeNativeCall(command) {
         var call = 'mraid://' + command;
         var key, value;
@@ -242,7 +245,11 @@
     };
 
     mraid_bridge.fireCloseEventOfCompanion = function () {
-        broadcastEvent(EVENTS.VISXCOMPANIONCLOSED);
+        broadcastEvent(EVENTS.VISXSTICKYISCLOSED);
+    }
+
+    mraid_bridge.fireOpenEventOfCompanion = function () {
+        broadcastEvent(EVENTS.VISXSTICKYISDISPLAYED);
     }
 
     var EventListeners = function (event) {
@@ -739,6 +746,14 @@
     mraid.visxEnableOnScrollEvent = function () {
         executeNativeCall('visxEnableOnScrollEvent');
     };
+
+    mraid.setIsUniversalAd = function (val) {
+        isUniversalAd = val;
+    }
+
+    mraid.visxIsUniversalAd = function () {
+        return isUniversalAd;
+    }
 
     mraid.open = function (URL) {
         if (!URL) {
