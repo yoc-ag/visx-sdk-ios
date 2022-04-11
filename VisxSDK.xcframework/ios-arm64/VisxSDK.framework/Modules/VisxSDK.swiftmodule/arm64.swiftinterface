@@ -780,8 +780,15 @@ extension UIKit.NSDirectionalEdgeInsets : VisxSDK.ConstraintConstantTarget {
   @objc deinit
 }
 public typealias ConstraintView = UIKit.UIView
+@_inheritsConvenienceInitializers @objc(VisxCollectionViewCell) @_Concurrency.MainActor(unsafe) public class VisxCollectionViewCell : UIKit.UICollectionViewCell {
+  @objc @_Concurrency.MainActor(unsafe) public static var visxCellIdentifier: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public func showAd(adView: VisxSDK.VisxAdView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 public protocol LoadMediationDelegate : AnyObject {
-  func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView)
+  func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView, customTargeting: [Swift.String : Swift.String]?)
 }
 @available(*, deprecated, message: "Use ConstraintMakerPrioritizable instead.")
 public typealias ConstraintMakerPriortizable = VisxSDK.ConstraintMakerPrioritizable
@@ -814,7 +821,7 @@ public struct ConstraintConfig {
   @objc func viewControllerForPresentingVisxAdView() -> UIKit.UIViewController
   @objc func visxAdViewDidInitialize(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
   @objc optional func visxAdRequestStarted(visxAdView: VisxSDK.VisxAdView)
-  @objc optional func visxAdResponseReceived(visxAdView: VisxSDK.VisxAdView, price: Swift.Double)
+  @objc optional func visxAdResponseReceived(visxAdView: VisxSDK.VisxAdView, price: Swift.Double, currency: Swift.String)
   @objc optional func visxAdFailedWithError(visxAdView: VisxSDK.VisxAdView, message: Swift.String, code: Swift.Int)
   @objc optional func visxAdViewSizeChange(visxAdView: VisxSDK.VisxAdView, width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat)
   @objc optional func visxAdViewEffectChange(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
@@ -987,7 +994,6 @@ extension VisxSDK.VisxAdView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func isInterstitial() -> Swift.Bool
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setInterstitialBackgroundColor(color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func renderAdIfHeaderBiddingEnabled()
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func getCurrency() -> Swift.String
   @objc @_Concurrency.MainActor(unsafe) dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func didFailToReceiveAdWithError(bannerView: UIKit.UIView, error: Foundation.NSError)
 }
