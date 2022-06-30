@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
 import AVFoundation
 import AVKit
@@ -8,8 +8,6 @@ import AppTrackingTransparency
 import CommonCrypto
 import CoreLocation
 import CoreVideo
-import EventKit
-import EventKitUI
 import Foundation
 import MediaPlayer
 import MessageUI
@@ -28,7 +26,7 @@ extension UIKit.UILayoutGuide {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LayoutConstraint : UIKit.NSLayoutConstraint {
   @_Concurrency.MainActor(unsafe) public var label: Swift.String? {
     get
-    set(newValue)
+    set
   }
   @objc override dynamic public init()
   @objc deinit
@@ -85,19 +83,19 @@ public struct ConstraintViewDSL : VisxSDK.ConstraintAttributesDSL {
   public func removeConstraints()
   public var contentHuggingHorizontalPriority: Swift.Float {
     get
-    nonmutating set(newValue)
+    nonmutating set
   }
   public var contentHuggingVerticalPriority: Swift.Float {
     get
-    nonmutating set(newValue)
+    nonmutating set
   }
   public var contentCompressionResistanceHorizontalPriority: Swift.Float {
     get
-    nonmutating set(newValue)
+    nonmutating set
   }
   public var contentCompressionResistanceVerticalPriority: Swift.Float {
     get
-    nonmutating set(newValue)
+    nonmutating set
   }
   public var target: Swift.AnyObject? {
     get
@@ -273,8 +271,10 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
 @_inheritsConvenienceInitializers @objc(VisxSDKManager) public class VisxSDKManager : ObjectiveC.NSObject {
   @objc public class func sharedInstance() -> VisxSDK.VisxSDKManager
   @objc public func initializeSDK()
+  @objc public func SDKVersion() -> Swift.String
   @objc public func setRemoteConfigSiteId(with siteId: Swift.String)
   @objc public func setAppStoreUrl(url: Swift.String)
+  @objc public func setSharedNamespace(uuid namespace: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -282,7 +282,7 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   final public var layoutConstraints: [VisxSDK.LayoutConstraint]
   final public var isActive: Swift.Bool {
     get
-    set(newValue)
+    set
   }
   @available(*, deprecated, renamed: "activate()")
   final public func install()
@@ -317,27 +317,28 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   final public func updatePriorityLow()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class VisxAdSize : ObjectiveC.NSObject {
-  @objc public static var kSmartphoneBanner300x50: VisxSDK.VisxAdSize
-  @objc public static var kSmartphoneBanner300x75: VisxSDK.VisxAdSize
-  @objc public static var kSmartphoneBanner300x150: VisxSDK.VisxAdSize
-  @objc public static var kSmartphoneBanner320x50: VisxSDK.VisxAdSize
-  @objc public static var kBillboard970x250: VisxSDK.VisxAdSize
-  @objc public static var kLeaderboard728x90: VisxSDK.VisxAdSize
-  @objc public static var kPushdown970x90: VisxSDK.VisxAdSize
-  @objc public static var kHalfpage300x600: VisxSDK.VisxAdSize
-  @objc public static var kPortrait300x1050: VisxSDK.VisxAdSize
-  @objc public static var kSkyscraper160x600: VisxSDK.VisxAdSize
-  @objc public static var kUnderstitial320x480: VisxSDK.VisxAdSize
-  @objc public static var kUnderstitial300x600: VisxSDK.VisxAdSize
-  @objc public static var kMediumRectangle300x150: VisxSDK.VisxAdSize
-  @objc public static var kMediumRectangle300x250: VisxSDK.VisxAdSize
-  @objc public static var kUnderstitial300x250: VisxSDK.VisxAdSize
-  @objc public static var kInterstitial1x1: VisxSDK.VisxAdSize
-  @objc public static var kInterstitial320x480: VisxSDK.VisxAdSize
-  @objc public static var kInterstitial300x600: VisxSDK.VisxAdSize
-  @objc public static var kStickyBanner300x50: VisxSDK.VisxAdSize
-  @objc public static var kStickyBanner320x50: VisxSDK.VisxAdSize
+@objc @objcMembers public class VisxAdSize : ObjectiveC.NSObject {
+  @objc public init(adSize: CoreGraphics.CGSize, type: VisxSDK.VisxPlacementType)
+  @objc public static let kSmartphoneBanner300x50: VisxSDK.VisxAdSize
+  @objc public static let kSmartphoneBanner300x75: VisxSDK.VisxAdSize
+  @objc public static let kSmartphoneBanner300x150: VisxSDK.VisxAdSize
+  @objc public static let kSmartphoneBanner320x50: VisxSDK.VisxAdSize
+  @objc public static let kBillboard970x250: VisxSDK.VisxAdSize
+  @objc public static let kLeaderboard728x90: VisxSDK.VisxAdSize
+  @objc public static let kPushdown970x90: VisxSDK.VisxAdSize
+  @objc public static let kHalfpage300x600: VisxSDK.VisxAdSize
+  @objc public static let kPortrait300x1050: VisxSDK.VisxAdSize
+  @objc public static let kSkyscraper160x600: VisxSDK.VisxAdSize
+  @objc public static let kUnderstitial320x480: VisxSDK.VisxAdSize
+  @objc public static let kUnderstitial300x600: VisxSDK.VisxAdSize
+  @objc public static let kMediumRectangle300x150: VisxSDK.VisxAdSize
+  @objc public static let kMediumRectangle300x250: VisxSDK.VisxAdSize
+  @objc public static let kUnderstitial300x250: VisxSDK.VisxAdSize
+  @objc public static let kInterstitial1x1: VisxSDK.VisxAdSize
+  @objc public static let kInterstitial320x480: VisxSDK.VisxAdSize
+  @objc public static let kInterstitial300x600: VisxSDK.VisxAdSize
+  @objc public static let kStickyBanner300x50: VisxSDK.VisxAdSize
+  @objc public static let kStickyBanner320x50: VisxSDK.VisxAdSize
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ConstraintMaker {
@@ -775,17 +776,23 @@ extension UIKit.UIEdgeInsets : VisxSDK.ConstraintConstantTarget {
 extension UIKit.NSDirectionalEdgeInsets : VisxSDK.ConstraintConstantTarget {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VisxTableViewCell) @_Concurrency.MainActor(unsafe) public class VisxTableViewCell : UIKit.UITableViewCell {
-  @objc @_Concurrency.MainActor(unsafe) public static var visxCellIdentifier: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public static let visxCellIdentifier: Swift.String
   @objc @_Concurrency.MainActor(unsafe) public func showAd(adView: VisxSDK.VisxAdView, tableView: UIKit.UITableView)
   @objc deinit
 }
+@objc extension UIKit.UITableView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func dequeueVisxCell(for indexPath: Foundation.IndexPath, reuseIdentifier: Swift.String) -> VisxSDK.VisxTableViewCell
+}
 public typealias ConstraintView = UIKit.UIView
 @_inheritsConvenienceInitializers @objc(VisxCollectionViewCell) @_Concurrency.MainActor(unsafe) public class VisxCollectionViewCell : UIKit.UICollectionViewCell {
-  @objc @_Concurrency.MainActor(unsafe) public static var visxCellIdentifier: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public static let visxCellIdentifier: Swift.String
   @objc @_Concurrency.MainActor(unsafe) public func showAd(adView: VisxSDK.VisxAdView)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+@objc extension UIKit.UICollectionView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func dequeueVisxCell(for indexPath: Foundation.IndexPath, reuseIdentifier: Swift.String) -> VisxSDK.VisxCollectionViewCell
 }
 public protocol LoadMediationDelegate : AnyObject {
   func loadMediationAd(_ mediation: VisxSDK.Mediation, adView: VisxSDK.VisxAdView, customTargeting: [Swift.String : Swift.String]?)
@@ -974,12 +981,12 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 }
 public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
 extension VisxSDK.VisxAdView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: VisxSDK.VisxAdSize, universal: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, appDomain: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate)
   @objc @available(*, deprecated, message: "Please use -> \"Default initializer\"")
-  @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
+  @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate)
   @objc @available(*, deprecated, message: "Please use -> \"Adaptive banner initializer with dynamic size\"")
-  @_Concurrency.MainActor(unsafe) dynamic public convenience init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
+  @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, appDomain: Swift.String, adSize: VisxSDK.VisxAdSize, container: UIKit.UIView, delegate: VisxSDK.VisxAdViewDelegate, anchorView: UIKit.UIScrollView?)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func getSdkVersion() -> Swift.String
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setAnchorFrame(with anchorX: Swift.Double, _ anchorY: Swift.Double, _ anchorWidth: Swift.Double, _ anchorHeight: Swift.Double)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func load()
@@ -997,3 +1004,9 @@ extension VisxSDK.VisxAdView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func didFailToReceiveAdWithError(bannerView: UIKit.UIView, error: Foundation.NSError)
 }
+extension VisxSDK.VisxPlacementType : Swift.Equatable {}
+extension VisxSDK.VisxPlacementType : Swift.Hashable {}
+extension VisxSDK.VisxPlacementType : Swift.RawRepresentable {}
+extension VisxSDK.VisxPlacementEffect : Swift.Equatable {}
+extension VisxSDK.VisxPlacementEffect : Swift.Hashable {}
+extension VisxSDK.VisxPlacementEffect : Swift.RawRepresentable {}
