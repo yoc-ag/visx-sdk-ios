@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
 import AdSupport
@@ -18,7 +17,6 @@ import UIKit
 @_exported import VisxSDK
 import WebKit
 import _Concurrency
-import _StringProcessing
 @available(iOS 9.0, macOS 10.11, *)
 extension UIKit.UILayoutGuide {
   @_Concurrency.MainActor(unsafe) public var snp: VisxSDK.ConstraintLayoutGuideDSL {
@@ -30,7 +28,7 @@ extension UIKit.UILayoutGuide {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @objc override dynamic public init()
   @objc deinit
 }
 public protocol ConstraintInsetTarget : VisxSDK.ConstraintConstantTarget {
@@ -43,7 +41,7 @@ extension Swift.Float : VisxSDK.ConstraintInsetTarget {
 }
 extension Swift.Double : VisxSDK.ConstraintInsetTarget {
 }
-extension CoreFoundation.CGFloat : VisxSDK.ConstraintInsetTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintInsetTarget {
 }
 extension UIKit.UIEdgeInsets : VisxSDK.ConstraintInsetTarget {
 }
@@ -57,7 +55,7 @@ extension Swift.Float : VisxSDK.ConstraintOffsetTarget {
 }
 extension Swift.Double : VisxSDK.ConstraintOffsetTarget {
 }
-extension CoreFoundation.CGFloat : VisxSDK.ConstraintOffsetTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintOffsetTarget {
 }
 @_hasMissingDesignatedInitializers public class ConstraintMakerFinalizable {
   @discardableResult
@@ -240,11 +238,11 @@ extension Swift.Float : VisxSDK.ConstraintRelatableTarget {
 }
 extension Swift.Double : VisxSDK.ConstraintRelatableTarget {
 }
-extension CoreFoundation.CGFloat : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintRelatableTarget {
 }
-extension CoreFoundation.CGSize : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGSize : VisxSDK.ConstraintRelatableTarget {
 }
-extension CoreFoundation.CGPoint : VisxSDK.ConstraintRelatableTarget {
+extension CoreGraphics.CGPoint : VisxSDK.ConstraintRelatableTarget {
 }
 extension UIKit.UIEdgeInsets : VisxSDK.ConstraintRelatableTarget {
 }
@@ -320,7 +318,7 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   @objc deinit
 }
 @objc @objcMembers public class VisxAdSize : ObjectiveC.NSObject {
-  @objc public init(adSize: CoreFoundation.CGSize, type: VisxSDK.VisxPlacementType)
+  @objc public init(adSize: CoreGraphics.CGSize, type: VisxSDK.VisxPlacementType)
   @objc public static let kSmartphoneBanner300x50: VisxSDK.VisxAdSize
   @objc public static let kSmartphoneBanner300x75: VisxSDK.VisxAdSize
   @objc public static let kSmartphoneBanner300x150: VisxSDK.VisxAdSize
@@ -510,7 +508,7 @@ extension Swift.Double : VisxSDK.ConstraintPriorityTarget {
     get
   }
 }
-extension CoreFoundation.CGFloat : VisxSDK.ConstraintPriorityTarget {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintPriorityTarget {
   public var constraintPriorityTargetValue: Swift.Float {
     get
   }
@@ -521,7 +519,7 @@ extension UIKit.UILayoutPriority : VisxSDK.ConstraintPriorityTarget {
   }
 }
 extension VisxSDK.LayoutConstraint {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var description: Swift.String {
+  @objc override dynamic public var description: Swift.String {
     @objc get
   }
 }
@@ -538,7 +536,7 @@ extension VisxSDK.LayoutConstraint {
 @objc @_inheritsConvenienceInitializers @objcMembers public class VisxMediationUtils : ObjectiveC.NSObject {
   @objc public class func topMostController() -> UIKit.UIViewController?
   @objc public class func visxGetAdSizeFromString(serverParameter: Swift.String) -> VisxSDK.VisxAdSize
-  @objc public class func visxGetXandrAdSize(cgSize: CoreFoundation.CGSize) -> VisxSDK.VisxAdSize
+  @objc public class func visxGetXandrAdSize(cgSize: CoreGraphics.CGSize) -> VisxSDK.VisxAdSize
   @objc public class func visxGoogleAdUpdatedViewString() -> Swift.String
   @objc public class func visxGetAUIDFromString(serverParameter: Swift.String) -> Swift.String
   @objc public class func visxGetAppDomainFromString(serverParameter: Swift.String) -> Swift.String
@@ -546,30 +544,30 @@ extension VisxSDK.LayoutConstraint {
   @objc deinit
 }
 public protocol ConstraintMultiplierTarget {
-  var constraintMultiplierTargetValue: CoreFoundation.CGFloat { get }
+  var constraintMultiplierTargetValue: CoreGraphics.CGFloat { get }
 }
 extension Swift.Int : VisxSDK.ConstraintMultiplierTarget {
-  public var constraintMultiplierTargetValue: CoreFoundation.CGFloat {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
 extension Swift.UInt : VisxSDK.ConstraintMultiplierTarget {
-  public var constraintMultiplierTargetValue: CoreFoundation.CGFloat {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
 extension Swift.Float : VisxSDK.ConstraintMultiplierTarget {
-  public var constraintMultiplierTargetValue: CoreFoundation.CGFloat {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
 extension Swift.Double : VisxSDK.ConstraintMultiplierTarget {
-  public var constraintMultiplierTargetValue: CoreFoundation.CGFloat {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
-extension CoreFoundation.CGFloat : VisxSDK.ConstraintMultiplierTarget {
-  public var constraintMultiplierTargetValue: CoreFoundation.CGFloat {
+extension CoreGraphics.CGFloat : VisxSDK.ConstraintMultiplierTarget {
+  public var constraintMultiplierTargetValue: CoreGraphics.CGFloat {
     get
   }
 }
@@ -768,9 +766,9 @@ extension UIKit.UIView {
 }
 public protocol ConstraintConstantTarget {
 }
-extension CoreFoundation.CGPoint : VisxSDK.ConstraintConstantTarget {
+extension CoreGraphics.CGPoint : VisxSDK.ConstraintConstantTarget {
 }
-extension CoreFoundation.CGSize : VisxSDK.ConstraintConstantTarget {
+extension CoreGraphics.CGSize : VisxSDK.ConstraintConstantTarget {
 }
 extension UIKit.UIEdgeInsets : VisxSDK.ConstraintConstantTarget {
 }
@@ -789,7 +787,7 @@ public typealias ConstraintView = UIKit.UIView
 @_inheritsConvenienceInitializers @objc(VisxCollectionViewCell) @_Concurrency.MainActor(unsafe) public class VisxCollectionViewCell : UIKit.UICollectionViewCell {
   @objc @_Concurrency.MainActor(unsafe) public static let visxCellIdentifier: Swift.String
   @objc @_Concurrency.MainActor(unsafe) public func showAd(adView: VisxSDK.VisxAdView)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -832,7 +830,7 @@ public struct ConstraintConfig {
   @objc optional func visxAdRequestStarted(visxAdView: VisxSDK.VisxAdView)
   @objc optional func visxAdResponseReceived(visxAdView: VisxSDK.VisxAdView, price: Swift.Double, currency: Swift.String)
   @objc optional func visxAdFailedWithError(visxAdView: VisxSDK.VisxAdView, message: Swift.String, code: Swift.Int)
-  @objc optional func visxAdViewSizeChange(visxAdView: VisxSDK.VisxAdView, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat)
+  @objc optional func visxAdViewSizeChange(visxAdView: VisxSDK.VisxAdView, width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat)
   @objc optional func visxAdViewEffectChange(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
   @objc optional func visxAdViewClosed(visxAdView: VisxSDK.VisxAdView)
   @objc optional func visxAdViewClicked(visxAdView: VisxSDK.VisxAdView)
@@ -975,7 +973,7 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @objc @_Concurrency.MainActor(unsafe) public var isMediationAdView: Swift.Bool
-  @objc @_Concurrency.MainActor(unsafe) public var adHeight: CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public var adHeight: CoreGraphics.CGFloat
   @objc @_Concurrency.MainActor(unsafe) public var hasMessageAbove: Swift.Bool
   @objc deinit
 }
