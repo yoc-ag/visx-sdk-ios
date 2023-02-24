@@ -6,6 +6,6 @@ framework module VisxSDK {
 }
 
 module VisxSDK.Swift {
-    header "VisxSDK-Swift.h"
-    requires objc
+  header "VisxSDK-Swift.h"
+  requires objc
 }
