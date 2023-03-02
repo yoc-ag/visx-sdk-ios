@@ -14,7 +14,5 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = "VisxSDK.xcframework"
   
   spec.preserve_paths = "VisxSDK.xcframework"
-  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   
 end
