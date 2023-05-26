@@ -13162,6 +13162,51 @@
           },
           {
             "kind": "Var",
+            "name": "adUnit",
+            "printedName": "adUnit",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@VisxSDK@objc(cs)VisxAdView(py)adUnit",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnitSSvp",
+            "moduleName": "VisxSDK",
+            "declAttributes": [
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView(im)adUnit",
+                "mangledName": "$s7VisxSDK0A6AdViewC6adUnitSSvg",
+                "moduleName": "VisxSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "hasMessageAbove",
             "printedName": "hasMessageAbove",
             "children": [
@@ -24106,203 +24151,203 @@
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 399,
+      "offset": 476,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 430,
+      "offset": 507,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 455,
+      "offset": 532,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 495,
+      "offset": 572,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 529,
+      "offset": 606,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 555,
+      "offset": 632,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 596,
+      "offset": 673,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 621,
+      "offset": 698,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 662,
+      "offset": 739,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 694,
+      "offset": 771,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 830,
+      "offset": 907,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1029,
+      "offset": 1106,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 1050,
+      "offset": 1127,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1088,
+      "offset": 1165,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1128,
+      "offset": 1205,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1134,
+      "offset": 1211,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1593,
+      "offset": 1670,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1620,
+      "offset": 1697,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1666,
+      "offset": 1743,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1712,
+      "offset": 1789,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1755,
+      "offset": 1832,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1877,
+      "offset": 1954,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1916,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1960,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
       "offset": 1993,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2037,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2070,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2201,
+      "offset": 2278,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2289,
+      "offset": 2366,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2382,
+      "offset": 2459,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-ios-source\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2426,
+      "offset": 2503,
       "length": 4,
       "value": "true"
     },
