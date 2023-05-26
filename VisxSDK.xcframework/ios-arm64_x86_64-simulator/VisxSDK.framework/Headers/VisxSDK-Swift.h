@@ -355,6 +355,7 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView : UIView <UIScrollViewDelegate>
 @property (nonatomic) BOOL isMediationAdView;
 @property (nonatomic) CGFloat adHeight;
+@property (nonatomic, readonly, copy) NSString * _Nonnull adUnit;
 @property (nonatomic) BOOL hasMessageAbove;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -871,6 +872,7 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView : UIView <UIScrollViewDelegate>
 @property (nonatomic) BOOL isMediationAdView;
 @property (nonatomic) CGFloat adHeight;
+@property (nonatomic, readonly, copy) NSString * _Nonnull adUnit;
 @property (nonatomic) BOOL hasMessageAbove;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;

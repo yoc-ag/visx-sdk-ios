@@ -976,6 +976,9 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 @objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @objc @_Concurrency.MainActor(unsafe) public var isMediationAdView: Swift.Bool
   @objc @_Concurrency.MainActor(unsafe) public var adHeight: CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public var adUnit: Swift.String {
+    @objc get
+  }
   @objc @_Concurrency.MainActor(unsafe) public var hasMessageAbove: Swift.Bool
   @objc deinit
 }
