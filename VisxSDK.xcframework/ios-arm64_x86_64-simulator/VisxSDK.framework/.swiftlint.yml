@@ -18,7 +18,7 @@ type_name: #2 https://realm.github.io/SwiftLint/type_name.html
     min_length:
         error: 3
     max_length:
-        error: 30
+        error: 40
 
 identifier_name: #3 https://realm.github.io/SwiftLint/identifier_name.html
     min_length:
@@ -82,7 +82,7 @@ function_parameter_count: # 21 https://realm.github.io/SwiftLint/function_parame
 
 type_body_length: # 22 https://realm.github.io/SwiftLint/type_body_length.html
     warning: 300
-    error: 300
+    error: 400
 
 file_length: # 23 https://realm.github.io/SwiftLint/file_length.html
     warning: 500
