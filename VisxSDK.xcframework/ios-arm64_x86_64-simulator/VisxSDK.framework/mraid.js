@@ -18,6 +18,7 @@
     window.open = function(url) {mraid.open(url)}
     //////////////////////////////////////////////////////////////////////////////////////
     var VERSION = mraid.VERSION = '3.0';
+    var APIVERSION = '2.0';
     // Placeholder, to be filled on Content Injection
     window.MRAID_ENV;
 
@@ -83,6 +84,13 @@
         offsetX: 0,
         offsetY: 0,
         allowOffscreen: false
+    };
+    var stickyProperties = {
+        width: 0,
+        height: 0,
+        threshold: 50,
+        position: 'auto',
+        mode: 'auto'
     };
     var listeners = {};
     var state = STATES.LOADING;
@@ -230,6 +238,10 @@
         return mraid.VERSION;
     };
 
+    mraid.getVisxApiVersion = function () {
+        return APIVERSION;
+    };
+
     mraid.addEventListener = function (event, listener) {
         if (!event || !listener) {
             broadcastEvent(EVENTS.ERROR, 'Both event and listener are required.', 'addEventListener');
@@ -282,7 +294,7 @@
     };
 
     mraid.unload = function () {
-        executeNativeCall('visxUnloadCreative');
+        executeNativeCall('unload');
     }
 
     mraid.expand = function (URL) {
@@ -591,7 +603,7 @@
         viewportDimension.height = viewportHeight;
         executeNativeCall('visxSetPlacementEffect', 'effect', effect, 'webViewWidth', webViewWidth, 'webViewHeight', webViewHeight, 'viewportWidth', viewportWidth, 'viewportHeight', viewportHeight);
     };
-
+    
     mraid.visxGetPlacementEffect = function () {
         return placementEffect;
     };
@@ -610,11 +622,13 @@
     };
 
     mraid.visxClosePlacement = function () {
-        executeNativeCall('visxClosePlacement')
+        broadcastEvent(EVENTS.WARNING, 'visxClosePlacement() is deprecated use mraid.close()');
+        executeNativeCall('close')
     };
 
     mraid.visxClearPlacement = function () {
-        executeNativeCall('visxClearPlacement')
+        broadcastEvent(EVENTS.WARNING, 'visxClearPlacement() is deprecated use mraid.unload()');
+        executeNativeCall('unload');
     };
 
     mraid.visxRefreshPlacement = function () {
@@ -644,6 +658,38 @@
     mraid.visxIsUniversalAd = function () {
         return isUniversalAd;
     }
+    
+    mraid.visxToSticky = function() {
+        executeNativeCall('visxToSticky',
+                          'width', stickyProperties.width,
+                          'height', stickyProperties.height,
+                          'threshold', stickyProperties.threshold,
+                          'position', stickyProperties.position,
+                          'mode', stickyProperties.mode);
+    };
+    
+    mraid.visxGetStickyProperties = function() {
+        var properties = {
+            'width': stickyProperties.width,
+            'height': stickyProperties.height,
+            'threshold': stickyProperties.threshold,
+            'position': stickyProperties.position,
+            'mode': stickyProperties.mode
+        };
+        return properties;
+    };
+    
+    mraid.visxSetStickyProperties = function(properties) {
+        stickyProperties.width = properties.width;
+        stickyProperties.height = properties.height;
+        stickyProperties.threshold = properties.threshold;
+        stickyProperties.position = properties.position;
+        stickyProperties.mode = properties.mode;
+    };
+    
+    mraid.visxCloseSticky = function () {
+        executeNativeCall('visxCloseSticky')
+    };
 
     //////////////////////////////////////////////////////////////////////
     //MARK: NON MRAID Properties
