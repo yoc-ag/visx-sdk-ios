@@ -9,6 +9,10 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
     - VisxSDK/Resources/VisxConstants.swift
     - VisxSDK/Logger/VisxLogger.swift
     - VisxSDK/Logger/Extensions
+    - VisxSDK/Utils/VisxDeviceModel.swift
+
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+- explicit_self
 
 #############
 # Rules
@@ -30,15 +34,16 @@ identifier_name: #3 https://realm.github.io/SwiftLint/identifier_name.html
         - j
         - x
         - y
+        - show_ad
 
-force_unwrapping: error #4 https://realm.github.io/SwiftLint/force_unwrapping.html
+force_unwrapping: warning #4 https://realm.github.io/SwiftLint/force_unwrapping.html
 
 conditional_returns_on_newline:  #5 https://realm.github.io/SwiftLint/conditional_returns_on_newline.html
-    severity: error
+    severity: warning
     if_only: false
 
 implicit_return: #6 https://realm.github.io/SwiftLint/implicit_return.html
-    severity: error
+    severity: warning
     included: [function, getter, closure]
 
 empty_count: #7 https://realm.github.io/SwiftLint/empty_count.html
@@ -54,9 +59,6 @@ nesting: #9 https://realm.github.io/SwiftLint/nesting.html
     severity: warning
 
 attributes: # 10 https://realm.github.io/SwiftLint/attributes.html
-    severity: error
-
-explicit_self: # 11 https://realm.github.io/SwiftLint/explicit_self.html
     severity: error
 
 unowned_variable_capture: # 17 https://realm.github.io/SwiftLint/unowned_variable_capture.html
@@ -77,20 +79,22 @@ function_body_length: # 20 https://realm.github.io/SwiftLint/function_body_lengt
     error: 100
 
 function_parameter_count: # 21 https://realm.github.io/SwiftLint/function_parameter_count.html
+    warning: 5
     error: 8
     ignores_default_parameters: true
 
 type_body_length: # 22 https://realm.github.io/SwiftLint/type_body_length.html
-    warning: 300
-    error: 400
+    warning: 250
+    error: 350
 
 file_length: # 23 https://realm.github.io/SwiftLint/file_length.html
-    warning: 500
+    warning: 400
     error: 1000
     ignore_comment_only_lines: true
 
 cyclomatic_complexity: # 24 https://realm.github.io/SwiftLint/cyclomatic_complexity.html
-    error: 10
+    warning: 10
+    error: 20
     ignores_case_statements: true
 
 ##############
@@ -108,7 +112,7 @@ custom_rules:
 
     no_print: # 13 https://ricardojpsantos.medium.com/using-swiftlint-to-decrease-code-smell-on-xcode-e1dd49258f22
         included: ".*\\.swift"
-        name: "Fordidden print"
+        name: "Forbidden print"
         regex: "print[(]"
         message: "Use appropriate logger"
         severity: warning
@@ -138,7 +142,6 @@ opt_in_rules: # some rules are turned off by default, so we need to opt-in them
         - attributes
         - conditional_returns_on_newline
         - empty_count
-        - explicit_self
         - force_unwrapping
         - implicit_return
         - unowned_variable_capture
@@ -148,7 +151,7 @@ opt_in_rules: # some rules are turned off by default, so we need to opt-in them
 #############
 
 comment_spacing:
-    severity: error
+    severity: warning
 
 unneeded_break_in_switch:
-    severity: error
+    severity: warning

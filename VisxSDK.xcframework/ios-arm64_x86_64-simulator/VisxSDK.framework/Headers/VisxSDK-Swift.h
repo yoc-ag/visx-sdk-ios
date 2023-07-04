@@ -289,6 +289,7 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
+
 @class VisxTableViewCell;
 
 @interface UITableView (SWIFT_EXTENSION(VisxSDK))
@@ -300,85 +301,30 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
-enum VisxPlacementType : NSInteger;
 
-SWIFT_CLASS("_TtC7VisxSDK10VisxAdSize")
-@interface VisxAdSize : NSObject
-- (nonnull instancetype)initWithAdSize:(CGSize)adSize type:(enum VisxPlacementType)type OBJC_DESIGNATED_INITIALIZER;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x50;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x75;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x75 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x150;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x150 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner320x50;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner320x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kBillboard970x250;)
-+ (VisxAdSize * _Nonnull)kBillboard970x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kLeaderboard728x90;)
-+ (VisxAdSize * _Nonnull)kLeaderboard728x90 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kPushdown970x90;)
-+ (VisxAdSize * _Nonnull)kPushdown970x90 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kHalfpage300x600;)
-+ (VisxAdSize * _Nonnull)kHalfpage300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kPortrait300x1050;)
-+ (VisxAdSize * _Nonnull)kPortrait300x1050 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSkyscraper160x600;)
-+ (VisxAdSize * _Nonnull)kSkyscraper160x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial320x480;)
-+ (VisxAdSize * _Nonnull)kUnderstitial320x480 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial300x600;)
-+ (VisxAdSize * _Nonnull)kUnderstitial300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kMediumRectangle300x150;)
-+ (VisxAdSize * _Nonnull)kMediumRectangle300x150 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kMediumRectangle300x250;)
-+ (VisxAdSize * _Nonnull)kMediumRectangle300x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial300x250;)
-+ (VisxAdSize * _Nonnull)kUnderstitial300x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial1x1;)
-+ (VisxAdSize * _Nonnull)kInterstitial1x1 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial320x480;)
-+ (VisxAdSize * _Nonnull)kInterstitial320x480 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial300x600;)
-+ (VisxAdSize * _Nonnull)kInterstitial300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kStickyBanner300x50;)
-+ (VisxAdSize * _Nonnull)kStickyBanner300x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kStickyBanner320x50;)
-+ (VisxAdSize * _Nonnull)kStickyBanner320x50 SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView : UIView <UIScrollViewDelegate>
 @property (nonatomic) BOOL isMediationAdView;
-@property (nonatomic) CGFloat adHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull adUnit;
 @property (nonatomic) BOOL hasMessageAbove;
+@property (nonatomic, strong) UIViewController * _Nullable viewControllerForPresenting;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)didMoveToSuperview;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 
 
-@protocol VisxAdViewDelegate;
+
 @class UIScrollView;
-@class UIViewController;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
-/// VisxAdView - Default initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(VisxAdSize * _Nonnull)adSize universal:(BOOL)universal;
-/// VisxAdView - Adaptive banner initializer with dynamic size
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate;
-/// VisxAdView - Fixed size banner initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate SWIFT_DEPRECATED_MSG("Please use -> \"Default initializer\"");
-/// VisxAdView - Universal ad initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView SWIFT_DEPRECATED_MSG("Please use -> \"Adaptive banner initializer with dynamic size\"");
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
 /// Sets absolute position of the visible view where creative can be shown.
@@ -416,6 +362,26 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (void)setInterstitialBackgroundColorWithColor:(UIColor * _Nonnull)color;
 /// Used only when header bidding is enabled, renderAdIfHeaderBiddingEnabled() needs to be called to show creative
 - (void)renderAdIfHeaderBiddingEnabled;
+/// Add a friendly obstruction for the OM SDK.
+/// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
+/// \param view The view to be marked as a friendly obstruction.
+///
+/// \param detailedReason A detailed reason explaining why the view is considered a friendly obstruction.
+///
+- (void)addFriendlyObstractionWithView:(UIView * _Nonnull)view detailedReason:(NSString * _Nonnull)detailedReason;
+/// Add friendly obstructions for the OM SDK in a dictionary format [UIView: String].
+/// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
+/// <ul>
+///   <li>
+///     Parameter:
+///     <ul>
+///       <li>
+///         viewsAndReasons: A dictionary containing views and their corresponding detailed reasons for being considered friendly obstructions.
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)addFriendlyObstractionWithViewsAndReasons:(NSDictionary<UIView *, NSString *> * _Nonnull)viewsAndReasons;
 - (void)adViewDidReceiveAdWithBannerView:(UIView * _Nonnull)bannerView;
 - (void)didFailToReceiveAdWithErrorWithBannerView:(UIView * _Nonnull)bannerView error:(NSError * _Nonnull)error;
 @end
@@ -442,6 +408,9 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (void)visxAdVideoFinishedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)visxAdInterstitialWillBeClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)visxAdInterstitialClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyOpenedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyWillBeClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
 
 
@@ -449,7 +418,7 @@ SWIFT_CLASS_NAMED("VisxCollectionViewCell")
 @interface VisxCollectionViewCell : UICollectionViewCell
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull visxCellIdentifier;)
 + (NSString * _Nonnull)visxCellIdentifier SWIFT_WARN_UNUSED_RESULT;
-- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView;
+- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView collectionView:(UICollectionView * _Nonnull)collectionView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -460,9 +429,7 @@ SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
 /// Returns the top most view controller
 + (UIViewController * _Nullable)topMostController SWIFT_WARN_UNUSED_RESULT;
 /// Returns visxAdSize from mediation response
-+ (VisxAdSize * _Nonnull)visxGetAdSizeFromStringWithServerParameter:(NSString * _Nonnull)serverParameter SWIFT_WARN_UNUSED_RESULT;
-/// Returns visxAdSize from Xandr size
-+ (VisxAdSize * _Nonnull)visxGetXandrAdSizeWithCgSize:(CGSize)cgSize SWIFT_WARN_UNUSED_RESULT;
++ (CGSize)visxGetAdSizeFromStringWithServerParameter:(NSString * _Nonnull)serverParameter SWIFT_WARN_UNUSED_RESULT;
 /// Returns NSString const for notification center
 + (NSString * _Nonnull)visxGoogleAdUpdatedViewString SWIFT_WARN_UNUSED_RESULT;
 /// Returns creative Id from mediation response
@@ -473,11 +440,15 @@ SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
 @end
 
 typedef SWIFT_ENUM(NSInteger, VisxPlacementEffect, open) {
-  VisxPlacementEffectBanner = 0,
-  VisxPlacementEffectUnderstitial = 1,
-  VisxPlacementEffectUnderstitialMini = 2,
-  VisxPlacementEffectSticky = 3,
-  VisxPlacementEffectInterstitial = 4,
+  VisxPlacementEffectFullscreenOverlay = 0,
+  VisxPlacementEffectSitebar = 1,
+  VisxPlacementEffectSticky = 2,
+  VisxPlacementEffectInlineToSticky = 3,
+  VisxPlacementEffectUnderstitialMini = 4,
+  VisxPlacementEffectUnderstitialMiniToSticky = 5,
+  VisxPlacementEffectZoom = 6,
+  VisxPlacementEffectZoomToSticky = 7,
+  VisxPlacementEffectNone = 8,
 };
 
 typedef SWIFT_ENUM(NSInteger, VisxPlacementType, open) {
@@ -492,7 +463,6 @@ SWIFT_CLASS_NAMED("VisxSDKManager")
 - (void)initializeSDK;
 - (NSString * _Nonnull)SDKVersion SWIFT_WARN_UNUSED_RESULT;
 - (void)setRemoteConfigSiteIdWith:(NSString * _Nonnull)siteId;
-- (void)setAppStoreUrlWithUrl:(NSString * _Nonnull)url;
 - (void)setSharedNamespaceWithUuid:(NSString * _Nonnull)namespace_;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -806,6 +776,7 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
+
 @class VisxTableViewCell;
 
 @interface UITableView (SWIFT_EXTENSION(VisxSDK))
@@ -817,85 +788,30 @@ SWIFT_CLASS("_TtC7VisxSDK9Mediation")
 
 
 
-enum VisxPlacementType : NSInteger;
 
-SWIFT_CLASS("_TtC7VisxSDK10VisxAdSize")
-@interface VisxAdSize : NSObject
-- (nonnull instancetype)initWithAdSize:(CGSize)adSize type:(enum VisxPlacementType)type OBJC_DESIGNATED_INITIALIZER;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x50;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x75;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x75 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner300x150;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner300x150 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSmartphoneBanner320x50;)
-+ (VisxAdSize * _Nonnull)kSmartphoneBanner320x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kBillboard970x250;)
-+ (VisxAdSize * _Nonnull)kBillboard970x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kLeaderboard728x90;)
-+ (VisxAdSize * _Nonnull)kLeaderboard728x90 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kPushdown970x90;)
-+ (VisxAdSize * _Nonnull)kPushdown970x90 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kHalfpage300x600;)
-+ (VisxAdSize * _Nonnull)kHalfpage300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kPortrait300x1050;)
-+ (VisxAdSize * _Nonnull)kPortrait300x1050 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kSkyscraper160x600;)
-+ (VisxAdSize * _Nonnull)kSkyscraper160x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial320x480;)
-+ (VisxAdSize * _Nonnull)kUnderstitial320x480 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial300x600;)
-+ (VisxAdSize * _Nonnull)kUnderstitial300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kMediumRectangle300x150;)
-+ (VisxAdSize * _Nonnull)kMediumRectangle300x150 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kMediumRectangle300x250;)
-+ (VisxAdSize * _Nonnull)kMediumRectangle300x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kUnderstitial300x250;)
-+ (VisxAdSize * _Nonnull)kUnderstitial300x250 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial1x1;)
-+ (VisxAdSize * _Nonnull)kInterstitial1x1 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial320x480;)
-+ (VisxAdSize * _Nonnull)kInterstitial320x480 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kInterstitial300x600;)
-+ (VisxAdSize * _Nonnull)kInterstitial300x600 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kStickyBanner300x50;)
-+ (VisxAdSize * _Nonnull)kStickyBanner300x50 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VisxAdSize * _Nonnull kStickyBanner320x50;)
-+ (VisxAdSize * _Nonnull)kStickyBanner320x50 SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
+@class UIViewController;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 @interface VisxAdView : UIView <UIScrollViewDelegate>
 @property (nonatomic) BOOL isMediationAdView;
-@property (nonatomic) CGFloat adHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull adUnit;
 @property (nonatomic) BOOL hasMessageAbove;
+@property (nonatomic, strong) UIViewController * _Nullable viewControllerForPresenting;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)didMoveToSuperview;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 
 
-@protocol VisxAdViewDelegate;
+
 @class UIScrollView;
-@class UIViewController;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
-/// VisxAdView - Default initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(VisxAdSize * _Nonnull)adSize universal:(BOOL)universal;
-/// VisxAdView - Adaptive banner initializer with dynamic size
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate;
-/// VisxAdView - Fixed size banner initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate SWIFT_DEPRECATED_MSG("Please use -> \"Default initializer\"");
-/// VisxAdView - Universal ad initializer
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit appDomain:(NSString * _Nonnull)appDomain adSize:(VisxAdSize * _Nonnull)adSize container:(UIView * _Nonnull)container delegate:(id <VisxAdViewDelegate> _Nonnull)delegate anchorView:(UIScrollView * _Nullable)anchorView SWIFT_DEPRECATED_MSG("Please use -> \"Adaptive banner initializer with dynamic size\"");
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
 /// Sets absolute position of the visible view where creative can be shown.
@@ -933,6 +849,26 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (void)setInterstitialBackgroundColorWithColor:(UIColor * _Nonnull)color;
 /// Used only when header bidding is enabled, renderAdIfHeaderBiddingEnabled() needs to be called to show creative
 - (void)renderAdIfHeaderBiddingEnabled;
+/// Add a friendly obstruction for the OM SDK.
+/// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
+/// \param view The view to be marked as a friendly obstruction.
+///
+/// \param detailedReason A detailed reason explaining why the view is considered a friendly obstruction.
+///
+- (void)addFriendlyObstractionWithView:(UIView * _Nonnull)view detailedReason:(NSString * _Nonnull)detailedReason;
+/// Add friendly obstructions for the OM SDK in a dictionary format [UIView: String].
+/// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
+/// <ul>
+///   <li>
+///     Parameter:
+///     <ul>
+///       <li>
+///         viewsAndReasons: A dictionary containing views and their corresponding detailed reasons for being considered friendly obstructions.
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
+- (void)addFriendlyObstractionWithViewsAndReasons:(NSDictionary<UIView *, NSString *> * _Nonnull)viewsAndReasons;
 - (void)adViewDidReceiveAdWithBannerView:(UIView * _Nonnull)bannerView;
 - (void)didFailToReceiveAdWithErrorWithBannerView:(UIView * _Nonnull)bannerView error:(NSError * _Nonnull)error;
 @end
@@ -959,6 +895,9 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (void)visxAdVideoFinishedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)visxAdInterstitialWillBeClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 - (void)visxAdInterstitialClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyOpenedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyWillBeClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+- (void)visxAdStickyClosedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
 @end
 
 
@@ -966,7 +905,7 @@ SWIFT_CLASS_NAMED("VisxCollectionViewCell")
 @interface VisxCollectionViewCell : UICollectionViewCell
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull visxCellIdentifier;)
 + (NSString * _Nonnull)visxCellIdentifier SWIFT_WARN_UNUSED_RESULT;
-- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView;
+- (void)showAdWithAdView:(VisxAdView * _Nonnull)adView collectionView:(UICollectionView * _Nonnull)collectionView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -977,9 +916,7 @@ SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
 /// Returns the top most view controller
 + (UIViewController * _Nullable)topMostController SWIFT_WARN_UNUSED_RESULT;
 /// Returns visxAdSize from mediation response
-+ (VisxAdSize * _Nonnull)visxGetAdSizeFromStringWithServerParameter:(NSString * _Nonnull)serverParameter SWIFT_WARN_UNUSED_RESULT;
-/// Returns visxAdSize from Xandr size
-+ (VisxAdSize * _Nonnull)visxGetXandrAdSizeWithCgSize:(CGSize)cgSize SWIFT_WARN_UNUSED_RESULT;
++ (CGSize)visxGetAdSizeFromStringWithServerParameter:(NSString * _Nonnull)serverParameter SWIFT_WARN_UNUSED_RESULT;
 /// Returns NSString const for notification center
 + (NSString * _Nonnull)visxGoogleAdUpdatedViewString SWIFT_WARN_UNUSED_RESULT;
 /// Returns creative Id from mediation response
@@ -990,11 +927,15 @@ SWIFT_CLASS("_TtC7VisxSDK18VisxMediationUtils")
 @end
 
 typedef SWIFT_ENUM(NSInteger, VisxPlacementEffect, open) {
-  VisxPlacementEffectBanner = 0,
-  VisxPlacementEffectUnderstitial = 1,
-  VisxPlacementEffectUnderstitialMini = 2,
-  VisxPlacementEffectSticky = 3,
-  VisxPlacementEffectInterstitial = 4,
+  VisxPlacementEffectFullscreenOverlay = 0,
+  VisxPlacementEffectSitebar = 1,
+  VisxPlacementEffectSticky = 2,
+  VisxPlacementEffectInlineToSticky = 3,
+  VisxPlacementEffectUnderstitialMini = 4,
+  VisxPlacementEffectUnderstitialMiniToSticky = 5,
+  VisxPlacementEffectZoom = 6,
+  VisxPlacementEffectZoomToSticky = 7,
+  VisxPlacementEffectNone = 8,
 };
 
 typedef SWIFT_ENUM(NSInteger, VisxPlacementType, open) {
@@ -1009,7 +950,6 @@ SWIFT_CLASS_NAMED("VisxSDKManager")
 - (void)initializeSDK;
 - (NSString * _Nonnull)SDKVersion SWIFT_WARN_UNUSED_RESULT;
 - (void)setRemoteConfigSiteIdWith:(NSString * _Nonnull)siteId;
-- (void)setAppStoreUrlWithUrl:(NSString * _Nonnull)url;
 - (void)setSharedNamespaceWithUuid:(NSString * _Nonnull)namespace_;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -13,5 +13,4 @@ FOUNDATION_EXPORT double YocSDKVersionNumber;
 //! Project version string for YocSDK.
 FOUNDATION_EXPORT const unsigned char YocSDKVersionString[];
 #import "OMIDImports.h"
-#import <VisxSDK/MediationLoader.h>
 
