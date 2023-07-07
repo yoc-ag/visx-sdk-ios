@@ -10384,7 +10384,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(VisxSDK.VisxAdView, Swift.Double, Swift.String) -> ()",
+                "printedName": "(VisxSDK.VisxAdView, Foundation.Decimal, Swift.String) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -10394,7 +10394,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Tuple",
-                    "printedName": "(VisxSDK.VisxAdView, Swift.Double, Swift.String)",
+                    "printedName": "(VisxSDK.VisxAdView, Foundation.Decimal, Swift.String)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -10404,9 +10404,9 @@
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Double",
-                        "printedName": "Swift.Double",
-                        "usr": "s:Sd"
+                        "name": "Decimal",
+                        "printedName": "Foundation.Decimal",
+                        "usr": "c:@SA@NSDecimal"
                       },
                       {
                         "kind": "TypeNominal",
@@ -10420,8 +10420,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7VisxSDK0A17AdCallbackHandlerC18onResponseReceivedyACyAA0aC4ViewC_SdSStcF",
-            "mangledName": "$s7VisxSDK0A17AdCallbackHandlerC18onResponseReceivedyACyAA0aC4ViewC_SdSStcF",
+            "usr": "s:7VisxSDK0A17AdCallbackHandlerC18onResponseReceivedyACyAA0aC4ViewC_So9NSDecimalaSStcF",
+            "mangledName": "$s7VisxSDK0A17AdCallbackHandlerC18onResponseReceivedyACyAA0aC4ViewC_So9NSDecimalaSStcF",
             "moduleName": "VisxSDK",
             "declAttributes": [
               "AccessControl",
@@ -13827,9 +13827,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "Decimal",
+                "printedName": "Foundation.Decimal",
+                "usr": "c:@SA@NSDecimal"
               },
               {
                 "kind": "TypeNominal",
@@ -13840,7 +13840,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@M@VisxSDK@objc(pl)VisxAdViewDelegate(im)visxAdResponseReceivedWithVisxAdView:price:currency:",
-            "mangledName": "$s7VisxSDK0A14AdViewDelegateP04visxC16ResponseReceived0fcD05price8currencyyAA0acD0C_SdSStF",
+            "mangledName": "$s7VisxSDK0A14AdViewDelegateP04visxC16ResponseReceived0fcD05price8currencyyAA0acD0C_So9NSDecimalaSStF",
             "moduleName": "VisxSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : VisxSDK.VisxAdViewDelegate>",
             "sugared_genericSig": "<Self where Self : VisxSDK.VisxAdViewDelegate>",
@@ -16473,18 +16473,10 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Bool?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
+                "name": "Bool",
+                "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
@@ -16503,29 +16495,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Bool?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
+                "name": "Bool",
+                "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:7VisxSDK0A6AdViewC6adUnit0E4Size05fixedG027viewControllerForPresenting12interstitialACSS_So6CGSizeVSbSgSo06UIViewJ0CSgAKtcfc",
-            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0E4Size05fixedG027viewControllerForPresenting12interstitialACSS_So6CGSizeVSbSgSo06UIViewJ0CSgAKtcfc",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adSize:fixedSize:viewControllerForPresenting:interstitial:",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0E4Size05fixedG027viewControllerForPresenting12interstitialACSS_So6CGSizeVSbSo06UIViewJ0CSgSbtcfc",
             "moduleName": "VisxSDK",
             "declAttributes": [
+              "Dynamic",
               "Custom",
               "Convenience",
               "AccessControl",
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "isFromExtension": true,
             "init_kind": "Convenience"
@@ -16561,44 +16547,30 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Bool?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
+                "name": "Bool",
+                "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Bool?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
+                "name": "Bool",
+                "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:7VisxSDK0A6AdViewC6adUnit0eD8Delegate0E4Size05fixedH012interstitialACSS_AA0acdG0_pSo6CGSizeVSbSgALtcfc",
-            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0eD8Delegate0E4Size05fixedH012interstitialACSS_AA0acdG0_pSo6CGSizeVSbSgALtcfc",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adViewDelegate:adSize:fixedSize:interstitial:",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0eD8Delegate0E4Size05fixedH012interstitialACSS_AA0acdG0_pSo6CGSizeVS2btcfc",
             "moduleName": "VisxSDK",
             "declAttributes": [
+              "Dynamic",
               "Custom",
               "Convenience",
               "AccessControl",
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "isFromExtension": true,
             "init_kind": "Convenience"
@@ -16628,29 +16600,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Bool?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
+                "name": "Bool",
+                "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:7VisxSDK0A6AdViewC6adUnit0eD8Delegate12interstitialACSS_AA0acdG0_pSbSgtcfc",
-            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0eD8Delegate12interstitialACSS_AA0acdG0_pSbSgtcfc",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adViewDelegate:interstitial:",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0eD8Delegate12interstitialACSS_AA0acdG0_pSbtcfc",
             "moduleName": "VisxSDK",
             "declAttributes": [
+              "Dynamic",
               "Custom",
               "Convenience",
               "AccessControl",
-              "RawDocComment"
+              "RawDocComment",
+              "ObjC"
             ],
             "isFromExtension": true,
             "init_kind": "Convenience"
@@ -34394,7 +34360,7 @@
       "kind": "StringLiteral",
       "offset": 256,
       "length": 7,
-      "value": "\"4.0.0\""
+      "value": "\"4.0.1\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Resources\/VisxConstants.swift",
@@ -36772,126 +36738,140 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 490,
+      "offset": 484,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 528,
+      "offset": 522,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 567,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 901,
       "length": 26,
       "value": "\"TabNavBarHeightDidChange\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1161,
+      "offset": 1200,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1816,
+      "offset": 1927,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3357,
+      "offset": 3468,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3775,
+      "offset": 3886,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4535,
+      "offset": 4646,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4690,
+      "offset": 4801,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5204,
+      "offset": 5313,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5351,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5655,
+      "offset": 5895,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5694,
+      "offset": 5930,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6177,
+      "offset": 6401,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6320,
+      "offset": 6544,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6632,
+      "offset": 6864,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6638,
+      "offset": 6870,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7154,
+      "offset": 7403,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8295,
+      "offset": 8544,
       "length": 3,
       "value": "100"
     },
@@ -37024,21 +37004,28 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5167,
+      "offset": 4985,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5177,
+      "offset": 5249,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5184,
+      "offset": 5259,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5266,
       "length": 5,
       "value": "false"
     },
@@ -39439,140 +39426,126 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 322,
+      "offset": 321,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 405,
+      "offset": 403,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 557,
+      "offset": 965,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 979,
+      "offset": 993,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1008,
+      "offset": 1373,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1171,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1400,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1569,
+      "offset": 1542,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1660,
+      "offset": 1633,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2489,
+      "offset": 2462,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2690,
+      "offset": 2663,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 3190,
+      "offset": 3163,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 4538,
+      "offset": 4511,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5283,
+      "offset": 5256,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5561,
+      "offset": 5534,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5631,
+      "offset": 5604,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 6506,
+      "offset": 6479,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 6958,
+      "offset": 6931,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 7168,
+      "offset": 7141,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 10912,
+      "offset": 10885,
       "length": 5,
       "value": "false"
     }
