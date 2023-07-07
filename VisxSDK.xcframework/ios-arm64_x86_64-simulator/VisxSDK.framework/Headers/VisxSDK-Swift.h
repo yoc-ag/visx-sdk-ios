@@ -350,11 +350,18 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 
 
 
+@protocol VisxAdViewDelegate;
 @class UIScrollView;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
+/// VisxAdView - Default initializer using callbacks
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial;
+/// VisxAdView - Default initializer using delegates
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
+/// VisxAdView - Adaptive banner initializer with dynamic size
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate interstitial:(BOOL)interstitial;
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
 /// Sets absolute position of the visible view where creative can be shown.
@@ -426,7 +433,7 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (void)visxAdViewDidInitializeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
 @optional
 - (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(double)price currency:(NSString * _Nonnull)currency;
+- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 - (void)visxAdFailedWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView message:(NSString * _Nonnull)message code:(NSInteger)code;
 - (void)visxAdViewSizeChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView width:(CGFloat)width height:(CGFloat)height;
 - (void)visxAdViewEffectChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
@@ -867,11 +874,18 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 
 
 
+@protocol VisxAdViewDelegate;
 @class UIScrollView;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
+/// VisxAdView - Default initializer using callbacks
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial;
+/// VisxAdView - Default initializer using delegates
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
+/// VisxAdView - Adaptive banner initializer with dynamic size
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate interstitial:(BOOL)interstitial;
 /// Returns current VisxSDK version
 - (NSString * _Nonnull)getSdkVersion SWIFT_WARN_UNUSED_RESULT;
 /// Sets absolute position of the visible view where creative can be shown.
@@ -943,7 +957,7 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (void)visxAdViewDidInitializeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
 @optional
 - (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(double)price currency:(NSString * _Nonnull)currency;
+- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 - (void)visxAdFailedWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView message:(NSString * _Nonnull)message code:(NSInteger)code;
 - (void)visxAdViewSizeChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView width:(CGFloat)width height:(CGFloat)height;
 - (void)visxAdViewEffectChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
