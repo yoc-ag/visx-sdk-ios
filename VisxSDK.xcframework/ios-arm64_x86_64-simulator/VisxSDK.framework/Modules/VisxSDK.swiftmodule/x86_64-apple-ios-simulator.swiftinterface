@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -305,22 +305,22 @@ public struct ConstraintLayoutGuideDSL : VisxSDK.ConstraintAttributesDSL {
   final public func activate()
   final public func deactivate()
   @discardableResult
-  final public func update(offset: VisxSDK.ConstraintOffsetTarget) -> VisxSDK.Constraint
+  final public func update(offset: any VisxSDK.ConstraintOffsetTarget) -> VisxSDK.Constraint
   @discardableResult
-  final public func update(inset: VisxSDK.ConstraintInsetTarget) -> VisxSDK.Constraint
+  final public func update(inset: any VisxSDK.ConstraintInsetTarget) -> VisxSDK.Constraint
   @available(iOS 11.0, tvOS 11.0, *)
   @discardableResult
-  final public func update(inset: VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.Constraint
+  final public func update(inset: any VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.Constraint
   @discardableResult
-  final public func update(priority: VisxSDK.ConstraintPriorityTarget) -> VisxSDK.Constraint
+  final public func update(priority: any VisxSDK.ConstraintPriorityTarget) -> VisxSDK.Constraint
   @discardableResult
   final public func update(priority: VisxSDK.ConstraintPriority) -> VisxSDK.Constraint
   @available(*, deprecated, renamed: "update(offset:)")
-  final public func updateOffset(amount: VisxSDK.ConstraintOffsetTarget)
+  final public func updateOffset(amount: any VisxSDK.ConstraintOffsetTarget)
   @available(*, deprecated, renamed: "update(inset:)")
-  final public func updateInsets(amount: VisxSDK.ConstraintInsetTarget)
+  final public func updateInsets(amount: any VisxSDK.ConstraintInsetTarget)
   @available(*, deprecated, renamed: "update(priority:)")
-  final public func updatePriority(amount: VisxSDK.ConstraintPriorityTarget)
+  final public func updatePriority(amount: any VisxSDK.ConstraintPriorityTarget)
   @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
   final public func updatePriorityRequired()
   @available(*, deprecated, message: "Use update(priority: ConstraintPriorityTarget) instead.")
@@ -536,7 +536,7 @@ extension VisxSDK.LayoutConstraint {
   @discardableResult
   public func onInitialize(_ callback: @escaping (VisxSDK.VisxAdView, VisxSDK.VisxPlacementEffect) -> Swift.Void) -> VisxSDK.VisxAdCallbackHandler
   @discardableResult
-  public func onError(_ callback: @escaping (VisxSDK.VisxAdView, Swift.Error) -> Swift.Void) -> VisxSDK.VisxAdCallbackHandler
+  public func onError(_ callback: @escaping (VisxSDK.VisxAdView, any Swift.Error) -> Swift.Void) -> VisxSDK.VisxAdCallbackHandler
   @discardableResult
   public func onRequestStarted(_ callback: @escaping (VisxSDK.VisxAdView) -> Swift.Void) -> VisxSDK.VisxAdCallbackHandler
   @discardableResult
@@ -608,15 +608,15 @@ extension CoreFoundation.CGFloat : VisxSDK.ConstraintMultiplierTarget {
 }
 @_hasMissingDesignatedInitializers public class ConstraintMakerRelatable {
   @discardableResult
-  public func equalTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  public func equalTo(_ other: any VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
   public func equalToSuperview(_ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
-  public func lessThanOrEqualTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  public func lessThanOrEqualTo(_ other: any VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
   public func lessThanOrEqualToSuperview(_ file: Swift.String = #file, _ line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
-  public func greaterThanOrEqualTo(_ other: VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
+  public func greaterThanOrEqualTo(_ other: any VisxSDK.ConstraintRelatableTarget, _ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
   public func greaterThanOrEqualToSuperview(_ file: Swift.String = #file, line: Swift.UInt = #line) -> VisxSDK.ConstraintMakerEditable
   @objc deinit
@@ -838,7 +838,7 @@ public typealias ConstraintMakerPriortizable = VisxSDK.ConstraintMakerPrioritiza
   @discardableResult
   public func priority(_ amount: VisxSDK.ConstraintPriority) -> VisxSDK.ConstraintMakerFinalizable
   @discardableResult
-  public func priority(_ amount: VisxSDK.ConstraintPriorityTarget) -> VisxSDK.ConstraintMakerFinalizable
+  public func priority(_ amount: any VisxSDK.ConstraintPriorityTarget) -> VisxSDK.ConstraintMakerFinalizable
   @available(*, deprecated, message: "Use priority(.required) instead.")
   @discardableResult
   public func priorityRequired() -> VisxSDK.ConstraintMakerFinalizable
@@ -997,16 +997,16 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConstraintMakerEditable : VisxSDK.ConstraintMakerPrioritizable {
   @discardableResult
-  public func multipliedBy(_ amount: VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
+  public func multipliedBy(_ amount: any VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
-  public func dividedBy(_ amount: VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
+  public func dividedBy(_ amount: any VisxSDK.ConstraintMultiplierTarget) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
-  public func offset(_ amount: VisxSDK.ConstraintOffsetTarget) -> VisxSDK.ConstraintMakerEditable
+  public func offset(_ amount: any VisxSDK.ConstraintOffsetTarget) -> VisxSDK.ConstraintMakerEditable
   @discardableResult
-  public func inset(_ amount: VisxSDK.ConstraintInsetTarget) -> VisxSDK.ConstraintMakerEditable
+  public func inset(_ amount: any VisxSDK.ConstraintInsetTarget) -> VisxSDK.ConstraintMakerEditable
   @available(iOS 11.0, tvOS 11.0, *)
   @discardableResult
-  public func inset(_ amount: VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.ConstraintMakerEditable
+  public func inset(_ amount: any VisxSDK.ConstraintDirectionalInsetTarget) -> VisxSDK.ConstraintMakerEditable
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class VisxAdView : UIKit.UIView, UIKit.UIScrollViewDelegate {
@@ -1026,8 +1026,8 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
 extension VisxSDK.VisxAdView {
   @_Concurrency.MainActor(unsafe) convenience public init(adUnit: Swift.String, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool? = false, viewControllerForPresenting: UIKit.UIViewController? = nil, interstitial: Swift.Bool? = false)
-  @_Concurrency.MainActor(unsafe) convenience public init(adUnit: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool? = false, interstitial: Swift.Bool? = false)
-  @_Concurrency.MainActor(unsafe) convenience public init(adUnit: Swift.String, adViewDelegate: VisxSDK.VisxAdViewDelegate, interstitial: Swift.Bool? = false)
+  @_Concurrency.MainActor(unsafe) convenience public init(adUnit: Swift.String, adViewDelegate: any VisxSDK.VisxAdViewDelegate, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool? = false, interstitial: Swift.Bool? = false)
+  @_Concurrency.MainActor(unsafe) convenience public init(adUnit: Swift.String, adViewDelegate: any VisxSDK.VisxAdViewDelegate, interstitial: Swift.Bool? = false)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func getSdkVersion() -> Swift.String
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setAnchorFrame(with anchorX: Swift.Double, _ anchorY: Swift.Double, _ anchorWidth: Swift.Double, _ anchorHeight: Swift.Double)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func load()
