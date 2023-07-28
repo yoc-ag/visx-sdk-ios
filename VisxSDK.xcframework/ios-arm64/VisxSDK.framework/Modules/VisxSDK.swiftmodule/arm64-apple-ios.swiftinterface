@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
-// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VisxSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
@@ -482,6 +482,10 @@ public typealias ConstraintLayoutSupport = UIKit.UILayoutSupport
     get
   }
 }
+@objc public protocol VisxHeaderBiddingDelegate : VisxSDK.VisxAdViewDelegate {
+  @objc optional func visxAdRequestStarted(visxAdView: VisxSDK.VisxAdView)
+  @objc func visxAdResponseReceived(visxAdView: VisxSDK.VisxAdView, price: Foundation.Decimal, currency: Swift.String)
+}
 public protocol ConstraintPriorityTarget {
   var constraintPriorityTargetValue: Swift.Float { get }
 }
@@ -862,8 +866,6 @@ public struct ConstraintConfig {
 @objc public protocol VisxAdViewDelegate {
   @objc func viewControllerForPresentingVisxAdView() -> UIKit.UIViewController
   @objc func visxAdViewDidInitialize(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
-  @objc optional func visxAdRequestStarted(visxAdView: VisxSDK.VisxAdView)
-  @objc optional func visxAdResponseReceived(visxAdView: VisxSDK.VisxAdView, price: Foundation.Decimal, currency: Swift.String)
   @objc optional func visxAdFailedWithError(visxAdView: VisxSDK.VisxAdView, message: Swift.String, code: Swift.Int)
   @objc optional func visxAdViewSizeChange(visxAdView: VisxSDK.VisxAdView, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat)
   @objc optional func visxAdViewEffectChange(visxAdView: VisxSDK.VisxAdView, effect: VisxSDK.VisxPlacementEffect)
@@ -1025,8 +1027,9 @@ extension UIKit.UIView : VisxSDK.LayoutConstraintItem {
 }
 public func == (lhs: VisxSDK.ConstraintItem, rhs: VisxSDK.ConstraintItem) -> Swift.Bool
 extension VisxSDK.VisxAdView {
-  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool = false, viewControllerForPresenting: UIKit.UIViewController? = nil, interstitial: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool = false, viewControllerForPresenting: UIKit.UIViewController? = nil, interstitial: Swift.Bool = false, headerBidding: Swift.Bool = false)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, adViewDelegate: any VisxSDK.VisxAdViewDelegate, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool = false, interstitial: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, headerBiddingDelegate: any VisxSDK.VisxHeaderBiddingDelegate, adSize: CoreFoundation.CGSize, fixedSize: Swift.Bool = false, interstitial: Swift.Bool = false)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(adUnit: Swift.String, adViewDelegate: any VisxSDK.VisxAdViewDelegate, interstitial: Swift.Bool = false)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func getSdkVersion() -> Swift.String
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setAnchorFrame(with anchorX: Swift.Double, _ anchorY: Swift.Double, _ anchorWidth: Swift.Double, _ anchorHeight: Swift.Double)
@@ -1041,7 +1044,7 @@ extension VisxSDK.VisxAdView {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func isInterstitial() -> Swift.Bool
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setInterstitialBackgroundColor(color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func renderAdIfHeaderBiddingEnabled()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func renderAd()
   @objc @_Concurrency.MainActor(unsafe) dynamic public func addFriendlyObstraction(view: UIKit.UIView, detailedReason: Swift.String)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func addFriendlyObstraction(viewsAndReasons: [UIKit.UIView : Swift.String])
   @objc @_Concurrency.MainActor(unsafe) dynamic public func adViewDidReceiveAd(bannerView: UIKit.UIView)

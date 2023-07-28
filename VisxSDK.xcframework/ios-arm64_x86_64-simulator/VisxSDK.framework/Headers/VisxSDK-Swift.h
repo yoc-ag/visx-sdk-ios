@@ -350,16 +350,20 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 
 
 
+
 @protocol VisxAdViewDelegate;
+@protocol VisxHeaderBiddingDelegate;
 @class UIScrollView;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
 /// VisxAdView - Default initializer using callbacks
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial;
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial headerBidding:(BOOL)headerBidding;
 /// VisxAdView - Default initializer using delegates
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
+/// VisxAdView - Header Bidding initializer using delegates
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit headerBiddingDelegate:(id <VisxHeaderBiddingDelegate> _Nonnull)headerBiddingDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
 /// VisxAdView - Adaptive banner initializer with dynamic size
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate interstitial:(BOOL)interstitial;
 /// Returns current VisxSDK version
@@ -397,8 +401,8 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (BOOL)isInterstitial SWIFT_WARN_UNUSED_RESULT;
 /// Set interstitial background color, clear is default
 - (void)setInterstitialBackgroundColorWithColor:(UIColor * _Nonnull)color;
-/// Used only when header bidding is enabled, renderAdIfHeaderBiddingEnabled() needs to be called to show creative
-- (void)renderAdIfHeaderBiddingEnabled;
+/// Used only when header bidding is enabled, renderAd() needs to be called to show creative
+- (void)renderAd;
 /// Add a friendly obstruction for the OM SDK.
 /// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
 /// \param view The view to be marked as a friendly obstruction.
@@ -432,8 +436,6 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (UIViewController * _Nonnull)viewControllerForPresentingVisxAdView SWIFT_WARN_UNUSED_RESULT;
 - (void)visxAdViewDidInitializeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
 @optional
-- (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 - (void)visxAdFailedWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView message:(NSString * _Nonnull)message code:(NSInteger)code;
 - (void)visxAdViewSizeChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView width:(CGFloat)width height:(CGFloat)height;
 - (void)visxAdViewEffectChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
@@ -458,6 +460,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)showAdWithAdView:(VisxAdView * _Nonnull)adView collectionView:(UICollectionView * _Nonnull)collectionView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7VisxSDK25VisxHeaderBiddingDelegate_")
+@protocol VisxHeaderBiddingDelegate <VisxAdViewDelegate>
+@optional
+- (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+@required
+- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 @end
 
 
@@ -874,16 +885,20 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 
 
 
+
 @protocol VisxAdViewDelegate;
+@protocol VisxHeaderBiddingDelegate;
 @class UIScrollView;
 @class UIColor;
 @class NSError;
 
 @interface VisxAdView (SWIFT_EXTENSION(VisxSDK))
 /// VisxAdView - Default initializer using callbacks
-- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial;
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize viewControllerForPresenting:(UIViewController * _Nullable)viewControllerForPresenting interstitial:(BOOL)interstitial headerBidding:(BOOL)headerBidding;
 /// VisxAdView - Default initializer using delegates
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
+/// VisxAdView - Header Bidding initializer using delegates
+- (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit headerBiddingDelegate:(id <VisxHeaderBiddingDelegate> _Nonnull)headerBiddingDelegate adSize:(CGSize)adSize fixedSize:(BOOL)fixedSize interstitial:(BOOL)interstitial;
 /// VisxAdView - Adaptive banner initializer with dynamic size
 - (nonnull instancetype)initWithAdUnit:(NSString * _Nonnull)adUnit adViewDelegate:(id <VisxAdViewDelegate> _Nonnull)adViewDelegate interstitial:(BOOL)interstitial;
 /// Returns current VisxSDK version
@@ -921,8 +936,8 @@ SWIFT_CLASS("_TtC7VisxSDK10VisxAdView")
 - (BOOL)isInterstitial SWIFT_WARN_UNUSED_RESULT;
 /// Set interstitial background color, clear is default
 - (void)setInterstitialBackgroundColorWithColor:(UIColor * _Nonnull)color;
-/// Used only when header bidding is enabled, renderAdIfHeaderBiddingEnabled() needs to be called to show creative
-- (void)renderAdIfHeaderBiddingEnabled;
+/// Used only when header bidding is enabled, renderAd() needs to be called to show creative
+- (void)renderAd;
 /// Add a friendly obstruction for the OM SDK.
 /// Note: This method should be called after VisxAdView is initialized in the ‘visxAdViewDidInitialize’ delegate or ‘onInitialize’ callback.
 /// \param view The view to be marked as a friendly obstruction.
@@ -956,8 +971,6 @@ SWIFT_PROTOCOL("_TtP7VisxSDK18VisxAdViewDelegate_")
 - (UIViewController * _Nonnull)viewControllerForPresentingVisxAdView SWIFT_WARN_UNUSED_RESULT;
 - (void)visxAdViewDidInitializeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
 @optional
-- (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
-- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 - (void)visxAdFailedWithErrorWithVisxAdView:(VisxAdView * _Nonnull)visxAdView message:(NSString * _Nonnull)message code:(NSInteger)code;
 - (void)visxAdViewSizeChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView width:(CGFloat)width height:(CGFloat)height;
 - (void)visxAdViewEffectChangeWithVisxAdView:(VisxAdView * _Nonnull)visxAdView effect:(enum VisxPlacementEffect)effect;
@@ -982,6 +995,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)showAdWithAdView:(VisxAdView * _Nonnull)adView collectionView:(UICollectionView * _Nonnull)collectionView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7VisxSDK25VisxHeaderBiddingDelegate_")
+@protocol VisxHeaderBiddingDelegate <VisxAdViewDelegate>
+@optional
+- (void)visxAdRequestStartedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView;
+@required
+- (void)visxAdResponseReceivedWithVisxAdView:(VisxAdView * _Nonnull)visxAdView price:(NSDecimal)price currency:(NSString * _Nonnull)currency;
 @end
 
 
