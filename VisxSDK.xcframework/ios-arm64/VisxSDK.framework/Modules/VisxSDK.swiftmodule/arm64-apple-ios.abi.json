@@ -3004,6 +3004,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VisxSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "VisxDeviceModel",
         "printedName": "VisxDeviceModel",
@@ -9823,6 +9833,117 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "VisxHeaderBiddingDelegate",
+        "printedName": "VisxHeaderBiddingDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "visxAdRequestStarted",
+            "printedName": "visxAdRequestStarted(visxAdView:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VisxAdView",
+                "printedName": "VisxSDK.VisxAdView",
+                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VisxSDK@objc(pl)VisxHeaderBiddingDelegate(im)visxAdRequestStartedWithVisxAdView:",
+            "mangledName": "$s7VisxSDK0A21HeaderBiddingDelegateP20visxAdRequestStarted0fG4ViewyAA0agJ0C_tF",
+            "moduleName": "VisxSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : VisxSDK.VisxHeaderBiddingDelegate>",
+            "sugared_genericSig": "<Self where Self : VisxSDK.VisxHeaderBiddingDelegate>",
+            "protocolReq": true,
+            "objc_name": "visxAdRequestStartedWithVisxAdView:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "visxAdResponseReceived",
+            "printedName": "visxAdResponseReceived(visxAdView:price:currency:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VisxAdView",
+                "printedName": "VisxSDK.VisxAdView",
+                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decimal",
+                "printedName": "Foundation.Decimal",
+                "usr": "c:@SA@NSDecimal"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VisxSDK@objc(pl)VisxHeaderBiddingDelegate(im)visxAdResponseReceivedWithVisxAdView:price:currency:",
+            "mangledName": "$s7VisxSDK0A21HeaderBiddingDelegateP22visxAdResponseReceived0fG4View5price8currencyyAA0agJ0C_So9NSDecimalaSStF",
+            "moduleName": "VisxSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : VisxSDK.VisxHeaderBiddingDelegate>",
+            "sugared_genericSig": "<Self where Self : VisxSDK.VisxHeaderBiddingDelegate>",
+            "protocolReq": true,
+            "objc_name": "visxAdResponseReceivedWithVisxAdView:price:currency:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@VisxSDK@objc(pl)VisxHeaderBiddingDelegate",
+        "mangledName": "$s7VisxSDK0A21HeaderBiddingDelegateP",
+        "moduleName": "VisxSDK",
+        "genericSig": "<τ_0_0 : VisxSDK.VisxAdViewDelegate>",
+        "sugared_genericSig": "<Self : VisxSDK.VisxAdViewDelegate>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "VisxAdViewDelegate",
+            "printedName": "VisxAdViewDelegate",
+            "usr": "c:@M@VisxSDK@objc(pl)VisxAdViewDelegate",
+            "mangledName": "$s7VisxSDK0A14AdViewDelegateP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "VisxSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -13778,83 +13899,6 @@
           },
           {
             "kind": "Function",
-            "name": "visxAdRequestStarted",
-            "printedName": "visxAdRequestStarted(visxAdView:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VisxAdView",
-                "printedName": "VisxSDK.VisxAdView",
-                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@VisxSDK@objc(pl)VisxAdViewDelegate(im)visxAdRequestStartedWithVisxAdView:",
-            "mangledName": "$s7VisxSDK0A14AdViewDelegateP04visxC14RequestStarted0fcD0yAA0acD0C_tF",
-            "moduleName": "VisxSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : VisxSDK.VisxAdViewDelegate>",
-            "sugared_genericSig": "<Self where Self : VisxSDK.VisxAdViewDelegate>",
-            "protocolReq": true,
-            "objc_name": "visxAdRequestStartedWithVisxAdView:",
-            "declAttributes": [
-              "Optional",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "visxAdResponseReceived",
-            "printedName": "visxAdResponseReceived(visxAdView:price:currency:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VisxAdView",
-                "printedName": "VisxSDK.VisxAdView",
-                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decimal",
-                "printedName": "Foundation.Decimal",
-                "usr": "c:@SA@NSDecimal"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@VisxSDK@objc(pl)VisxAdViewDelegate(im)visxAdResponseReceivedWithVisxAdView:price:currency:",
-            "mangledName": "$s7VisxSDK0A14AdViewDelegateP04visxC16ResponseReceived0fcD05price8currencyyAA0acD0C_So9NSDecimalaSStF",
-            "moduleName": "VisxSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : VisxSDK.VisxAdViewDelegate>",
-            "sugared_genericSig": "<Self where Self : VisxSDK.VisxAdViewDelegate>",
-            "protocolReq": true,
-            "objc_name": "visxAdResponseReceivedWithVisxAdView:price:currency:",
-            "declAttributes": [
-              "Optional",
-              "ObjC"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "visxAdFailedWithError",
             "printedName": "visxAdFailedWithError(visxAdView:message:code:)",
             "children": [
@@ -13892,7 +13936,8 @@
             "objc_name": "visxAdFailedWithErrorWithVisxAdView:message:code:",
             "declAttributes": [
               "Optional",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -16451,7 +16496,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(adUnit:adSize:fixedSize:viewControllerForPresenting:interstitial:)",
+            "printedName": "init(adUnit:adSize:fixedSize:viewControllerForPresenting:interstitial:headerBidding:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -16499,11 +16544,18 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adSize:fixedSize:viewControllerForPresenting:interstitial:",
-            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0E4Size05fixedG027viewControllerForPresenting12interstitialACSS_So6CGSizeVSbSo06UIViewJ0CSgSbtcfc",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adSize:fixedSize:viewControllerForPresenting:interstitial:headerBidding:",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0E4Size05fixedG027viewControllerForPresenting12interstitial13headerBiddingACSS_So6CGSizeVSbSo06UIViewJ0CSgS2btcfc",
             "moduleName": "VisxSDK",
             "declAttributes": [
               "Dynamic",
@@ -16563,6 +16615,65 @@
             "declKind": "Constructor",
             "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:adViewDelegate:adSize:fixedSize:interstitial:",
             "mangledName": "$s7VisxSDK0A6AdViewC6adUnit0eD8Delegate0E4Size05fixedH012interstitialACSS_AA0acdG0_pSo6CGSizeVS2btcfc",
+            "moduleName": "VisxSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Custom",
+              "Convenience",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(adUnit:headerBiddingDelegate:adSize:fixedSize:interstitial:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VisxAdView",
+                "printedName": "VisxSDK.VisxAdView",
+                "usr": "c:@M@VisxSDK@objc(cs)VisxAdView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VisxHeaderBiddingDelegate",
+                "printedName": "VisxSDK.VisxHeaderBiddingDelegate",
+                "usr": "c:@M@VisxSDK@objc(pl)VisxHeaderBiddingDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)initWithAdUnit:headerBiddingDelegate:adSize:fixedSize:interstitial:",
+            "mangledName": "$s7VisxSDK0A6AdViewC6adUnit21headerBiddingDelegate0E4Size05fixedJ012interstitialACSS_AA0a6HeaderhI0_pSo6CGSizeVS2btcfc",
             "moduleName": "VisxSDK",
             "declAttributes": [
               "Dynamic",
@@ -17035,8 +17146,8 @@
           },
           {
             "kind": "Function",
-            "name": "renderAdIfHeaderBiddingEnabled",
-            "printedName": "renderAdIfHeaderBiddingEnabled()",
+            "name": "renderAd",
+            "printedName": "renderAd()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -17045,8 +17156,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)renderAdIfHeaderBiddingEnabled",
-            "mangledName": "$s7VisxSDK0A6AdViewC06renderC22IfHeaderBiddingEnabledyyF",
+            "usr": "c:@CM@VisxSDK@objc(cs)VisxAdView(im)renderAd",
+            "mangledName": "$s7VisxSDK0A6AdViewC06renderC0yyF",
             "moduleName": "VisxSDK",
             "declAttributes": [
               "Dynamic",
@@ -23018,182 +23129,189 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "BooleanLiteral",
-      "offset": 1219,
+      "offset": 1452,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1510,
+      "offset": 1743,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1525,
+      "offset": 1758,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1562,
+      "offset": 1795,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1568,
+      "offset": 1801,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1683,
+      "offset": 1916,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1708,
+      "offset": 1941,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1745,
+      "offset": 1978,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1751,
+      "offset": 1984,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1951,
+      "offset": 2184,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 1957,
+      "offset": 2190,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 2393,
+      "offset": 2598,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 2399,
+      "offset": 2604,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 2725,
+      "offset": 2921,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 3887,
+      "offset": 4083,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
+      "kind": "Array",
+      "offset": 4626,
+      "length": 47,
+      "value": "[\"ListCollectionViewCell\", \"HostingScrollView\"]"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 4944,
+      "offset": 6022,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 5054,
+      "offset": 6132,
       "length": 26,
       "value": "\"TabNavBarHeightDidChange\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 5317,
+      "offset": 6395,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 5758,
+      "offset": 6836,
       "length": 26,
       "value": "\"TabNavBarHeightDidChange\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 6086,
+      "offset": 7164,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 6659,
+      "offset": 7737,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 6837,
+      "offset": 7901,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 8014,
+      "offset": 9078,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 8155,
+      "offset": 9219,
       "length": 24,
       "value": "\"RNSScreenContainerView\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 8266,
+      "offset": 9330,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 8962,
+      "offset": 10026,
       "length": 1,
       "value": "2"
     },
@@ -23207,28 +23325,28 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxAdManagerDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 1743,
+      "offset": 1513,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxAdManagerDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 1859,
+      "offset": 1629,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxAdManagerDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3201,
+      "offset": 2914,
       "length": 19,
       "value": "\"Fallback received\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxAdManagerDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 3265,
+      "offset": 2978,
       "length": 4,
       "value": "true"
     },
@@ -23558,972 +23676,972 @@
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
       "offset": 1530,
-      "length": 38,
+      "length": 52,
       "value": "\"{width: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1547,
+      "offset": 1554,
       "length": 1,
       "value": "\", height: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1566,
+      "offset": 1580,
       "length": 1,
       "value": "\"}\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1592,
+      "offset": 1606,
       "length": 50,
       "value": "\"mraid_bridge.fireEventSizeChange(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1639,
+      "offset": 1653,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1910,
+      "offset": 1924,
       "length": 94,
       "value": "\"{'exposedPercentage': \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1946,
+      "offset": 1960,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 1973,
+      "offset": 1987,
       "length": 1,
       "value": "\", 'occlusionRectangles': null}\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2028,
+      "offset": 2042,
       "length": 47,
       "value": "\"mraid_bridge.fireExposureEvent(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2073,
+      "offset": 2087,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2266,
-      "length": 94,
+      "offset": 2280,
+      "length": 122,
       "value": "\"mraid_bridge.fireScrollEvent(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2309,
+      "offset": 2330,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2327,
+      "offset": 2355,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2347,
+      "offset": 2382,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2357,
+      "offset": 2399,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2488,
+      "offset": 2530,
       "length": 47,
       "value": "\"mraid_bridge.fireAudioChangeEvent(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2532,
+      "offset": 2574,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2656,
+      "offset": 2698,
       "length": 42,
       "value": "\"mraid_bridge.fireCloseEventOfCompanion()\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 2777,
+      "offset": 2819,
       "length": 41,
       "value": "\"mraid_bridge.fireOpenEventOfCompanion()\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3218,
+      "offset": 3260,
       "length": 58,
       "value": "\"mraid_bridge.setPlacementType('\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3272,
+      "offset": 3314,
       "length": 4,
       "value": "\"');\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3395,
+      "offset": 3437,
       "length": 58,
       "value": "\"width: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3422,
+      "offset": 3464,
       "length": 1,
       "value": "\", height: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3452,
+      "offset": 3494,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3477,
+      "offset": 3519,
       "length": 40,
       "value": "\"mraid_bridge.setMaxSize({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3513,
+      "offset": 3555,
       "length": 1,
       "value": "\"});\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 3635,
+      "offset": 3677,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3665,
+      "offset": 3707,
       "length": 52,
       "value": "\"Density can\\'t be set to a value <= 0, setDensity\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3839,
+      "offset": 3881,
       "length": 36,
       "value": "\"mraid_bridge.setDensity(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3872,
+      "offset": 3914,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 3989,
+      "offset": 4031,
       "length": 46,
       "value": "\"width: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4010,
+      "offset": 4052,
       "length": 1,
       "value": "\", height: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4034,
+      "offset": 4076,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4059,
+      "offset": 4101,
       "length": 45,
       "value": "\"mraid_bridge.setScreenSize({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4101,
+      "offset": 4143,
       "length": 1,
       "value": "\"})\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4239,
-      "length": 98,
+      "offset": 4364,
+      "length": 122,
       "value": "\"x:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4259,
+      "offset": 4390,
       "length": 1,
       "value": "\", y:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4280,
+      "offset": 4417,
       "length": 1,
       "value": "\", width:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4307,
+      "offset": 4450,
       "length": 1,
       "value": "\", height:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4336,
+      "offset": 4485,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4361,
+      "offset": 4510,
       "length": 56,
       "value": "\"mraid_bridge.setDefaultPosition({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4413,
+      "offset": 4562,
       "length": 1,
       "value": "\"});\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4552,
-      "length": 98,
+      "offset": 4784,
+      "length": 122,
       "value": "\"x:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4572,
+      "offset": 4810,
       "length": 1,
       "value": "\", y:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4593,
+      "offset": 4837,
       "length": 1,
       "value": "\", width:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4620,
+      "offset": 4870,
       "length": 1,
       "value": "\", height:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4649,
+      "offset": 4905,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4674,
+      "offset": 4930,
       "length": 56,
       "value": "\"mraid_bridge.setCurrentPosition({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 4726,
+      "offset": 4982,
       "length": 1,
       "value": "\"});\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 4831,
+      "offset": 5087,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 4860,
+      "offset": 5116,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 4900,
+      "offset": 5156,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "FloatLiteral",
-      "offset": 5441,
+      "offset": 5697,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 5447,
+      "offset": 5703,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 5451,
+      "offset": 5707,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 5471,
+      "offset": 5727,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "IntegerLiteral",
-      "offset": 5483,
+      "offset": 5739,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5514,
+      "offset": 5770,
       "length": 87,
       "value": "\"lat: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5526,
+      "offset": 5782,
       "length": 1,
       "value": "\", lon: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5539,
+      "offset": 5795,
       "length": 1,
       "value": "\", type: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5554,
+      "offset": 5810,
       "length": 1,
       "value": "\", accuracy: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5577,
+      "offset": 5833,
       "length": 1,
       "value": "\", unixTime: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5600,
+      "offset": 5856,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5629,
+      "offset": 5885,
       "length": 42,
       "value": "\"mraid_bridge.setLocation({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5667,
+      "offset": 5923,
       "length": 1,
       "value": "\"});\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5815,
+      "offset": 6071,
       "length": 58,
       "value": "\"width: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5842,
+      "offset": 6098,
       "length": 1,
       "value": "\", height: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5872,
+      "offset": 6128,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5897,
+      "offset": 6153,
       "length": 45,
       "value": "\"mraid_bridge.setAbsoluteSize({\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 5938,
+      "offset": 6194,
       "length": 1,
       "value": "\"});\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6070,
+      "offset": 6326,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6079,
+      "offset": 6335,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6110,
+      "offset": 6366,
       "length": 51,
       "value": "\"mraid_bridge.setIsMediationAdView(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6158,
+      "offset": 6414,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6311,
+      "offset": 6567,
       "length": 13,
       "value": "\"orientation\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6360,
+      "offset": 6616,
       "length": 6,
       "value": "\"lock\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6435,
+      "offset": 6691,
       "length": 69,
       "value": "\"mraid_bridge.setCurrentAppOrientation('\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6489,
+      "offset": 6745,
       "length": 4,
       "value": "\"', '\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 6500,
+      "offset": 6756,
       "length": 4,
       "value": "\"');\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7113,
+      "offset": 7369,
       "length": 45,
       "value": "\"Unknown error for visxSetPlacementDimension\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7247,
+      "offset": 7503,
       "length": 30,
       "value": "\"window.onorientationchange()\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7401,
+      "offset": 7657,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7410,
+      "offset": 7666,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7441,
+      "offset": 7697,
       "length": 47,
       "value": "\"mraid_bridge.setIsUniversalAd(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7485,
+      "offset": 7741,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7618,
+      "offset": 7874,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7627,
+      "offset": 7883,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7658,
+      "offset": 7914,
       "length": 53,
       "value": "\"mraid_bridge.setCanUseOnScrollEvent(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7708,
+      "offset": 7964,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 7873,
+      "offset": 8129,
       "length": 39,
       "value": "\"window.mraid.getAbsoluteScreenSize();\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8044,
+      "offset": 8300,
       "length": 5,
       "value": "\"sms\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8053,
+      "offset": 8309,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8062,
+      "offset": 8318,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8117,
+      "offset": 8373,
       "length": 5,
       "value": "\"tel\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8126,
+      "offset": 8382,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8135,
+      "offset": 8391,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8200,
+      "offset": 8456,
       "length": 14,
       "value": "\"storePicture\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8218,
+      "offset": 8474,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8227,
+      "offset": 8483,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8287,
+      "offset": 8543,
       "length": 10,
       "value": "\"calendar\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8301,
+      "offset": 8557,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8310,
+      "offset": 8566,
       "length": 7,
       "value": "\"false\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8341,
+      "offset": 8597,
       "length": 82,
       "value": "\"mraid_bridge.modifyMraidSupports(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8381,
+      "offset": 8637,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8389,
+      "offset": 8645,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8407,
+      "offset": 8663,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8420,
+      "offset": 8676,
       "length": 1,
       "value": "\");\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8542,
+      "offset": 8798,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8568,
+      "offset": 8824,
       "length": 41,
       "value": "\"mraid_bridge.getOrientationProperties()\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8731,
+      "offset": 8987,
       "length": 19,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8746,
+      "offset": 9002,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8749,
+      "offset": 9005,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8872,
+      "offset": 9128,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 8898,
+      "offset": 9154,
       "length": 53,
       "value": "\"(typeof(window.onorientationchange) === 'function')\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9073,
+      "offset": 9329,
       "length": 19,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9088,
+      "offset": 9344,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9091,
+      "offset": 9347,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9351,
+      "offset": 9607,
       "length": 8,
       "value": "\"hidden\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9414,
+      "offset": 9670,
       "length": 9,
       "value": "\"default\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9474,
+      "offset": 9730,
       "length": 10,
       "value": "\"expanded\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9534,
+      "offset": 9790,
       "length": 9,
       "value": "\"resized\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9712,
+      "offset": 9968,
       "length": 132,
       "value": "\"window.mraid.visxSetPlacementEffect(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9758,
+      "offset": 10014,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9776,
+      "offset": 10032,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9795,
+      "offset": 10051,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9818,
+      "offset": 10074,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9842,
+      "offset": 10098,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 9959,
-      "length": 116,
+      "offset": 10215,
+      "length": 143,
       "value": "\"window.mraid.visxSetPlacementDimension(\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10015,
+      "offset": 10278,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10034,
+      "offset": 10304,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10053,
+      "offset": 10330,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10073,
+      "offset": 10357,
       "length": 1,
-      "value": "\")\""
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10159,
+      "offset": 10442,
       "length": 124,
       "value": "\"'visibleRectangle': {'x':\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10201,
+      "offset": 10484,
       "length": 1,
       "value": "\", 'y':\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10223,
+      "offset": 10506,
       "length": 1,
       "value": "\", 'width':\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10251,
+      "offset": 10534,
       "length": 1,
       "value": "\", 'height':\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10281,
+      "offset": 10564,
       "length": 1,
       "value": "\"}\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10500,
+      "offset": 10783,
       "length": 47,
       "value": "\"Could not execute javascript for: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/JavascriptBridge\/JavascriptBridge.swift",
       "kind": "StringLiteral",
-      "offset": 10546,
+      "offset": 10829,
       "length": 19,
       "value": "\"\""
     },
@@ -30060,308 +30178,322 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 575,
+      "offset": 636,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "FloatLiteral",
-      "offset": 4145,
+      "offset": 2984,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6028,
+      "offset": 4983,
       "length": 19,
       "value": "\"VisxBannerAdapter\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 6428,
+      "offset": 5468,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 7358,
+      "offset": 6010,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 7364,
+      "offset": 6016,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 7400,
+      "offset": 6052,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7687,
+      "offset": 6339,
       "length": 26,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7712,
+      "offset": 6364,
       "length": 4,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7715,
+      "offset": 6367,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7741,
+      "offset": 6393,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9837,
+      "offset": 7430,
       "length": 26,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9862,
+      "offset": 7455,
       "length": 4,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9865,
+      "offset": 7458,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9891,
+      "offset": 7484,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 10685,
+      "offset": 7853,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 12522,
+      "offset": 9690,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 13959,
+      "offset": 10862,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 17415,
+      "offset": 13647,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 18479,
+      "offset": 14699,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 18907,
+      "offset": 15127,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 19212,
+      "offset": 15432,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 19518,
+      "offset": 15738,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 19548,
+      "offset": 15768,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 19634,
+      "offset": 15854,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 20006,
+      "offset": 16045,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 20927,
+      "offset": 16583,
       "length": 26,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 20952,
+      "offset": 16608,
       "length": 4,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 20955,
+      "offset": 16611,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 20981,
+      "offset": 16637,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 22420,
+      "offset": 18076,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 22443,
+      "offset": 18099,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 23093,
+      "offset": 18547,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 23130,
+      "offset": 18584,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 19873,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
+      "kind": "BooleanLiteral",
+      "offset": 19903,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24135,
+      "offset": 19974,
       "length": 50,
       "value": "\"Cannot set message if placement effect is sticky\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24210,
+      "offset": 20049,
       "length": 54,
       "value": "\"Cannot change effect for placement type interstitial\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24289,
+      "offset": 20128,
       "length": 74,
       "value": "\"Placement effect sticky invalid for understitial, interstitial creatives\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24391,
+      "offset": 20230,
       "length": 52,
       "value": "\"Cannot change effect, MRAID state must be default.\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24468,
+      "offset": 20307,
       "length": 50,
       "value": "\"Cannot set message if creative is not universal.\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24135,
+      "offset": 19974,
       "length": 50,
       "value": "\"Cannot set message if placement effect is sticky\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24210,
+      "offset": 20049,
       "length": 54,
       "value": "\"Cannot change effect for placement type interstitial\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24289,
+      "offset": 20128,
       "length": 74,
       "value": "\"Placement effect sticky invalid for understitial, interstitial creatives\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24391,
+      "offset": 20230,
       "length": 52,
       "value": "\"Cannot change effect, MRAID state must be default.\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+VisxMRAdViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 24468,
+      "offset": 20307,
       "length": 50,
       "value": "\"Cannot set message if creative is not universal.\""
     },
@@ -33945,301 +34077,301 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7429,
+      "offset": 7467,
       "length": 7,
       "value": "\"width\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 7464,
+      "offset": 7502,
       "length": 8,
       "value": "\"height\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 8289,
+      "offset": 8537,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9313,
+      "offset": 9561,
       "length": 16,
       "value": "\"expandPosition\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9366,
+      "offset": 9614,
       "length": 8,
       "value": "\"center\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 9404,
+      "offset": 9652,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 9457,
+      "offset": 9705,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9725,
+      "offset": 9973,
       "length": 37,
       "value": "\">> scheme == tel , mailto , sms <<:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10095,
+      "offset": 10343,
       "length": 25,
       "value": "\">> scheme is ios-log <<\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10192,
+      "offset": 10440,
       "length": 5,
       "value": "\"%20\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10205,
+      "offset": 10453,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10258,
+      "offset": 10506,
       "length": 27,
       "value": "\"Web console: \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10284,
+      "offset": 10532,
       "length": 17,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10502,
+      "offset": 10750,
       "length": 27,
       "value": "\">> scheme == itms-apps <<\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10594,
+      "offset": 10842,
       "length": 12,
       "value": "\">> url == \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 10627,
+      "offset": 10875,
       "length": 5,
       "value": "\" <<\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "Dictionary",
-      "offset": 10751,
+      "offset": 10999,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 11642,
+      "offset": 11890,
       "length": 25,
       "value": "\"OPEN BROWSER CONTROLLER\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 11755,
+      "offset": 12003,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 11770,
+      "offset": 12018,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 11785,
+      "offset": 12033,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 12183,
+      "offset": 12431,
       "length": 31,
       "value": "\"Ad will open external Browser\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "Array",
-      "offset": 12494,
+      "offset": 12742,
       "length": 11,
       "value": "[\"Empty URL\"]"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "Array",
-      "offset": 13837,
+      "offset": 14085,
       "length": 11,
       "value": "[\"Empty URL\"]"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 14198,
+      "offset": 14446,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 14213,
+      "offset": 14461,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 14228,
+      "offset": 14476,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 14379,
+      "offset": 14627,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 14634,
+      "offset": 14882,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 14662,
+      "offset": 14910,
       "length": 6,
       "value": "\"mail\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 14682,
+      "offset": 14930,
       "length": 6,
       "value": "\"sms:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 14702,
+      "offset": 14950,
       "length": 6,
       "value": "\"tel:\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 14722,
+      "offset": 14970,
       "length": 6,
       "value": "\"itms\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15260,
+      "offset": 15508,
       "length": 9,
       "value": "\"ios-log\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15290,
+      "offset": 15538,
       "length": 11,
       "value": "\"itms-apps\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15260,
+      "offset": 15508,
       "length": 9,
       "value": "\"ios-log\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15290,
+      "offset": 15538,
       "length": 11,
       "value": "\"itms-apps\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15381,
+      "offset": 15629,
       "length": 18,
       "value": "\"phobos.apple.com\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15423,
+      "offset": 15671,
       "length": 17,
       "value": "\"maps.google.com\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15463,
+      "offset": 15711,
       "length": 18,
       "value": "\"itunes.apple.com\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15381,
+      "offset": 15629,
       "length": 18,
       "value": "\"phobos.apple.com\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15423,
+      "offset": 15671,
       "length": 17,
       "value": "\"maps.google.com\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/MRAdView\/Extensions\/VisxMRAdView+WebViewDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 15463,
+      "offset": 15711,
       "length": 18,
       "value": "\"itunes.apple.com\""
     },
@@ -34360,7 +34492,7 @@
       "kind": "StringLiteral",
       "offset": 256,
       "length": 7,
-      "value": "\"4.0.1\""
+      "value": "\"4.1.0\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Resources\/VisxConstants.swift",
@@ -35562,28 +35694,28 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "BooleanLiteral",
-      "offset": 4682,
+      "offset": 4674,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "BooleanLiteral",
-      "offset": 4723,
+      "offset": 4704,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "BooleanLiteral",
-      "offset": 4859,
+      "offset": 4838,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "BooleanLiteral",
-      "offset": 4889,
+      "offset": 4879,
       "length": 5,
       "value": "false"
     },
@@ -35604,56 +35736,56 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "StringLiteral",
-      "offset": 5254,
+      "offset": 5410,
+      "length": 21,
+      "value": "\"UIHostingController\""
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 5531,
       "length": 11,
       "value": "\"UIWebView\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "StringLiteral",
-      "offset": 5355,
-      "length": 18,
-      "value": "\"ObservableObject\""
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
-      "kind": "StringLiteral",
-      "offset": 5462,
+      "offset": 5629,
       "length": 17,
       "value": "\"RCTBridgeModule\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "StringLiteral",
-      "offset": 5566,
+      "offset": 5733,
       "length": 15,
       "value": "\"FlutterPlugin\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "StringLiteral",
-      "offset": 6238,
+      "offset": 6405,
       "length": 6,
       "value": "\"Info\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "StringLiteral",
-      "offset": 6261,
+      "offset": 6428,
       "length": 7,
       "value": "\"plist\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "Array",
-      "offset": 6464,
+      "offset": 6631,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAppUtils.swift",
       "kind": "Array",
-      "offset": 8009,
+      "offset": 8514,
       "length": 2,
       "value": "[]"
     },
@@ -36780,98 +36912,98 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3468,
+      "offset": 3299,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3886,
+      "offset": 3717,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4646,
+      "offset": 4477,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4801,
+      "offset": 4632,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5313,
+      "offset": 5144,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5351,
+      "offset": 5182,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5895,
+      "offset": 5748,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5930,
+      "offset": 5783,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6401,
+      "offset": 6254,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6544,
+      "offset": 6397,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6864,
+      "offset": 6717,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6870,
+      "offset": 6723,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7403,
+      "offset": 7256,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/MRAID\/StickyManager\/VisxStickyManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8544,
+      "offset": 7837,
       "length": 3,
       "value": "100"
     },
@@ -37830,30 +37962,30 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1663,
-      "length": 11,
-      "value": "\"hb.enable\""
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
-      "kind": "StringLiteral",
-      "offset": 1709,
+      "offset": 1677,
       "length": 31,
       "value": "\"inline.disableBrandedTakeover\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1767,
+      "offset": 1735,
       "length": 19,
       "value": "\"override.adUnitId\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1817,
+      "offset": 1785,
       "length": 27,
       "value": "\"inline.enableInterstitial\""
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
+      "kind": "StringLiteral",
+      "offset": 1850,
+      "length": 34,
+      "value": "\"inline.disableSetPlacementEffect\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
@@ -37907,30 +38039,30 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1663,
-      "length": 11,
-      "value": "\"hb.enable\""
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
-      "kind": "StringLiteral",
-      "offset": 1709,
+      "offset": 1677,
       "length": 31,
       "value": "\"inline.disableBrandedTakeover\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1767,
+      "offset": 1735,
       "length": 19,
       "value": "\"override.adUnitId\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
       "kind": "StringLiteral",
-      "offset": 1817,
+      "offset": 1785,
       "length": 27,
       "value": "\"inline.enableInterstitial\""
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/RemoteConfiguration\/RemoteConfigEnums.swift",
+      "kind": "StringLiteral",
+      "offset": 1850,
+      "length": 34,
+      "value": "\"inline.disableSetPlacementEffect\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
@@ -37942,217 +38074,315 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1010,
+      "offset": 1114,
       "length": 26,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1035,
+      "offset": 1139,
       "length": 4,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1038,
+      "offset": 1142,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1064,
+      "offset": 1168,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1928,
+      "offset": 1781,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 1939,
+      "offset": 1792,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 2012,
+      "offset": 1865,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 2023,
+      "offset": 1876,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 2306,
+      "offset": 2159,
       "length": 11,
       "value": "\"undefined\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "BooleanLiteral",
-      "offset": 2320,
+      "offset": 2173,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "BooleanLiteral",
-      "offset": 2328,
+      "offset": 2181,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 2512,
+      "offset": 2365,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 2518,
+      "offset": 2371,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4452,
+      "offset": 4305,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4482,
+      "offset": 4335,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "StringLiteral",
-      "offset": 4608,
+      "offset": 4461,
       "length": 3,
       "value": "\"#\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4704,
+      "offset": 4557,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4774,
+      "offset": 4627,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4894,
+      "offset": 4747,
       "length": 8,
       "value": "0xFF0000"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "FloatLiteral",
-      "offset": 4921,
+      "offset": 4774,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4967,
+      "offset": 4820,
       "length": 8,
       "value": "0x00FF00"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "FloatLiteral",
-      "offset": 4996,
+      "offset": 4849,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 5040,
+      "offset": 4893,
       "length": 8,
       "value": "0x0000FF"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "FloatLiteral",
-      "offset": 5052,
+      "offset": 4905,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "FloatLiteral",
-      "offset": 5086,
+      "offset": 4939,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "BooleanLiteral",
-      "offset": 5853,
+      "offset": 5706,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "BooleanLiteral",
-      "offset": 6039,
+      "offset": 5892,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 7112,
+      "offset": 6965,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 7118,
+      "offset": 6971,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12205,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12213,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12413,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "FloatLiteral",
+      "offset": 12463,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "FloatLiteral",
+      "offset": 12564,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "FloatLiteral",
+      "offset": 12634,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12736,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12900,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13512,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13821,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 11983,
+      "offset": 13827,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16051,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16204,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16229,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16261,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Helper.swift",
       "kind": "IntegerLiteral",
-      "offset": 11989,
+      "offset": 16267,
       "length": 1,
       "value": "0"
     },
@@ -38236,198 +38466,184 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 343,
+      "offset": 401,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 371,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "StringLiteral",
-      "offset": 471,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 496,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 535,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 569,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 595,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 636,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 661,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 702,
+      "offset": 429,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 932,
+      "offset": 529,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 970,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1010,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1016,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1468,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1495,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1541,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1587,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1630,
-      "length": 1,
-      "value": "0"
+      "kind": "BooleanLiteral",
+      "offset": 554,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1714,
+      "offset": 593,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1753,
+      "offset": 627,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 653,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 694,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 719,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 760,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1797,
+      "offset": 1006,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1830,
+      "offset": 1046,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1052,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1504,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1531,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1577,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1623,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1666,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2038,
+      "offset": 1750,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1789,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1833,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1866,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2074,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2196,
+      "offset": 2232,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2232,
+      "offset": 2268,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2276,
+      "offset": 2312,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2352,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
@@ -38439,205 +38655,198 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2624,
+      "offset": 2430,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2676,
+      "offset": 2462,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2873,
+      "offset": 2695,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2901,
+      "offset": 2724,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2927,
+      "offset": 2776,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3013,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3041,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3067,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3224,
+      "offset": 3364,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3249,
+      "offset": 3389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3291,
+      "offset": 3431,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "IntegerLiteral",
-      "offset": 3297,
+      "offset": 3437,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3660,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3712,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3909,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3937,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3963,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3994,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4291,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4316,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4358,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4364,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 3942,
+      "offset": 4592,
       "length": 39,
       "value": "\"init(coder:) has not been implemented\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4838,
+      "offset": 5490,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4972,
+      "offset": 5624,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6017,
+      "offset": 6699,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6405,
+      "offset": 7087,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
       "kind": "StringLiteral",
-      "offset": 7044,
+      "offset": 7726,
       "length": 2,
       "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7864,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7872,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8072,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "FloatLiteral",
-      "offset": 8122,
-      "length": 3,
-      "value": "0.3"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "FloatLiteral",
-      "offset": 8223,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "FloatLiteral",
-      "offset": 8293,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8395,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8559,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9395,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10400,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10553,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10578,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10610,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10616,
-      "length": 1,
-      "value": "0"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/VisxAdView.swift",
@@ -39356,49 +39565,49 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2525,
+      "offset": 2049,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3319,
+      "offset": 2605,
       "length": 6,
       "value": "\"auid\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3355,
+      "offset": 2641,
       "length": 13,
       "value": "\"wrapperType\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3417,
+      "offset": 2703,
       "length": 16,
       "value": "\"wrapperVersion\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3498,
+      "offset": 2784,
       "length": 4,
       "value": "\"bi\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3575,
+      "offset": 2861,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+FetchMediationDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3599,
+      "offset": 2885,
       "length": 9,
       "value": "\"app_ver\""
     },
@@ -39426,126 +39635,147 @@
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 321,
+      "offset": 377,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 403,
+      "offset": 515,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 965,
+      "offset": 572,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 993,
+      "offset": 1266,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1373,
+      "offset": 1322,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1542,
+      "offset": 1810,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1866,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2309,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2478,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1633,
+      "offset": 2569,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2462,
+      "offset": 3398,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2663,
+      "offset": 3599,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 3163,
+      "offset": 4099,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 4511,
+      "offset": 5548,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5256,
+      "offset": 6293,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5534,
+      "offset": 6571,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 5604,
+      "offset": 6641,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 6479,
+      "offset": 7516,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 6931,
+      "offset": 7968,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 7141,
+      "offset": 8178,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marvinzinowsky\/Documents\/Github\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/Extensions\/VisxAdView+Public.swift",
       "kind": "BooleanLiteral",
-      "offset": 10885,
+      "offset": 11601,
       "length": 5,
       "value": "false"
     }
