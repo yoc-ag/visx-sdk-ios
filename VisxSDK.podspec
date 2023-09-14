@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "Copyright", :text => "Copyright YOC AG. All rights reserved." }
   spec.author       = { "Yoc AG" => "sdk@yoc.com" }
   spec.platform     = :ios, "13.0"
-  spec.source       = { :path => "/Users/yourUserName/Desktop/SomeFolder" }
+  spec.source       =   { :git => 'https://github.com/yoc-media/visx-sdk-ios.git', :tag => "#{spec.version}" }
   spec.vendored_frameworks = "VisxSDK.xcframework"
   
   spec.preserve_paths = "VisxSDK.xcframework"
