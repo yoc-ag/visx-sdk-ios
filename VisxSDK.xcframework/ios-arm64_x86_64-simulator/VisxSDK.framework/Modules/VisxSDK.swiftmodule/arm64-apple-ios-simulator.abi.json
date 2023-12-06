@@ -23689,77 +23689,84 @@
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 6234,
+      "offset": 5672,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6467,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 6344,
+      "offset": 6577,
       "length": 26,
       "value": "\"TabNavBarHeightDidChange\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 6607,
+      "offset": 6840,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 7048,
+      "offset": 7281,
       "length": 26,
       "value": "\"TabNavBarHeightDidChange\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 7376,
+      "offset": 7609,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 7994,
+      "offset": 8227,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 8168,
+      "offset": 8401,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 9345,
+      "offset": 9578,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "StringLiteral",
-      "offset": 9486,
+      "offset": 9719,
       "length": 24,
       "value": "\"RNSScreenContainerView\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 9597,
+      "offset": 9830,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Utils\/VisxAdViewUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10293,
+      "offset": 10526,
       "length": 1,
       "value": "2"
     },
@@ -28917,36 +28924,43 @@
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1499,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
       "kind": "FloatLiteral",
-      "offset": 1379,
+      "offset": 1839,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1391,
+      "offset": 1851,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1771,
-      "length": 1,
-      "value": "0"
+      "kind": "BooleanLiteral",
+      "offset": 2300,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
       "kind": "FloatLiteral",
-      "offset": 2119,
+      "offset": 3525,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/AdView\/BrandedTakeoverWebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2131,
+      "offset": 3537,
       "length": 1,
       "value": "0"
     },
@@ -34744,7 +34758,7 @@
       "kind": "StringLiteral",
       "offset": 256,
       "length": 7,
-      "value": "\"4.1.2\""
+      "value": "\"4.1.3\""
     },
     {
       "filePath": "\/Users\/work\/visx-sdk-source-ios\/Development\/VisxSDK\/VisxSDK\/Resources\/VisxConstants.swift",
