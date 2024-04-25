@@ -10,6 +10,7 @@
 /**
  * List of supported media player positions.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDPosition) {
     /**
      * The ad plays preceding video content.
@@ -32,6 +33,7 @@ typedef NS_ENUM(NSUInteger, OMIDPosition) {
 /**
  *  This object is used to capture key VAST properties so this can be shared with all registered verification providers.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 @interface OMIDYocVASTProperties : NSObject
 
 @property(nonatomic, readonly, getter = isSkippable) BOOL skippable;

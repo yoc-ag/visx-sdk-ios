@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * List of supported error types.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDErrorType) {
     /**
      * The integration is publishing a "generic" error to verification scripts.
@@ -31,7 +32,6 @@ typedef NS_ENUM(NSUInteger, OMIDErrorType) {
  * In addition to viewability this API will also notify all verification providers of key ad session lifecycle events.
  */
 @interface OMIDYocAdSession : NSObject
-
 /**
  *  The AdSession configuration is used for check owners.
  */
