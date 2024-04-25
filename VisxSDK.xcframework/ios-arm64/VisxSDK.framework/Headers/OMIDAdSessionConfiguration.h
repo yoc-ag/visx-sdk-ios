@@ -10,6 +10,7 @@
 /**
  * Identifies which integration layer is responsible for sending certain events.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDOwner) {
     /** The integration will send the event from a JavaScript session script. */
     OMIDJavaScriptOwner = 1,
@@ -23,6 +24,7 @@ typedef NS_ENUM(NSUInteger, OMIDOwner) {
 /**
  * List of supported creative types.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDCreativeType) {
     /**
      * Creative type will be set by JavaScript session script.
@@ -53,6 +55,7 @@ typedef NS_ENUM(NSUInteger, OMIDCreativeType) {
  * Declaring an impression type makes it easier to understand discrepancies between measurers
  * of the ad session, since many metrics depend on impressions.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDImpressionType) {
   /**
    * ImpressionType will be set by JavaScript session script.

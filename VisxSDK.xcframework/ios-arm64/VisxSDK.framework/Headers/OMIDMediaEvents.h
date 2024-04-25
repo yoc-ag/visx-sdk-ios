@@ -12,6 +12,7 @@
 /**
  * List of supported media event player states.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDPlayerState) {
     /**
      * The player is collapsed in such a way that the video is hidden.
@@ -42,6 +43,7 @@ typedef NS_ENUM(NSUInteger, OMIDPlayerState) {
 /**
  * List of supported media event user interaction types.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDInteractionType) {
     /**
      * The user clicked to load the ad's landing page.
@@ -58,6 +60,7 @@ typedef NS_ENUM(NSUInteger, OMIDInteractionType) {
  * Using this event API assumes the media player is fully responsible for communicating all media events at the appropriate times.
  * Only one media events implementation can be associated with the ad session and any attempt to create multiple instances will result in an error.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 @interface OMIDYocMediaEvents : NSObject
 
 /**

@@ -13,6 +13,7 @@
  *  Ad event API enabling the integration partner to signal to all verification providers when key events have occurred.
  * Only one ad events implementation can be associated with the ad session and any attempt to create multiple instances will result in an error.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 @interface OMIDYocAdEvents : NSObject
 
 /**

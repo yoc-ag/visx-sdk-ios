@@ -10,6 +10,7 @@
 /**
  *  Details about the verification provider which will be supplied to the ad session.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 @interface OMIDYocVerificationScriptResource : NSObject
 
 @property(nonatomic, readonly, nonnull) NSURL *URL;

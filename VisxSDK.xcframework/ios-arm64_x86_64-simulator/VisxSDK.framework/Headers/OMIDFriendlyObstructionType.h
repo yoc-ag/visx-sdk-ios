@@ -9,6 +9,7 @@
 /**
  * List of allowed friendly obstruction purposes.
  */
+NS_SWIFT_UNAVAILABLE("Documentation not available for Objective-C framework")
 typedef NS_ENUM(NSUInteger, OMIDFriendlyObstructionType) {
     /**
      * The friendly obstruction relates to interacting with a video (such as play/pause buttons).

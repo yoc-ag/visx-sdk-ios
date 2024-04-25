@@ -7,10 +7,4 @@
 //
 
 #import <Foundation/Foundation.h>
-
-//! Project version number for YocSDK.
-FOUNDATION_EXPORT double YocSDKVersionNumber;
-//! Project version string for YocSDK.
-FOUNDATION_EXPORT const unsigned char YocSDKVersionString[];
 #import "OMIDImports.h"
-
